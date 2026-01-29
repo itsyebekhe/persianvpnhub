@@ -422,7 +422,7 @@ async def main():
                 )
                 
                 # Add "More Configs" Button to files
-                buttons = [[Button.url("کانفیگ های بیشتر", CHANNEL_LINK)]]
+                buttons = [[Button.url("🔍 دریافت کانفیگ‌های بیشتر", CHANNEL_LINK)]]
                 
                 await bot_client.send_file(
                     DESTINATION_ID, 
