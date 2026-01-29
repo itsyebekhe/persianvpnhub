@@ -13,7 +13,6 @@ from urllib.parse import urlparse, parse_qs, unquote
 
 import aiohttp
 import geoip2.database
-import jdatetime
 from telethon import TelegramClient, Button
 from telethon.sessions import StringSession
 
@@ -47,6 +46,43 @@ NPV_EXTENSIONS = ('.npvt')
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
+# --- JALALI CONVERTER (Native Python Implementation) ---
+class JalaliConverter:
+    @staticmethod
+    def gregorian_to_jalali(gy, gm, gd):
+        g_d_m = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
+        if (gy > 1600):
+            jy = 979
+            gy -= 1600
+        else:
+            jy = 0
+            gy -= 621
+        
+        days = (365 * gy) + ((gy + 1) // 4) - ((gy + 99) // 100) + ((gy + 399) // 400) - 80 + gd + g_d_m[gm - 1]
+        jy += 33 * (days // 12053)
+        days %= 12053
+        jy += 4 * (days // 1461)
+        days %= 1461
+        if (days > 365):
+            jy += (days - 1) // 365
+            days = (days - 1) % 365
+        if (days < 186):
+            jm = 1 + (days // 31)
+            jd = 1 + (days % 31)
+        else:
+            jm = 7 + ((days - 186) // 30)
+            jd = 1 + ((days - 186) % 30)
+        return (jy, jm, jd)
+
+    @staticmethod
+    def get_persian_time(timestamp):
+        # Convert UTC to Iran Standard Time (UTC+03:30)
+        utc_dt = datetime.fromtimestamp(timestamp, timezone.utc)
+        tehran_dt = utc_dt + timedelta(hours=3, minutes=30)
+        
+        jy, jm, jd = JalaliConverter.gregorian_to_jalali(tehran_dt.year, tehran_dt.month, tehran_dt.day)
+        return f"{jy}/{jm:02d}/{jd:02d} - {tehran_dt.hour:02d}:{tehran_dt.minute:02d}"
 
 # --- CLOUDFLARE ---
 CF_IPV6_DEFAULTS = [
@@ -197,7 +233,7 @@ class ConfigManager:
             return None
 
     def get_location_info(self, ip_str):
-        # 1. Cloudflare Check (First priority)
+        # 1. Cloudflare Check (Prioritized)
         if self.cf_manager.is_cloudflare(ip_str):
             return "☁️", "کلادفلر"
         
@@ -266,16 +302,6 @@ class ConfigManager:
             for chunk in iter(lambda: f.read(4096), b""):
                 hash_sha.update(chunk)
         return hash_sha.hexdigest()
-
-    @staticmethod
-    def get_shamsi_time(timestamp):
-        # Convert to Iran Standard Time (UTC+3:30)
-        utc_dt = datetime.fromtimestamp(timestamp, timezone.utc)
-        tehran_dt = utc_dt + timedelta(hours=3, minutes=30)
-        
-        # Use jdatetime for correct conversion
-        j_dt = jdatetime.datetime.fromgregorian(datetime=tehran_dt)
-        return j_dt.strftime("%Y/%m/%d - %H:%M")
 
 async def main():
     logger.info("Starting PSG Collector Bot...")
@@ -355,7 +381,7 @@ async def main():
                 if clean_proto == 'VMESS': clean_proto = 'VMess'
                 if clean_proto == 'VLESS': clean_proto = 'VLESS'
 
-                shamsi_date = manager.get_shamsi_time(item['ts'])
+                shamsi_date = JalaliConverter.get_persian_time(item['ts'])
 
                 caption = (
                     f"{flag} {country} | {clean_proto}\n\n"
@@ -365,7 +391,7 @@ async def main():
                 )
                 
                 # Output format: Code block inside markdown
-                final_msg = f"{caption}\n```\n{config_str}\n```"
+                final_msg = f"{caption}```\n{config_str}\n```"
 
                 # Buttons (Only connect button for MTProto)
                 buttons = []
