@@ -1,17 +1,22 @@
-name: persianvpnhub Bot
+name: PersianVPNHub Bot
 
 on:
   schedule:
-    - cron: '*/15 * * * *' # Run every 4 hours
+    - cron: '*/15 * * * *' # Run every 15 minutes
   workflow_dispatch:      # Allow manual run
+
+permissions:
+  contents: write
 
 jobs:
   collect-and-post:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout Code
+    - name: Checkout Code (Main)
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 # Fetch all history so we can switch branches
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -31,10 +36,51 @@ jobs:
         DESTINATION_ID: ${{ secrets.DESTINATION_ID }}
       run: python bot.py
 
-    - name: Commit History (Deduplication)
+    - name: Configure Git
       run: |
         git config --global user.name "PersianVPNHub-Bot"
         git config --global user.email "bot@persianvpnhub.local"
-        git add history.json
-        # Only commit if history.json changed
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update history [skip ci]" && git push)
+
+    # --- PART 1: Save Bot Memory to Main ---
+    - name: Commit State (History & Stats) to Main
+      run: |
+        # Add only the bot state files
+        git add history.json stats.json
+        
+        # Check if they changed
+        if ! git diff --cached --quiet; then
+          git commit -m "Update Bot State [skip ci]"
+          git push origin main
+        else
+          echo "No changes to history or stats."
+        fi
+
+    # --- PART 2: Publish Subscriptions to Export ---
+    - name: Publish Subscriptions to Export Branch
+      run: |
+        # 1. Move the generated subscription files to a temporary location
+        mkdir -p /tmp/subs_output
+        mv subscribed_configs.txt /tmp/subs_output/ 2>/dev/null || true
+        mv subscribed_configs_b64.txt /tmp/subs_output/ 2>/dev/null || true
+
+        # 2. Switch to the export branch (create it as orphan if it doesn't exist)
+        if git show-ref --verify --quiet refs/remotes/origin/export; then
+          git checkout export
+          git pull origin export
+        else
+          git checkout --orphan export
+          git rm -rf . # Remove all files from main to have a clean branch
+        fi
+
+        # 3. Move files back from temp location
+        mv /tmp/subs_output/* .
+
+        # 4. Commit and Push
+        git add subscribed_configs.txt subscribed_configs_b64.txt
+        
+        if ! git diff --cached --quiet; then
+          git commit -m "Update Subscription Files [skip ci]"
+          git push origin export
+        else
+          echo "No changes to subscription files."
+        fi
