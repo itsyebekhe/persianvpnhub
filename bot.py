@@ -13,6 +13,7 @@ from urllib.parse import urlparse, parse_qs, unquote
 
 import aiohttp
 import geoip2.database
+import jdatetime
 from telethon import TelegramClient, Button
 from telethon.sessions import StringSession
 
@@ -46,42 +47,6 @@ NPV_EXTENSIONS = ('.npvt')
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
-
-# --- JALALI CONVERTER (No external lib dependency) ---
-class JalaliConverter:
-    @staticmethod
-    def gregorian_to_jalali(gy, gm, gd):
-        g_d_m = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
-        if (gy % 4 == 0 and gy % 100 != 0) or (gy % 400 == 0):
-            g_d_m = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335]
-        jy = gy - 1600 + 979
-        days = (365 if (gy % 4 != 0 or gy % 100 == 0) and gy % 400 != 0 else 366)
-        if gy > 1600:
-            jy -= 979
-            gy -= 1600
-        else:
-            jy += 621
-            gy -= 621
-        days2 = (365 * gy) + (int((gy + 3) / 4)) - (int((gy + 99) / 100)) + (int((gy + 399) / 400))
-        days += days2 + gd + g_d_m[gm - 1] - 1
-        jy += 33 * (int(days / 12053))
-        days %= 12053
-        jy += 4 * (int(days / 1461))
-        days %= 1461
-        if days > 365:
-            jy += int((days - 1) / 365)
-            days = (days - 1) % 365
-        return (jy, (int(days / 31) + 1), (days % 31 + 1)) if days < 186 else (jy, (7 + int((days - 186) / 30)), ((days - 186) % 30 + 1))
-
-    @staticmethod
-    def get_shamsi_datetime(timestamp):
-        # Convert UTC timestamp to Tehran Time (UTC+3:30)
-        # Note: DST is no longer observed in Iran, so strictly +3:30
-        utc_dt = datetime.fromtimestamp(timestamp, timezone.utc)
-        tehran_dt = utc_dt + timedelta(hours=3, minutes=30)
-        
-        jy, jm, jd = JalaliConverter.gregorian_to_jalali(tehran_dt.year, tehran_dt.month, tehran_dt.day)
-        return f"{jy}/{jm:02d}/{jd:02d} - {tehran_dt.hour:02d}:{tehran_dt.minute:02d}"
 
 # --- CLOUDFLARE ---
 CF_IPV6_DEFAULTS = [
@@ -248,7 +213,9 @@ class ConfigManager:
                 'France': 'فرانسه', 'United Kingdom': 'انگلیس', 'Finland': 'فنلاند',
                 'Canada': 'کانادا', 'Turkey': 'ترکیه', 'Russia': 'روسیه',
                 'Singapore': 'سنگاپور', 'Japan': 'ژاپن', 'Sweden': 'سوئد',
-                'United Arab Emirates': 'امارات', 'Switzerland': 'سوئیس'
+                'United Arab Emirates': 'امارات', 'Switzerland': 'سوئیس',
+                'Poland': 'لهستان', 'Italy': 'ایتالیا', 'Spain': 'اسپانیا',
+                'Ireland': 'ایرلند', 'Belgium': 'بلژیک', 'Ukraine': 'اوکراین'
             }
             display_name = persian_names.get(name, name)
             flag = chr(127397 + ord(iso[0])) + chr(127397 + ord(iso[1])) if iso else "🏁"
@@ -257,8 +224,6 @@ class ConfigManager:
 
     @staticmethod
     def parse_config_details(config_str, proto):
-        # Extract the Connection Host (Where the client connects to)
-        # This is the most reliable way to determine if it is Cloudflare or not.
         host = None
         port = None
         try:
@@ -301,6 +266,16 @@ class ConfigManager:
             for chunk in iter(lambda: f.read(4096), b""):
                 hash_sha.update(chunk)
         return hash_sha.hexdigest()
+
+    @staticmethod
+    def get_shamsi_time(timestamp):
+        # Convert to Iran Standard Time (UTC+3:30)
+        utc_dt = datetime.fromtimestamp(timestamp, timezone.utc)
+        tehran_dt = utc_dt + timedelta(hours=3, minutes=30)
+        
+        # Use jdatetime for correct conversion
+        j_dt = jdatetime.datetime.fromgregorian(datetime=tehran_dt)
+        return j_dt.strftime("%Y/%m/%d - %H:%M")
 
 async def main():
     logger.info("Starting PSG Collector Bot...")
@@ -372,8 +347,7 @@ async def main():
                 if not await manager.check_connection(ip, port):
                     continue
 
-                # 5. Determine Location (Using the Connection IP)
-                # Prioritize Cloudflare check on the IP we connect to
+                # 5. Determine Location
                 flag, country = manager.get_location_info(ip)
 
                 # 6. Formatting
@@ -381,19 +355,19 @@ async def main():
                 if clean_proto == 'VMESS': clean_proto = 'VMess'
                 if clean_proto == 'VLESS': clean_proto = 'VLESS'
 
-                shamsi_date = JalaliConverter.get_shamsi_datetime(item['ts'])
+                shamsi_date = manager.get_shamsi_time(item['ts'])
 
                 caption = (
-                    f"{flag} **{country}** | {clean_proto}\n\n"
-                    f"📡 **منبع:** @{item['source']}\n"
-                    f"⚡️ **پینگ:** متصل (TCP)\n"
-                    f"🕒 **زمان انتشار:** {shamsi_date}\n\n"
+                    f"{flag} {country} | {clean_proto}\n\n"
+                    f"📡 منبع: @{item['source']}\n"
+                    f"⚡️ پینگ: متصل (TCP)\n"
+                    f"🕒 زمان انتشار: {shamsi_date}\n"
                 )
                 
                 # Output format: Code block inside markdown
-                final_msg = f"{caption}```\n{config_str}\n```"
+                final_msg = f"{caption}\n```\n{config_str}\n```"
 
-                # Buttons (Only connect button for MTProto, no source button)
+                # Buttons (Only connect button for MTProto)
                 buttons = []
                 if proto == 'mtproto': 
                     buttons.append([Button.url("🔵 اتصال (Connect)", config_str)])
@@ -417,9 +391,9 @@ async def main():
                     os.remove(path); continue
                 
                 caption = (
-                    f"📂 **فایل کانفیگ NapsternetV**\n"
-                    f"🌍 **لوکیشن:** نامشخص\n\n"
-                    f"📡 **منبع:** @{item['source']}"
+                    f"📂 فایل کانفیگ NapsternetV\n"
+                    f"🏁 نامشخص | NPV\n\n"
+                    f"📡 منبع: @{item['source']}"
                 )
                 
                 await bot_client.send_file(
