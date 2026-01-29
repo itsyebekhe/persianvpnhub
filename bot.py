@@ -381,12 +381,12 @@ async def main():
 
                 caption = (
                     f"📂 کانفیگ {clean_proto}\n"
-                    f"{flag} پینگ: متصل (TCP)\n\n"
+                    f"📍 لوکیشن: {country} {flag}\n\n"
                     f"🕒 انتشار: {shamsi_date}\n"
                     f"💡 منبع: @{item['source']}\n"
                 )
                 
-                final_msg = f"{caption}\n```{config_str}```"
+                final_msg = f"{caption}\n```{config_str}```\n"
 
                 # Buttons
                 buttons = []
@@ -416,9 +416,9 @@ async def main():
                 
                 caption = (
                     f"📂 فایل کانفیگ NapsternetV\n"
-                    f"🏁 پینگ: نامشخص\n\n"
+                    f"📍 لوکیشن: نامشخص\n\n"
                     f"🕒 انتشار: {shamsi_date}\n"
-                    f"💡 منبع: @{item['source']}\n"
+                    f"💡 منبع: @{item['source']}\n\n"
                 )
                 
                 # Add "More Configs" Button to files
