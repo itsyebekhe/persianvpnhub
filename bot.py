@@ -8,7 +8,7 @@ import ipaddress
 import socket
 import hashlib
 import shutil
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from urllib.parse import urlparse, parse_qs, unquote
 
 import aiohttp
@@ -46,6 +46,42 @@ NPV_EXTENSIONS = ('.npvt')
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
+# --- JALALI CONVERTER (No external lib dependency) ---
+class JalaliConverter:
+    @staticmethod
+    def gregorian_to_jalali(gy, gm, gd):
+        g_d_m = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
+        if (gy % 4 == 0 and gy % 100 != 0) or (gy % 400 == 0):
+            g_d_m = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335]
+        jy = gy - 1600 + 979
+        days = (365 if (gy % 4 != 0 or gy % 100 == 0) and gy % 400 != 0 else 366)
+        if gy > 1600:
+            jy -= 979
+            gy -= 1600
+        else:
+            jy += 621
+            gy -= 621
+        days2 = (365 * gy) + (int((gy + 3) / 4)) - (int((gy + 99) / 100)) + (int((gy + 399) / 400))
+        days += days2 + gd + g_d_m[gm - 1] - 1
+        jy += 33 * (int(days / 12053))
+        days %= 12053
+        jy += 4 * (int(days / 1461))
+        days %= 1461
+        if days > 365:
+            jy += int((days - 1) / 365)
+            days = (days - 1) % 365
+        return (jy, (int(days / 31) + 1), (days % 31 + 1)) if days < 186 else (jy, (7 + int((days - 186) / 30)), ((days - 186) % 30 + 1))
+
+    @staticmethod
+    def get_shamsi_datetime(timestamp):
+        # Convert UTC timestamp to Tehran Time (UTC+3:30)
+        # Note: DST is no longer observed in Iran, so strictly +3:30
+        utc_dt = datetime.fromtimestamp(timestamp, timezone.utc)
+        tehran_dt = utc_dt + timedelta(hours=3, minutes=30)
+        
+        jy, jm, jd = JalaliConverter.gregorian_to_jalali(tehran_dt.year, tehran_dt.month, tehran_dt.day)
+        return f"{jy}/{jm:02d}/{jd:02d} - {tehran_dt.hour:02d}:{tehran_dt.minute:02d}"
 
 # --- CLOUDFLARE ---
 CF_IPV6_DEFAULTS = [
@@ -114,9 +150,8 @@ class ConfigNormalizer:
                 host_port = parsed.netloc.split('@')[-1]
                 params = parse_qs(parsed.query)
                 flat_params = {k: v[0] for k, v in params.items()}
-                flat_params.pop('fp', None)
-                flat_params.pop('pbk', None)
-                flat_params.pop('sid', None)
+                for key in ['fp', 'pbk', 'sid', 'spx']:
+                    flat_params.pop(key, None)
                 
                 data = {
                     'protocol': proto,
@@ -169,7 +204,6 @@ class ConfigManager:
         return False
 
     async def setup_external_resources(self):
-        # 1. GeoIP
         if not os.path.exists(GEOIP_DB) or (datetime.now().timestamp() - os.path.getmtime(GEOIP_DB) > 86400):
             logger.info("Downloading GeoIP...")
             async with aiohttp.ClientSession() as session:
@@ -178,8 +212,6 @@ class ConfigManager:
                         with open(GEOIP_DB, 'wb') as f: f.write(await resp.read())
         try: self.geo_reader = geoip2.database.Reader(GEOIP_DB)
         except: pass
-
-        # 2. Cloudflare Ranges
         await self.cf_manager.update_ranges()
 
     async def resolve_dns(self, host):
@@ -191,7 +223,6 @@ class ConfigManager:
             pass
 
         if host in self.dns_cache: return self.dns_cache[host]
-        
         try:
             loop = asyncio.get_running_loop()
             ip = await loop.run_in_executor(None, socket.gethostbyname, host)
@@ -201,33 +232,35 @@ class ConfigManager:
             return None
 
     def get_location_info(self, ip_str):
-        # 1. Check Cloudflare
+        # 1. Cloudflare Check (First priority)
         if self.cf_manager.is_cloudflare(ip_str):
-            return "☁️", "کلادفلر (Cloudflare)"
+            return "☁️", "کلادفلر"
         
-        # 2. Check GeoIP
+        # 2. GeoIP Check
         if not self.geo_reader or not ip_str: return "🏁", "نامشخص"
         try:
             resp = self.geo_reader.country(ip_str)
             iso = resp.country.iso_code
             name = resp.country.names.get('en', 'Unknown')
             
-            # Common Persian Names
             persian_names = {
                 'Germany': 'آلمان', 'United States': 'آمریکا', 'Netherlands': 'هلند',
                 'France': 'فرانسه', 'United Kingdom': 'انگلیس', 'Finland': 'فنلاند',
                 'Canada': 'کانادا', 'Turkey': 'ترکیه', 'Russia': 'روسیه',
-                'Singapore': 'سنگاپور', 'Japan': 'ژاپن', 'Sweden': 'سوئد'
+                'Singapore': 'سنگاپور', 'Japan': 'ژاپن', 'Sweden': 'سوئد',
+                'United Arab Emirates': 'امارات', 'Switzerland': 'سوئیس'
             }
             display_name = persian_names.get(name, name)
-
             flag = chr(127397 + ord(iso[0])) + chr(127397 + ord(iso[1])) if iso else "🏁"
             return flag, display_name
         except: return "🏁", "نامشخص"
 
     @staticmethod
     def parse_config_details(config_str, proto):
-        host, port, sni, net = None, None, None, None
+        # Extract the Connection Host (Where the client connects to)
+        # This is the most reliable way to determine if it is Cloudflare or not.
+        host = None
+        port = None
         try:
             if proto == 'vmess':
                 b64 = config_str[8:]
@@ -236,30 +269,19 @@ class ConfigManager:
                 data = json.loads(base64.b64decode(b64).decode('utf-8', errors='ignore'))
                 host = data.get('add')
                 port = data.get('port')
-                sni = data.get('sni')
-                net = data.get('net')
             elif proto == 'mtproto':
                 parsed = urlparse(config_str.replace('tg://', 'http://'))
                 params = parse_qs(parsed.query)
                 host = params.get('server', [None])[0]
                 port = params.get('port', [None])[0]
-                net = 'tcp'
             else:
                 parsed = urlparse(config_str)
                 host = parsed.hostname
                 port = parsed.port
-                params = parse_qs(parsed.query)
-                sni = params.get('sni', [None])[0]
-                net = params.get('type', ['tcp'])[0]
-                if not net: net = params.get('security', [''])[0]
-
-            location_host = host
-            if net and 'ws' in net.lower():
-                if sni: location_host = sni
             
-            return host, int(port) if port else None, location_host
+            return host, int(port) if port else None
         except Exception:
-            return None, None, None
+            return None, None
 
     @staticmethod
     async def check_connection(ip, port):
@@ -338,48 +360,48 @@ async def main():
                 norm_json = ConfigNormalizer.normalize(config_str, proto)
                 if not norm_json or manager.is_duplicate(norm_json): continue
 
-                # 2. Parse & Resolve
-                conn_host, conn_port, loc_host = manager.parse_config_details(config_str, proto)
-                if not conn_host: continue
+                # 2. Parse details
+                host, port = manager.parse_config_details(config_str, proto)
+                if not host: continue
 
-                conn_ip = await manager.resolve_dns(conn_host)
-                if not conn_ip: continue
+                # 3. Resolve Connection IP
+                ip = await manager.resolve_dns(host)
+                if not ip: continue
                 
-                if loc_host == conn_host:
-                    loc_ip = conn_ip
-                else:
-                    loc_ip = await manager.resolve_dns(loc_host)
-                
-                # 3. TCP Ping
-                if not await manager.check_connection(conn_ip, conn_port):
+                # 4. TCP Ping Check
+                if not await manager.check_connection(ip, port):
                     continue
 
-                # 4. Location Info
-                flag, country = manager.get_location_info(loc_ip)
+                # 5. Determine Location (Using the Connection IP)
+                # Prioritize Cloudflare check on the IP we connect to
+                flag, country = manager.get_location_info(ip)
 
-                # 5. Post
+                # 6. Formatting
                 clean_proto = proto.upper()
-                # Special Persian labels
                 if clean_proto == 'VMESS': clean_proto = 'VMess'
                 if clean_proto == 'VLESS': clean_proto = 'VLESS'
+
+                shamsi_date = JalaliConverter.get_shamsi_datetime(item['ts'])
 
                 caption = (
                     f"{flag} **{country}** | {clean_proto}\n\n"
                     f"📡 **منبع:** @{item['source']}\n"
                     f"⚡️ **پینگ:** متصل (TCP)\n"
-                    f"🕒 **زمان انتشار:** {datetime.fromtimestamp(item['ts']).strftime('%H:%M UTC')}\n\n"
+                    f"🕒 **زمان انتشار:** {shamsi_date}\n\n"
                 )
                 
-                buttons = [[Button.url("📢 کانال منبع", f"https://t.me/{item['source']}")]]
-                if proto == 'mtproto': buttons.insert(0, [Button.url("🔵 اتصال (Connect)", config_str)])
+                # Output format: Code block inside markdown
+                final_msg = f"{caption}```\n{config_str}\n```"
 
-                # Add generic hashtags
-                footer = "#Proxy #FreeInternet #V2Ray #آزادی"
+                # Buttons (Only connect button for MTProto, no source button)
+                buttons = []
+                if proto == 'mtproto': 
+                    buttons.append([Button.url("🔵 اتصال (Connect)", config_str)])
 
                 await bot_client.send_message(
                     DESTINATION_ID, 
-                    f"{caption}`{config_str}`\n\n{footer}", 
-                    buttons=buttons, 
+                    final_msg, 
+                    buttons=buttons if buttons else None,
                     link_preview=False
                 )
                 processed_count += 1
@@ -393,20 +415,17 @@ async def main():
                 file_hash = manager.calculate_file_hash(path)
                 if manager.is_duplicate(file_hash):
                     os.remove(path); continue
-
+                
                 caption = (
                     f"📂 **فایل کانفیگ NapsternetV**\n"
-                    f"📝 **نام فایل:** `{msg.file.name}`\n"
-                    f"🌍 **لوکیشن:** نامشخص (فایل رمزنگاری شده)\n\n"
-                    f"📡 **منبع:** @{item['source']}\n"
-                    f"#NPV #NapsternetV"
+                    f"🌍 **لوکیشن:** نامشخص\n\n"
+                    f"📡 **منبع:** @{item['source']}"
                 )
                 
                 await bot_client.send_file(
                     DESTINATION_ID, 
                     path, 
-                    caption=caption, 
-                    buttons=[[Button.url("📢 کانال منبع", f"https://t.me/{item['source']}")]]
+                    caption=caption
                 )
                 processed_count += 1
                 if os.path.exists(path): os.remove(path)
