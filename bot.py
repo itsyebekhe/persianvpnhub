@@ -83,7 +83,7 @@ class JalaliConverter:
         tehran_dt = utc_dt + timedelta(hours=3, minutes=30)
         
         jy, jm, jd = JalaliConverter.gregorian_to_jalali(tehran_dt.year, tehran_dt.month, tehran_dt.day)
-        return f"{jy}/{jm:02d}/{jd:02d} - {tehran_dt.hour:02d}:{tehran_dt.minute:02d}"
+        return f"{tehran_dt.hour:02d}:{tehran_dt.minute:02d} - {jy}/{jm:02d}/{jd:02d}"
 
 # --- CLOUDFLARE ---
 CF_IPV6_DEFAULTS = [
@@ -236,7 +236,7 @@ class ConfigManager:
     def get_location_info(self, ip_str):
         # 1. Cloudflare Check (Prioritized)
         if self.cf_manager.is_cloudflare(ip_str):
-            return "☁️", "کلادفلر"
+            return "☁️", "کلودفلر"
         
         # 2. GeoIP Check
         if not self.geo_reader or not ip_str: return "🏁", "نامشخص"
@@ -380,20 +380,20 @@ async def main():
                 if clean_proto == 'VLESS': clean_proto = 'VLESS'
 
                 caption = (
-                    f"{flag} {country} | {clean_proto}\n\n"
-                    f"📡 منبع: @{item['source']}\n"
-                    f"⚡️ پینگ: متصل (TCP)\n"
-                    f"🕒 زمان انتشار: {shamsi_date}\n"
+                    f"📂 کانفیگ {clean_proto}\n"
+                    f"{flag} پینگ: متصل (TCP)\n\n"
+                    f"🕒 انتشار: {shamsi_date}\n"
+                    f"💡 منبع: @{item['source']}\n"
                 )
                 
-                final_msg = f"{caption}\n```\n{config_str}\n```"
+                final_msg = f"{caption}\n```{config_str}```"
 
                 # Buttons
                 buttons = []
                 if proto == 'mtproto': 
-                    buttons.append([Button.url("🔵 اتصال (Connect)", config_str)])
+                    buttons.append([Button.url("⚡️ اتصال (Connect)", config_str)])
                 # Add "More Configs" Button to all text posts
-                buttons.append([Button.url("کانفیگ های بیشتر", CHANNEL_LINK)])
+                buttons.append([Button.url("🔍 دریافت کانفیگ‌های بیشتر", CHANNEL_LINK)])
 
                 await bot_client.send_message(
                     DESTINATION_ID, 
@@ -416,9 +416,9 @@ async def main():
                 
                 caption = (
                     f"📂 فایل کانفیگ NapsternetV\n"
-                    f"🏁 نامشخص | NPV\n\n"
-                    f"📡 منبع: @{item['source']}\n"
-                    f"🕒 زمان انتشار: {shamsi_date}"
+                    f"🏁 پینگ: نامشخص\n\n"
+                    f"🕒 انتشار: {shamsi_date}\n"
+                    f"💡 منبع: @{item['source']}\n"
                 )
                 
                 # Add "More Configs" Button to files
