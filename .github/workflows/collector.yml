@@ -60,8 +60,8 @@ jobs:
       run: |
         # 1. Move the generated subscription files to a temporary location
         mkdir -p /tmp/subs_output
-        mv subscribed_configs.txt /tmp/subs_output/ 2>/dev/null || true
-        mv subscribed_configs_b64.txt /tmp/subs_output/ 2>/dev/null || true
+        mv normal /tmp/subs_output/ 2>/dev/null || true
+        mv base64 /tmp/subs_output/ 2>/dev/null || true
 
         # 2. Switch to the export branch (create it as orphan if it doesn't exist)
         if git show-ref --verify --quiet refs/remotes/origin/export; then
@@ -76,7 +76,7 @@ jobs:
         mv /tmp/subs_output/* .
 
         # 4. Commit and Push
-        git add subscribed_configs.txt subscribed_configs_b64.txt
+        git add normal base64
         
         if ! git diff --cached --quiet; then
           git commit -m "Update Subscription Files [skip ci]"
