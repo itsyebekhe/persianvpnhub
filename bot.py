@@ -22,6 +22,7 @@ API_HASH = os.environ.get("API_HASH")
 SESSION_STRING = os.environ.get("SESSION_STRING")
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 DESTINATION_ID = int(os.environ.get("DESTINATION_ID"))
+CHANNEL_LINK = "https://t.me/persianvpnhub"
 
 # File Paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -353,35 +354,30 @@ async def main():
     processed_count = 0
     for item in collected_items:
         try:
+            # Common Data
+            shamsi_date = JalaliConverter.get_persian_time(item['ts'])
+            
+            # --- TEXT CONFIGS ---
             if item['type'] == 'text':
                 config_str = item['raw']
                 proto = item['proto']
                 
-                # 1. Normalize & Deduplicate
+                # Normalize & Deduplicate
                 norm_json = ConfigNormalizer.normalize(config_str, proto)
                 if not norm_json or manager.is_duplicate(norm_json): continue
 
-                # 2. Parse details
+                # Check Connection
                 host, port = manager.parse_config_details(config_str, proto)
                 if not host: continue
-
-                # 3. Resolve Connection IP
                 ip = await manager.resolve_dns(host)
                 if not ip: continue
-                
-                # 4. TCP Ping Check
-                if not await manager.check_connection(ip, port):
-                    continue
+                if not await manager.check_connection(ip, port): continue
 
-                # 5. Determine Location
+                # Get Info
                 flag, country = manager.get_location_info(ip)
-
-                # 6. Formatting
                 clean_proto = proto.upper()
                 if clean_proto == 'VMESS': clean_proto = 'VMess'
                 if clean_proto == 'VLESS': clean_proto = 'VLESS'
-
-                shamsi_date = JalaliConverter.get_persian_time(item['ts'])
 
                 caption = (
                     f"{flag} {country} | {clean_proto}\n\n"
@@ -390,23 +386,25 @@ async def main():
                     f"🕒 زمان انتشار: {shamsi_date}\n"
                 )
                 
-                # Output format: Code block inside markdown
-                final_msg = f"{caption}```\n{config_str}\n```"
+                final_msg = f"{caption}\n```\n{config_str}\n```"
 
-                # Buttons (Only connect button for MTProto)
+                # Buttons
                 buttons = []
                 if proto == 'mtproto': 
                     buttons.append([Button.url("🔵 اتصال (Connect)", config_str)])
+                # Add "More Configs" Button to all text posts
+                buttons.append([Button.url("کانفیگ های بیشتر", CHANNEL_LINK)])
 
                 await bot_client.send_message(
                     DESTINATION_ID, 
                     final_msg, 
-                    buttons=buttons if buttons else None,
+                    buttons=buttons,
                     link_preview=False
                 )
                 processed_count += 1
                 await asyncio.sleep(4)
 
+            # --- FILE CONFIGS ---
             elif item['type'] == 'file':
                 msg = item['msg_obj']
                 path = await msg.download_media(file=TEMP_DIR)
@@ -419,13 +417,18 @@ async def main():
                 caption = (
                     f"📂 فایل کانفیگ NapsternetV\n"
                     f"🏁 نامشخص | NPV\n\n"
-                    f"📡 منبع: @{item['source']}"
+                    f"📡 منبع: @{item['source']}\n"
+                    f"🕒 زمان انتشار: {shamsi_date}"
                 )
+                
+                # Add "More Configs" Button to files
+                buttons = [[Button.url("کانفیگ های بیشتر", CHANNEL_LINK)]]
                 
                 await bot_client.send_file(
                     DESTINATION_ID, 
                     path, 
-                    caption=caption
+                    caption=caption,
+                    buttons=buttons
                 )
                 processed_count += 1
                 if os.path.exists(path): os.remove(path)
