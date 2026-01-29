@@ -35,7 +35,7 @@ GEOIP_URL = "https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Countr
 CF_RANGES_URL = "https://raw.githubusercontent.com/ircfspace/cf-ip-ranges/refs/heads/main/export.ipv4"
 
 # Constants
-CHECK_LIMIT_PER_CHANNEL = 20
+CHECK_LIMIT_PER_CHANNEL = 3
 DEDUPE_HOURS = 72
 TIMEOUT_TCP = 2
 
