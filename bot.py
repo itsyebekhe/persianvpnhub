@@ -13,9 +13,11 @@ from datetime import datetime, timezone, timedelta
 from urllib.parse import urlparse, parse_qs, unquote
 
 import aiohttp
+import requests  # Added for downloading initial cache
 import geoip2.database
 from telethon import TelegramClient, Button
 from telethon.sessions import StringSession
+from telethon.errors import FloodWaitError
 
 # --- Configuration ---
 API_ID = int(os.environ.get("API_ID"))
@@ -37,13 +39,23 @@ TEMP_DIR = os.path.join(BASE_DIR, 'temp_downloads')
 SUB_FILE_NORMAL = os.path.join(BASE_DIR, 'normal')
 SUB_FILE_B64 = os.path.join(BASE_DIR, 'base64')
 
+# Cache File for IDs (The Fix)
+ID_CACHE_FILE = os.path.join(BASE_DIR, 'id_cache.json')
+
 # URLs
 GEOIP_URL = "https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb"
 CF_RANGES_URL = "https://raw.githubusercontent.com/ircfspace/cf-ip-ranges/refs/heads/main/export.ipv4"
 
+# Repo Info for Remote Loading
+REPO_USER = "itsyebekhe" 
+REPO_NAME = "persianvpnhub"
+EXPORT_BRANCH = "export"
+EXISTING_SUBS_URL = f"https://raw.githubusercontent.com/{REPO_USER}/{REPO_NAME}/{EXPORT_BRANCH}/normal"
+CACHE_URL = f"https://raw.githubusercontent.com/{REPO_USER}/{REPO_NAME}/{EXPORT_BRANCH}/id_cache.json"
+
 # Constants
 CHECK_LIMIT_PER_CHANNEL = 5
-DEDUPE_HOURS = 72  # This is the 72 hours setting
+DEDUPE_HOURS = 72
 TIMEOUT_TCP = 2
 FETCH_DELAY = 6
 
@@ -64,26 +76,19 @@ class JalaliConverter:
 
         gy -= 1600
         jy = 979
-
-        # Calculate total Gregorian days passed
         g_day_no = 365 * gy + (gy + 3) // 4 - (gy + 99) // 100 + (gy + 399) // 400
 
         for i in range(gm - 1):
             g_day_no += g_days_in_month[i]
 
-        # Check for leap year to add the extra day after Feb
         if gm > 2 and ((gy + 1600) % 4 == 0 and (gy + 1600) % 100 != 0 or (gy + 1600) % 400 == 0):
             g_day_no += 1
 
         g_day_no += gd - 1
-
         j_day_no = g_day_no - 79
-
         j_np = j_day_no // 12053
         j_day_no %= 12053
-
         jy += 33 * j_np + 4 * (j_day_no // 1461)
-
         j_day_no %= 1461
 
         if j_day_no >= 366:
@@ -105,7 +110,6 @@ class JalaliConverter:
     @staticmethod
     def get_persian_time(timestamp):
         utc_dt = datetime.fromtimestamp(timestamp, timezone.utc)
-        # Iran Standard Time is UTC+3:30 (DST is no longer observed in Iran)
         tehran_dt = utc_dt + timedelta(hours=3, minutes=30)
         jy, jm, jd = JalaliConverter.gregorian_to_jalali(tehran_dt.year, tehran_dt.month, tehran_dt.day)
         return f"{tehran_dt.hour:02d}:{tehran_dt.minute:02d} - {jy}/{jm:02d}/{jd:02d}"
@@ -120,12 +124,6 @@ class JalaliConverter:
             return date_str
 
 # --- SUBSCRIPTION MANAGER ---
-
-REPO_USER = "itsyebekhe" 
-REPO_NAME = "persianvpnhub"
-EXPORT_BRANCH = "export"
-EXISTING_SUBS_URL = f"https://raw.githubusercontent.com/{REPO_USER}/{REPO_NAME}/{EXPORT_BRANCH}/normal"
-
 class SubscriptionManager:
     def __init__(self):
         self.normal_path = SUB_FILE_NORMAL
@@ -133,96 +131,58 @@ class SubscriptionManager:
         self.load_remote_subs()
 
     def load_remote_subs(self):
-        """Downloads the current subscription file from the export branch."""
-        if os.path.exists(self.normal_path):
-            return # If file exists locally (manual run), don't overwrite
-
+        if os.path.exists(self.normal_path): return
         logger.info(f"Downloading existing subs from {EXPORT_BRANCH} branch...")
         try:
-            import requests # Make sure to import requests or use aiohttp
             response = requests.get(EXISTING_SUBS_URL, timeout=10)
             if response.status_code == 200:
                 with open(self.normal_path, 'w', encoding='utf-8') as f:
                     f.write(response.text)
                 logger.info("Successfully loaded existing subscriptions.")
             else:
-                logger.warning("Could not download existing subs (might be first run or branch empty).")
-                # Create empty file
                 open(self.normal_path, 'a').close()
         except Exception as e:
             logger.error(f"Failed to load remote subs: {e}")
             open(self.normal_path, 'a').close()
             
     def trim_files(self):
-        """
-        Removes the first half of the subscription file (oldest configs).
-        Keeps the most recent 50%.
-        """
         logger.info("New day detected: Trimming subscription files (removing oldest 50%).")
-        
-        if not os.path.exists(self.normal_path):
-            return
-
+        if not os.path.exists(self.normal_path): return
         try:
             with open(self.normal_path, 'r', encoding='utf-8') as f:
                 content = f.read().strip()
-            
-            if not content:
-                return
-
+            if not content: return
             lines = content.split('\n')
             total_lines = len(lines)
-            
-            # Keep the last 50%
             if total_lines > 1:
                 keep_start_index = total_lines // 2
                 new_lines = lines[keep_start_index:]
             else:
-                new_lines = lines # Keep if only 1 line
-
+                new_lines = lines
             new_content = "\n".join(new_lines)
-
-            # Write Normal File
             with open(self.normal_path, 'w', encoding='utf-8') as f:
                 f.write(new_content)
-            
-            # Write Base64 File
             b64_content = base64.b64encode(new_content.encode('utf-8')).decode('utf-8')
             with open(self.b64_path, 'w', encoding='utf-8') as f:
                 f.write(b64_content)
-                
             logger.info(f"Trimmed subscription: {total_lines} -> {len(new_lines)} lines.")
-            
         except Exception as e:
             logger.error(f"Error trimming subscription files: {e}")
 
     def update_subscription(self, new_configs):
-        """Appends new configs to files and updates Base64."""
-        if not new_configs:
-            return
-
-        # Read existing content
+        if not new_configs: return
         existing_content = ""
         if os.path.exists(self.normal_path):
             with open(self.normal_path, 'r', encoding='utf-8') as f:
                 existing_content = f.read()
-
-        # Prepare content to append
-        # Ensure we start on a new line if file wasn't empty
         separator = "\n" if existing_content.strip() else ""
         to_add = separator + "\n".join(new_configs)
-        
         full_content = existing_content + to_add
-        
-        # Write Normal File
         with open(self.normal_path, 'w', encoding='utf-8') as f:
             f.write(full_content)
-        
-        # Write Base64 File
         b64_content = base64.b64encode(full_content.encode('utf-8')).decode('utf-8')
         with open(self.b64_path, 'w', encoding='utf-8') as f:
             f.write(b64_content)
-        
         logger.info(f"Subscription updated with {len(new_configs)} new configs.")
 
 # --- STATS MANAGER ---
@@ -234,32 +194,18 @@ class StatsManager:
     def load_data(self):
         if os.path.exists(STATS_FILE):
             try:
-                with open(STATS_FILE, 'r') as f:
-                    return json.load(f)
+                with open(STATS_FILE, 'r') as f: return json.load(f)
             except: pass
-        return {
-            'date': self.current_date,
-            'configs': 0,
-            'proxies': 0,
-            'files': 0
-        }
+        return {'date': self.current_date, 'configs': 0, 'proxies': 0, 'files': 0}
 
     def save_data(self):
-        with open(STATS_FILE, 'w') as f:
-            json.dump(self.data, f)
+        with open(STATS_FILE, 'w') as f: json.dump(self.data, f)
 
     async def check_date_and_report(self, client, chat_id):
-        """
-        Checks if the date changed. 
-        Returns True if it's a new day (to trigger resets), False otherwise.
-        """
         stored_date = self.data.get('date')
-        
         if stored_date != self.current_date:
-            # 1. Send Report
             jalali_date = JalaliConverter.get_jalali_date_from_str(stored_date)
             total = self.data['configs'] + self.data['proxies'] + self.data['files']
-            
             report_msg = (
                 f"📊 **گزارش عملکرد ربات**\n"
                 f"📅 تاریخ: {jalali_date}\n\n"
@@ -268,34 +214,18 @@ class StatsManager:
                 f"📂 فایل‌های پست شده: {self.data['files']}\n\n"
                 f"✅ **مجموع کل:** {total}"
             )
-
             try:
-                if total > 0:
-                    await client.send_message(chat_id, report_msg)
-                    logger.info("Daily report sent.")
-            except Exception as e:
-                logger.error(f"Failed to send daily report: {e}")
-
-            # 2. Reset Data
-            self.data = {
-                'date': self.current_date,
-                'configs': 0,
-                'proxies': 0,
-                'files': 0
-            }
+                if total > 0: await client.send_message(chat_id, report_msg)
+            except: pass
+            self.data = {'date': self.current_date, 'configs': 0, 'proxies': 0, 'files': 0}
             self.save_data()
-            return True # New Day Detected
-            
-        return False # Same Day
+            return True
+        return False
 
     def increment(self, category):
-        # Safety check for date change mid-execution
         if self.data.get('date') != self.current_date:
             self.data['date'] = self.current_date
-            self.data['configs'] = 0
-            self.data['proxies'] = 0
-            self.data['files'] = 0
-            
+            self.data['configs'] = 0; self.data['proxies'] = 0; self.data['files'] = 0
         if category in self.data:
             self.data[category] += 1
             self.save_data()
@@ -466,6 +396,22 @@ class ConfigManager:
             for chunk in iter(lambda: f.read(4096), b""): h.update(chunk)
         return h.hexdigest()
 
+# --- HELPER: REMOTE CACHE LOADER ---
+def load_remote_cache():
+    """Downloads the existing ID cache from the export branch."""
+    if os.path.exists(ID_CACHE_FILE): return
+    logger.info(f"Downloading existing ID cache from {EXPORT_BRANCH} branch...")
+    try:
+        response = requests.get(CACHE_URL, timeout=10)
+        if response.status_code == 200:
+            with open(ID_CACHE_FILE, 'w', encoding='utf-8') as f:
+                f.write(response.text)
+            logger.info("Successfully loaded ID cache.")
+        else:
+            logger.warning("Could not download cache (might be first run).")
+    except Exception as e:
+        logger.error(f"Failed to load remote cache: {e}")
+
 # --- MAIN ---
 async def main():
     logger.info("Starting PSG Collector Bot...")
@@ -474,6 +420,9 @@ async def main():
     stats = StatsManager()
     sub_manager = SubscriptionManager()
     
+    # 0. Load Cache (FIX)
+    load_remote_cache()
+
     await manager.setup_external_resources()
     
     user_client = TelegramClient(StringSession(SESSION_STRING), API_ID, API_HASH)
@@ -482,7 +431,7 @@ async def main():
     await user_client.connect()
     await bot_client.start(bot_token=BOT_TOKEN)
 
-    # 1. Date Check: Report & Trim Subscriptions (Keep last 50%)
+    # 1. Date Check & Trim
     is_new_day = await stats.check_date_and_report(bot_client, DESTINATION_ID)
     if is_new_day:
         sub_manager.trim_files()
@@ -491,29 +440,52 @@ async def main():
         with open(CHANNELS_FILE, 'r', encoding='utf-8') as f: sources = json.load(f)
     except: return
 
-    # --- PHASE 1: COLLECT ---
+    # --- PHASE 1: COLLECT (With ID Caching Fix) ---
     logger.info("Phase 1: Collecting...")
     collected_items = []
-    
-    # Calculate current time once for comparison
     current_time_ts = datetime.now(timezone.utc).timestamp()
     
+    # Load Cache into Memory
+    id_cache = {}
+    if os.path.exists(ID_CACHE_FILE):
+        try:
+            with open(ID_CACHE_FILE, 'r') as f: id_cache = json.load(f)
+        except: pass
+    
+    cache_updated = False
+
     for source_username in sources.keys():
         try:
             logger.info(f"Scraping: {source_username}")
+            
+            # Determine target: Use Integer ID if cached to bypass ResolveUsernameRequest limit
+            target = id_cache.get(source_username, source_username)
+            if isinstance(target, str) and target.lstrip('-').isdigit():
+                target = int(target)
+
             try:
-                entity = await user_client.get_entity(source_username)
-            except ValueError: continue
+                entity = await user_client.get_entity(target)
+                
+                # If we successfully got entity using username, Save ID to cache
+                if source_username not in id_cache:
+                    id_cache[source_username] = entity.id
+                    cache_updated = True
+                    logger.info(f"Cached ID for {source_username}: {entity.id}")
+            
+            except Exception as e:
+                if "wait" in str(e).lower() or "ResolveUsernameRequest" in str(e):
+                    logger.warning(f"Skipping {source_username} due to FloodWait/Limit.")
+                    continue
+                else:
+                    logger.warning(f"Could not get entity for {source_username}: {e}")
+                    continue
 
             async for message in user_client.iter_messages(entity, limit=CHECK_LIMIT_PER_CHANNEL):
                 if not message.date: continue
                 ts = message.date.astimezone(timezone.utc).timestamp()
                 
-                # --- NEW RULE: If post is older than 72 hours, do not process ---
-                # DEDUPE_HOURS is 72. 72 * 3600 converts it to seconds.
                 if (current_time_ts - ts) > (DEDUPE_HOURS * 3600):
                     continue
-                # -------------------------------------------------------------
                 
                 if message.file and message.file.name and message.file.name.lower().endswith(NPV_EXTENSIONS):
                     collected_items.append({'ts': ts, 'type': 'file', 'msg_obj': message, 'source': source_username})
@@ -529,6 +501,12 @@ async def main():
         except Exception as e:
             logger.warning(f"Error scraping {source_username}: {e}")
             await asyncio.sleep(FETCH_DELAY)
+    
+    # Save Cache to file if updated
+    if cache_updated:
+        with open(ID_CACHE_FILE, 'w') as f:
+            json.dump(id_cache, f)
+        logger.info("ID Cache saved locally.")
 
     # --- PHASE 2: PROCESS & SUBSCRIBE ---
     collected_items.sort(key=lambda x: x['ts'])
@@ -541,7 +519,6 @@ async def main():
             shamsi_date = JalaliConverter.get_persian_time(item['ts'])
             
             if item['type'] == 'text':
-                # Remove trailing backticks or quotes if captured
                 config_str = item['raw'].strip('`"\'')
                 proto = item['proto']
                 
@@ -556,19 +533,15 @@ async def main():
                 ping_ms = await manager.check_connection(ip, port)
                 if ping_ms is None: continue
 
-                # Collect for subscription (exclude mtproto)
                 if proto != 'mtproto':
                     valid_subscription_configs.append(config_str)
 
                 flag, country = manager.get_location_info(ip)
                 clean_proto = proto.upper().replace('VMESS', 'VMess').replace('VLESS', 'VLESS')
                 
-                # Generate Tags
                 tags = f"#{clean_proto} #VPN"
-                if proto == 'mtproto':
-                    tags = "#Proxy #MTProto"
-                elif proto == 'ss':
-                    tags = "#Shadowsocks #VPN"
+                if proto == 'mtproto': tags = "#Proxy #MTProto"
+                elif proto == 'ss': tags = "#Shadowsocks #VPN"
 
                 caption = (
                     f"📂 کانفیگ {clean_proto}\n"
@@ -586,10 +559,8 @@ async def main():
 
                 await bot_client.send_message(DESTINATION_ID, f"{caption}\n```{config_str}```\n", buttons=buttons, link_preview=False)
                 
-                if proto == 'mtproto':
-                    stats.increment('proxies')
-                else:
-                    stats.increment('configs')
+                if proto == 'mtproto': stats.increment('proxies')
+                else: stats.increment('configs')
                 
                 await asyncio.sleep(4)
 
