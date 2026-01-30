@@ -2,7 +2,7 @@ name: PersianVPNHub Bot
 
 on:
   schedule:
-    - cron: '* */4 * * *' # Run every 30 minutes
+    - cron: '*/45 * * * *' # Run every 30 minutes
   workflow_dispatch:      # Allow manual run
 
 # --- ADDED THIS SECTION ---
