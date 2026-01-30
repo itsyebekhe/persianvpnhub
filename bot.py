@@ -43,7 +43,7 @@ CF_RANGES_URL = "https://raw.githubusercontent.com/ircfspace/cf-ip-ranges/refs/h
 
 # Constants
 CHECK_LIMIT_PER_CHANNEL = 5
-DEDUPE_HOURS = 72
+DEDUPE_HOURS = 72  # This is the 72 hours setting
 TIMEOUT_TCP = 2
 FETCH_DELAY = 6
 
@@ -467,6 +467,9 @@ async def main():
     logger.info("Phase 1: Collecting...")
     collected_items = []
     
+    # Calculate current time once for comparison
+    current_time_ts = datetime.now(timezone.utc).timestamp()
+    
     for source_username in sources.keys():
         try:
             logger.info(f"Scraping: {source_username}")
@@ -475,7 +478,14 @@ async def main():
             except ValueError: continue
 
             async for message in user_client.iter_messages(entity, limit=CHECK_LIMIT_PER_CHANNEL):
+                if not message.date: continue
                 ts = message.date.astimezone(timezone.utc).timestamp()
+                
+                # --- NEW RULE: If post is older than 72 hours, do not process ---
+                # DEDUPE_HOURS is 72. 72 * 3600 converts it to seconds.
+                if (current_time_ts - ts) > (DEDUPE_HOURS * 3600):
+                    continue
+                # -------------------------------------------------------------
                 
                 if message.file and message.file.name and message.file.name.lower().endswith(NPV_EXTENSIONS):
                     collected_items.append({'ts': ts, 'type': 'file', 'msg_obj': message, 'source': source_username})
