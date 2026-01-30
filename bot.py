@@ -105,11 +105,48 @@ class SubscriptionManager:
         self.normal_path = SUB_FILE_NORMAL
         self.b64_path = SUB_FILE_B64
 
-    def reset_files(self):
-        """Clears content of subscription files (New Day Reset)."""
-        logger.info("New day detected: Resetting subscription files.")
-        open(self.normal_path, 'w').close()
-        open(self.b64_path, 'w').close()
+    def trim_files(self):
+        """
+        Removes the first half of the subscription file (oldest configs).
+        Keeps the most recent 50%.
+        """
+        logger.info("New day detected: Trimming subscription files (removing oldest 50%).")
+        
+        if not os.path.exists(self.normal_path):
+            return
+
+        try:
+            with open(self.normal_path, 'r', encoding='utf-8') as f:
+                content = f.read().strip()
+            
+            if not content:
+                return
+
+            lines = content.split('\n')
+            total_lines = len(lines)
+            
+            # Keep the last 50%
+            if total_lines > 1:
+                keep_start_index = total_lines // 2
+                new_lines = lines[keep_start_index:]
+            else:
+                new_lines = lines # Keep if only 1 line
+
+            new_content = "\n".join(new_lines)
+
+            # Write Normal File
+            with open(self.normal_path, 'w', encoding='utf-8') as f:
+                f.write(new_content)
+            
+            # Write Base64 File
+            b64_content = base64.b64encode(new_content.encode('utf-8')).decode('utf-8')
+            with open(self.b64_path, 'w', encoding='utf-8') as f:
+                f.write(b64_content)
+                
+            logger.info(f"Trimmed subscription: {total_lines} -> {len(new_lines)} lines.")
+            
+        except Exception as e:
+            logger.error(f"Error trimming subscription files: {e}")
 
     def update_subscription(self, new_configs):
         """Appends new configs to files and updates Base64."""
@@ -397,10 +434,10 @@ async def main():
     await user_client.connect()
     await bot_client.start(bot_token=BOT_TOKEN)
 
-    # 1. Date Check: Report & Reset Subscriptions
+    # 1. Date Check: Report & Trim Subscriptions (Keep last 50%)
     is_new_day = await stats.check_date_and_report(bot_client, DESTINATION_ID)
     if is_new_day:
-        sub_manager.reset_files()
+        sub_manager.trim_files()
 
     try:
         with open(CHANNELS_FILE, 'r', encoding='utf-8') as f: sources = json.load(f)
@@ -446,7 +483,8 @@ async def main():
             shamsi_date = JalaliConverter.get_persian_time(item['ts'])
             
             if item['type'] == 'text':
-                config_str = item['raw']
+                # Remove trailing backticks or quotes if captured
+                config_str = item['raw'].strip('`"\'')
                 proto = item['proto']
                 
                 norm_json = ConfigNormalizer.normalize(config_str, proto)
@@ -466,11 +504,19 @@ async def main():
 
                 flag, country = manager.get_location_info(ip)
                 clean_proto = proto.upper().replace('VMESS', 'VMess').replace('VLESS', 'VLESS')
+                
+                # Generate Tags
+                tags = f"#{clean_proto} #VPN"
+                if proto == 'mtproto':
+                    tags = "#Proxy #MTProto"
+                elif proto == 'ss':
+                    tags = "#Shadowsocks #VPN"
 
                 caption = (
                     f"📂 کانفیگ {clean_proto}\n"
                     f"📍 لوکیشن: {country} {flag}\n"
                     f"📶 پینگ: {ping_ms}ms\n\n"
+                    f"{tags}\n\n"
                     f"🕒 انتشار: {shamsi_date}\n"
                     f"💡 منبع: @{item['source']}\n"
                 )
@@ -501,6 +547,7 @@ async def main():
                 caption = (
                     f"📂 فایل کانفیگ NapsternetV\n"
                     f"📍 لوکیشن: نامشخص\n\n"
+                    f"#NapsternetV #Config #File\n\n"
                     f"🕒 انتشار: {shamsi_date}\n"
                     f"💡 منبع: @{item['source']}\n\n"
                 )
