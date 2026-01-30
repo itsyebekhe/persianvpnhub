@@ -120,11 +120,39 @@ class JalaliConverter:
             return date_str
 
 # --- SUBSCRIPTION MANAGER ---
+
+REPO_USER = "itsyebekhe" 
+REPO_NAME = "persianvpnhub"
+EXPORT_BRANCH = "export"
+EXISTING_SUBS_URL = f"https://raw.githubusercontent.com/{REPO_USER}/{REPO_NAME}/{EXPORT_BRANCH}/normal"
+
 class SubscriptionManager:
     def __init__(self):
         self.normal_path = SUB_FILE_NORMAL
         self.b64_path = SUB_FILE_B64
+        self.load_remote_subs()
 
+    def load_remote_subs(self):
+        """Downloads the current subscription file from the export branch."""
+        if os.path.exists(self.normal_path):
+            return # If file exists locally (manual run), don't overwrite
+
+        logger.info(f"Downloading existing subs from {EXPORT_BRANCH} branch...")
+        try:
+            import requests # Make sure to import requests or use aiohttp
+            response = requests.get(EXISTING_SUBS_URL, timeout=10)
+            if response.status_code == 200:
+                with open(self.normal_path, 'w', encoding='utf-8') as f:
+                    f.write(response.text)
+                logger.info("Successfully loaded existing subscriptions.")
+            else:
+                logger.warning("Could not download existing subs (might be first run or branch empty).")
+                # Create empty file
+                open(self.normal_path, 'a').close()
+        except Exception as e:
+            logger.error(f"Failed to load remote subs: {e}")
+            open(self.normal_path, 'a').close()
+            
     def trim_files(self):
         """
         Removes the first half of the subscription file (oldest configs).
