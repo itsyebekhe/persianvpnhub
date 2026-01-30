@@ -59,33 +59,53 @@ logger = logging.getLogger(__name__)
 class JalaliConverter:
     @staticmethod
     def gregorian_to_jalali(gy, gm, gd):
-        g_d_m = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
-        if (gy > 1600):
-            jy = 979
-            gy -= 1600
+        g_days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        j_days_in_month = [31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29]
+
+        gy -= 1600
+        jy = 979
+
+        # Calculate total Gregorian days passed
+        g_day_no = 365 * gy + (gy + 3) // 4 - (gy + 99) // 100 + (gy + 399) // 400
+
+        for i in range(gm - 1):
+            g_day_no += g_days_in_month[i]
+
+        # Check for leap year to add the extra day after Feb
+        if gm > 2 and ((gy + 1600) % 4 == 0 and (gy + 1600) % 100 != 0 or (gy + 1600) % 400 == 0):
+            g_day_no += 1
+
+        g_day_no += gd - 1
+
+        j_day_no = g_day_no - 79
+
+        j_np = j_day_no // 12053
+        j_day_no %= 12053
+
+        jy += 33 * j_np + 4 * (j_day_no // 1461)
+
+        j_day_no %= 1461
+
+        if j_day_no >= 366:
+            jy += (j_day_no - 1) // 365
+            j_day_no = (j_day_no - 1) % 365
+
+        for i in range(11):
+            if j_day_no < j_days_in_month[i]:
+                jm = i + 1
+                jd = j_day_no + 1
+                break
+            j_day_no -= j_days_in_month[i]
         else:
-            jy = 0
-            gy -= 621
-        
-        days = (365 * gy) + ((gy + 1) // 4) - ((gy + 99) // 100) + ((gy + 399) // 400) - 80 + gd + g_d_m[gm - 1]
-        jy += 33 * (days // 12053)
-        days %= 12053
-        jy += 4 * (days // 1461)
-        days %= 1461
-        if (days > 365):
-            jy += (days - 1) // 365
-            days = (days - 1) % 365
-        if (days < 186):
-            jm = 1 + (days // 31)
-            jd = 1 + (days % 31)
-        else:
-            jm = 7 + ((days - 186) // 30)
-            jd = 1 + ((days - 186) % 30)
-        return (jy, jm, jd)
+            jm = 12
+            jd = j_day_no + 1
+
+        return jy, jm, jd
 
     @staticmethod
     def get_persian_time(timestamp):
         utc_dt = datetime.fromtimestamp(timestamp, timezone.utc)
+        # Iran Standard Time is UTC+3:30 (DST is no longer observed in Iran)
         tehran_dt = utc_dt + timedelta(hours=3, minutes=30)
         jy, jm, jd = JalaliConverter.gregorian_to_jalali(tehran_dt.year, tehran_dt.month, tehran_dt.day)
         return f"{tehran_dt.hour:02d}:{tehran_dt.minute:02d} - {jy}/{jm:02d}/{jd:02d}"
