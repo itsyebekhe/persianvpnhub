@@ -53,7 +53,7 @@ jobs:
     # --- PART 1: Save Bot Memory to Main ---
     - name: Commit State (History & Stats) to Main
       run: |
-        git add history.json stats.json
+        git add history.json stats.json id_cache.json
         
         if ! git diff --cached --quiet; then
           git commit -m "Update Bot State [skip ci]"
