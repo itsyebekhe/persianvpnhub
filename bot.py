@@ -50,8 +50,9 @@ CF_RANGES_URL = "https://raw.githubusercontent.com/ircfspace/cf-ip-ranges/refs/h
 REPO_USER = "itsyebekhe" 
 REPO_NAME = "persianvpnhub"
 EXPORT_BRANCH = "export"
+MAIN_BRANCH = "main"
 EXISTING_SUBS_URL = f"https://raw.githubusercontent.com/{REPO_USER}/{REPO_NAME}/{EXPORT_BRANCH}/normal"
-CACHE_URL = f"https://raw.githubusercontent.com/{REPO_USER}/{REPO_NAME}/{EXPORT_BRANCH}/id_cache.json"
+CACHE_URL = f"https://raw.githubusercontent.com/{REPO_USER}/{REPO_NAME}/{MAIN_BRANCH}/id_cache.json"
 
 # Constants
 CHECK_LIMIT_PER_CHANNEL = 5
