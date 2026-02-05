@@ -555,7 +555,7 @@ async def main():
 
                 qr_line = ""
                 if proto != "mtproto":
-                    qr_line = f"\n🔍 کد QR: [VIEW]({qr_link})"
+                    qr_line = f"\n🔍 [QRcode]({qr_link})"
 
                 caption = (
                     f"📂 کانفیگ {clean_proto}\n"
