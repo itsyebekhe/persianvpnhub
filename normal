@@ -975,3 +975,12 @@ vless://a13df940-020c-465f-bc89-ee5279b5cd6a@212.183.88.142:443?security=tls&sni
 vless://2e05a59d-e0ad-4f93-96c4-41afa62aed9b@104.21.63.234:80?security=none&type=ws&host=speedtest.net.xn--sgbm1d.pinocchio1.ir.&path=%2F%3Fed%3D2048#@Hope_Net-join-us-on-Telegram
 vless://96c06155-a3d5-4bd8-9f46-a09cb11d2dd0@v2.punakpark.com:946?type=tcp&encryption=none&path=%2F&headerType=http&security=none#Telegram:@config_proxy
 vless://84fbacca-d04d-41a0-808a-cf7f049b1000@ip4.neoservers.ir:8443?security=tls&encryption=none&alpn=h2%2Ch3&host=WQLn6jpEZ9ZUkE6ShnzvkBazVVo74J4Bar267N5O.ViPClUbIrAn.Ir.&fp=chrome&type=ws&sni=WQLn6jpEZ9ZUkE6ShnzvkBazVVo74J4Bar267N5O.ViPClUbIrAn.Ir.#Telegram:@config_proxy
+vless://00ee7090-8d1d-47db-b48a-115d0ac85767@IPB-AlphaOmega-ComPany.AlphaOmegaComPany-PoWerFull.Ir:80?path=%2Fwss9000%3Fed%3D2560&security=none&encryption=none&host=UK-ComPany-AlphaOmega-Team.AlphaOmegaComPany-PoWerFull.Ir.&type=httpupgrade#Telegram:@config_proxy
+vless://00ee7090-8d1d-47db-b48a-115d0ac85767@IPC-AlphaOmega-ComPany.AlphaOmegaComPany-PoWerFull.Ir:80?path=%2Fwss9000%3Fed%3D2560&security=none&encryption=none&host=FI-ComPany-AlphaOmega-Team.AlphaOmegaComPany-PoWerFull.Ir.&type=httpupgrade#Telegram:@config_proxy
+vless://8b91e46d-edf5-4e57-b384-eb23a6f9ca14@IPA-AlphaOmega-ComPany.AlphaOmegaComPany-PoWerFull.Ir:80?path=%2Fwss9000%3Fed%3D2560&security=none&encryption=none&host=DE-ComPany-AlphaOmega-Team.AlphaOmegaComPany-PoWerFull.Ir.&type=httpupgrade#Telegram:@config_proxy
+vless://ec8463ea-07b7-475b-b9f0-eeb98927f427@172.64.152.23:443?path=%2F&security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0&sni=myservicefid.get-service.ir#Telegram:@config_proxy
+vless://081b4532-255d-4481-9484-b75ceab21b0d@140.248.159.164:80?encryption=none&type=ws&host=faqatchai.global.ssl.fastly.net&path=/containers/fi&security=none#Telegram:@config_proxy
+vless://081b4532-255d-4481-9484-b75ceab21b0d@fa.faraz360.ir:9829?encryption=none&type=tcp&headerType=http&host=pro30afzar.com&path=/&security=none#Telegram:@config_proxy
+vless://081b4532-255d-4481-9484-b75ceab21b0d@ma.mezrabcode.ir:9830?encryption=none&type=tcp&headerType=http&host=pro30afzar.com&path=/&security=none#Telegram:@config_proxy
+vless://081b4532-255d-4481-9484-b75ceab21b0d@Pinterest.com:80?encryption=none&type=ws&host=dojman.global.ssl.fastly.net&path=/containers/fi&security=none#Telegram:@config_proxy
+vless://081b4532-255d-4481-9484-b75ceab21b0d@ku.mezrabcode.ir:9831?encryption=none&type=tcp&headerType=http&host=pro30afzar.com&path=/&security=none#Telegram:@config_proxy
