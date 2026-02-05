@@ -208,13 +208,13 @@ class StatsManager:
             jalali_date = JalaliConverter.get_jalali_date_from_str(stored_date)
             total = self.data['configs'] + self.data['proxies'] + self.data['files']
             report_msg = (
-                f"📊 **گزارش عملکرد ربات**\n"
+                f"📊 **گزارش عملکرد ربات**\n\n"
                 f"📅 تاریخ: {jalali_date}\n"
-                f"✅ **مجموع کل:** {total}\n\n"
+                f"✅ مجموع کل: {total}\n\n"
                 f"⚙️ تعداد کانفیگ: {self.data['configs']}\n"
                 f"🛡 تعداد پروکسی: {self.data['proxies']}\n"
                 f"📂 تعداد فایل: {self.data['files']}\n\n"
-                f"#آمار #گزارش"
+                f"#آمار #گزارش\n"
             )
             try:
                 if total > 0: await client.send_message(chat_id, report_msg)
