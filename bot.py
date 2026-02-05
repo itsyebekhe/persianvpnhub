@@ -10,7 +10,7 @@ import hashlib
 import shutil
 import time
 from datetime import datetime, timezone, timedelta
-from urllib.parse import urlparse, parse_qs, unquote
+from urllib.parse import urlparse, parse_qs, unquote, quote
 
 import aiohttp
 import requests  # Added for downloading initial cache
@@ -545,13 +545,26 @@ async def main():
                 if proto == 'mtproto': tags = "#Proxy #MTProto"
                 elif proto == 'ss': tags = "#Shadowsocks #VPN"
 
+                encoded_config = quote(config_str, safe="")
+                qr_link = (
+                    "https://kissapi-qrcode.vercel.app/api/qrcode"
+                    "?cht=qr"
+                    "&chs=200x200"
+                    f"&chl={encoded_config}"
+                )
+
+                qr_line = ""
+                if proto != "mtproto":
+                    qr_line = f"\n📎 کد QR: {qr_link}"
+
                 caption = (
                     f"📂 کانفیگ {clean_proto}\n"
                     f"📍 لوکیشن: {country} {flag}\n"
                     f"📶 پینگ: {ping_ms}ms\n\n"
                     f"{tags}\n\n"
                     f"🕒 انتشار: {shamsi_date}\n"
-                    f"💡 منبع: @{item['source']}\n"
+                    f"💡 منبع: @{item['source']}"
+                    f"{qr_line}\n"
                 )
                 
                 buttons = []
