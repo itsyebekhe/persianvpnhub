@@ -563,7 +563,7 @@ async def main():
                     f"📶 پینگ: {ping_ms}ms\n\n"
                     f"{tags}\n\n"
                     f"🕒 انتشار: {shamsi_date}\n"
-                    f"💡 منبع: @{item['source']}"
+                    f"💡 منبع: @{item['source']}\n"
                     f"{qr_line}\n"
                 )
                 
