@@ -63,7 +63,8 @@ FETCH_DELAY = 6
 # Regex & Extensions
 VMESS_REGEX = r'(vmess|vless|trojan|ss|tuic|hysteria2?):\/\/[^\s\n]+'
 MTPROTO_REGEX = r'(?:tg:\/\/|https:\/\/t\.me\/)proxy\?(?=[^"\'\s<>]*server=)(?=[^"\'\s<>]*port=)([^"\'\s<>]+)'
-NPV_EXTENSIONS = ('.npvt')
+# Updated to support .hat files as well
+FILE_EXTENSIONS = ('.npvt', '.hat')
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -489,7 +490,8 @@ async def main():
                 if (current_time_ts - ts) > (DEDUPE_HOURS * 3600):
                     continue
                 
-                if message.file and message.file.name and message.file.name.lower().endswith(NPV_EXTENSIONS):
+                # Check for both .npvt and .hat files
+                if message.file and message.file.name and message.file.name.lower().endswith(FILE_EXTENSIONS):
                     collected_items.append({'ts': ts, 'type': 'file', 'msg_obj': message, 'source': source_username})
                     continue
 
@@ -588,10 +590,23 @@ async def main():
                 if manager.is_duplicate(file_hash):
                     os.remove(path); continue
                 
+                # Determine file type for caption
+                filename = msg.file.name.lower() if msg.file.name else ""
+                
+                if filename.endswith('.hat'):
+                    file_name_display = "HA Tunnel Plus"
+                    file_hashtags = "#HATunnel #Config #File"
+                elif filename.endswith('.npvt'):
+                    file_name_display = "NapsternetV"
+                    file_hashtags = "#NapsternetV #Config #File"
+                else:
+                    file_name_display = "Unknown"
+                    file_hashtags = "#Config #File"
+
                 caption = (
-                    f"📂 فایل کانفیگ NapsternetV\n"
+                    f"📂 فایل کانفیگ {file_name_display}\n"
                     f"📍 لوکیشن: نامشخص\n\n"
-                    f"#NapsternetV #Config #File\n\n"
+                    f"{file_hashtags}\n\n"
                     f"🕒 انتشار: {shamsi_date}\n"
                     f"💡 منبع: @{item['source']}\n\n"
                 )
