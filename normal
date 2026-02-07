@@ -1018,3 +1018,7 @@ vless://435bda4c-fe5e-42c9-a3ad-15334943b38a@104.17.150.169:80?security=none&typ
 vless://435bda4c-fe5e-42c9-a3ad-15334943b38a@104.17.122.66:80?security=none&type=ws&host=us3.rtacg.com&path=/#@Hope_Net-join-us-on-Telegram
 vless://435bda4c-fe5e-42c9-a3ad-15334943b38a@104.17.179.205:80?security=none&type=ws&host=us3.rtacg.com&path=/#@Hope_Net-join-us-on-Telegram
 vless://435bda4c-fe5e-42c9-a3ad-15334943b38a@104.17.110.70:80?security=none&type=ws&host=us3.rtacg.com&path=/#@Hope_Net-join-us-on-Telegram
+vless://e6fe1cbf-144b-40e1-b98c-a18736703631@178.21.161.126:443?type=ws&path=%2FXvonVpn&host=&security=none#Telegram:@config_proxy
+vless://20df8c30-c07a-494e-b83d-4af21ee57788@pinterest.com:80?encryption=none&security=none&type=ws&host=dojman.global.ssl.fastly.net&path=%2Fcontainers%2Ffi#Telegram:@config_proxy
+vless://bdbb6562-f2dc-4246-82c0-10e496a1c57d@f1.springpaatogh8.store:2053?path=%2F%3Fed%3D2560&security=tls&encryption=none&insecure=0&host=chess.sorza.ir&type=ws&allowInsecure=0&sni=digikala.sorza.ir#Telegram:@config_proxy
+vless://69031277-124d-434f-857e-6a7c59de0493@dl.nicnews.top:42760?type=tcp&path=%2F&host=telewebion.com&headerType=http&security=tls&fp=chrome&alpn=h3%2Ch2%2Chttp%2F1.1&sni=dl.nicnews.top#Telegram:@config_proxy
