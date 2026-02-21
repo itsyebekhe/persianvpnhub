@@ -425,3 +425,7 @@ vless://a13df940-020c-465f-bc89-ee5279b5cd6a@172.67.71.122:2087?security=tls&sni
 vless://435bda4c-fe5e-42c9-a3ad-15334943b38a@104.17.45.41:80?security=none&type=ws&host=us3.rtacg.com&path=/#@Hope_Net-join-us-on-Telegram
 vless://435bda4c-fe5e-42c9-a3ad-15334943b38a@104.17.26.14:80?security=none&type=ws&host=us3.rtacg.com&path=/#@Hope_Net-join-us-on-Telegram
 vless://d672ec4f-afba-4f61-af09-eec872f97e99@104.21.192.45:443?security=tls&sni=test35.pages.dev&type=ws&host=test35.pages.dev&path=/#@Hope_Net-join-us-on-Telegram
+vless://99ae469c-ab90-4ece-8e65-c93b05bb8e59@212.80.8.22:10780?security=none&encryption=none&headerType=none&type=tcp#%40NETMelliAnti
+vless://2a14c345-950b-416b-a029-3aa4751cb1d5@vip-80.f-sub.cfd:1517?security=none&encryption=none&host=JouRNaloFbIgdATA.SpRinGeropEn.coM.&headerType=http&type=tcp#%E2%9A%A1Telegram%20%3D%20%40prrofile_purple
+vless://ad8a28d6-a327-4ccc-9335-41fdd9738437@ip-data.turkserver.ir:2087?path=%2F&security=tls&encryption=none&insecure=0&host=all-fm2.netsnap.ir.&fp=firefox&type=ws&allowInsecure=0&sni=all-fm2.netsnap.ir.#%E2%9A%A1Telegram%20%3D%20%40prrofile_purple
+vless://6b279ab4-10e8-4e66-fb5d-9092c6709a1e@proxy.rahmancloud.ir:8443?path=%2F&security=tls&alpn=h3%2Ch2%2Chttp%2F1.1&encryption=none&insecure=0&host=proxy.rahmancloud.ir&fp=chrome&type=ws&allowInsecure=0#%E2%9A%A1Telegram%20%3D%20%40prrofile_purple
