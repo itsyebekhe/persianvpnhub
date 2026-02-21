@@ -262,3 +262,4 @@ vless://2271c50f-ac7a-4d7f-8b04-64085b0daa56@b.pabloping.cloud:2052?encryption=n
 vless://2271c50f-ac7a-4d7f-8b04-64085b0daa56@a.pabloping.cloud:2052?encryption=none&type=xhttp&mode=auto&host=nlbv2.pabloping.pro&path=/pabloping&security=none#%E2%98%81%EF%B8%8F%20%7C%20P8
 vless://2271c50f-ac7a-4d7f-8b04-64085b0daa56@c.pabloping.cloud:2052?encryption=none&type=xhttp&mode=auto&host=upnl.pabloping.pro&path=/pabloping&security=none#%E2%98%81%EF%B8%8F%20%7C%20P9
 vless://2271c50f-ac7a-4d7f-8b04-64085b0daa56@b.pabloping.cloud:2052?encryption=none&type=xhttp&mode=auto&host=updn.pabloping.pro&path=/pabloping&security=none#%E2%98%81%EF%B8%8F%20%7C%20P10
+vless://nasnet@162.19.10.94:443?security=tls&encryption=none&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=nasnet-162191094-direct.sharghdaily.co#ARGO_VPNN_25
