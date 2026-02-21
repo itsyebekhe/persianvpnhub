@@ -439,3 +439,12 @@ vless://fca42527-0f5f-4227-9554-ba32702fe90c@3.68.89.231:443?security=none&encry
 vless://21889ffd-54ee-40f9-e9b0-f1838908579a@18.199.99.98:443?security=none&encryption=none&headerType=none&type=tcp#%40mehrosaboran
 vless://ccab17f9-00a7-4493-c4a6-bbdd9e22166e@3.120.192.139:443?security=none&encryption=none&headerType=none&type=tcp#%40mehrosaboran
 vless://a0891e86-ce1f-4e1b-e47c-84c890f1b130@3.68.229.22:443?security=none&encryption=none&headerType=none&type=tcp#%40mehrosaboran
+vless://0154d742-3233-4c61-f81c-7407fcf28b87@18.153.93.127:443?security=none&encryption=none&headerType=none&type=tcp#%F0%9F%87%B3%F0%9F%87%B1JOIN%E2%9E%A4%40V2RRvip%20%20%F0%9F%91%88%DA%86%D9%86%D9%84%20%D9%85%D8%A7
+vless://b13770a6-29e5-45fd-d5fd-53837a41380c@18.197.68.115:32127?security=none&encryption=none&headerType=none&type=tcp#%F0%9F%87%AB%F0%9F%87%AEJOIN%E2%9E%A4%40V2RRvip%20%20%F0%9F%91%88%DA%86%D9%86%D9%84%20%D9%85%D8%A7
+vless://4d259f79-e02b-4aa3-ebde-92c177df2d87@18.199.91.228:36632?security=none&encryption=none&headerType=none&type=tcp#%F0%9F%87%A8%F0%9F%87%A6JOIN%E2%9E%A4%40V2RRvip%20%20%F0%9F%91%88%DA%86%D9%86%D9%84%20%D9%85%D8%A7
+vless://c21ba381-5808-4098-b94d-86c468a683d9@3.68.220.245:443?security=none&encryption=none&headerType=none&type=tcp#%F0%9F%87%A8%F0%9F%87%ADJOIN%E2%9E%A4%40V2RRvip%20%20%F0%9F%91%88%DA%86%D9%86%D9%84%20%D9%85%D8%A7
+vless://de41e034-f3b5-4465-b616-552f2019885a@3.67.64.135:40869?security=none&encryption=none&headerType=none&type=tcp#%F0%9F%87%AA%F0%9F%87%A6JOIN%E2%9E%A4%40V2RRvip%20%20%F0%9F%91%88%DA%86%D9%86%D9%84%20%D9%85%D8%A7
+vless://9a887970-9742-48fd-ee77-57735bdc1d49@3.76.29.156:443?security=none&encryption=none&headerType=none&type=tcp#%F0%9F%87%AF%F0%9F%87%B5JOIN%E2%9E%A4%40V2RRvip%20%20%F0%9F%91%88%DA%86%D9%86%D9%84%20%D9%85%D8%A7
+vless://ec7414ac-4550-414d-afed-5f7ec74ddc32@3.70.111.47:443?security=none&encryption=none&headerType=none&type=tcp#%F0%9F%87%B2%F0%9F%87%A9JOIN%E2%9E%A4%40V2RRvip%20%20%F0%9F%91%88%DA%86%D9%86%D9%84%20%D9%85%D8%A7
+vless://7a5dc2d1-8560-47de-8df9-2a1c5f8fd3ec@18.159.113.31:16763?security=none&encryption=none&headerType=none&type=tcp#%F0%9F%87%B6%F0%9F%87%A6JOIN%E2%9E%A4%40V2RRvip%20%20%F0%9F%91%88%DA%86%D9%86%D9%84%20%D9%85%D8%A7
+trojan://telegram-id-privatevpns@35.156.94.149:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
