@@ -263,3 +263,8 @@ vless://2271c50f-ac7a-4d7f-8b04-64085b0daa56@a.pabloping.cloud:2052?encryption=n
 vless://2271c50f-ac7a-4d7f-8b04-64085b0daa56@c.pabloping.cloud:2052?encryption=none&type=xhttp&mode=auto&host=upnl.pabloping.pro&path=/pabloping&security=none#%E2%98%81%EF%B8%8F%20%7C%20P9
 vless://2271c50f-ac7a-4d7f-8b04-64085b0daa56@b.pabloping.cloud:2052?encryption=none&type=xhttp&mode=auto&host=updn.pabloping.pro&path=/pabloping&security=none#%E2%98%81%EF%B8%8F%20%7C%20P10
 vless://nasnet@162.19.10.94:443?security=tls&encryption=none&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=nasnet-162191094-direct.sharghdaily.co#ARGO_VPNN_25
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpsanFkYWx1MTMuLg@3.1.195.148:8319#%F0%9F%87%B8%F0%9F%87%ACSG-0275-NetFreedom0
+trojan://telegram-id-privatevpns@52.29.75.76:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
+ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg@172.105.199.111:8080#%F0%9F%87%AF%F0%9F%87%B5JP-0215-NetFreedom0
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@193.29.139.141:8080#%F0%9F%87%B3%F0%9F%87%B1NL-0217-NetFreedom0
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@103.97.203.227:990#%F0%9F%87%AE%F0%9F%87%B3IN-0317-NetFreedom0
