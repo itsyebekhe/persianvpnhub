@@ -537,3 +537,10 @@ vless://c21ba381-5808-4098-b94d-86c468a683d9@18.159.131.55:443?security=&encrypt
 vless://597f08cd-bd00-4ec4-aaa4-93fe99ca7f36@3.72.52.65:39609?security=&encryption=none&headerType=&type=tcp#%40InfoTech_VK
 vless://907ccc0f-bd56-4726-a877-d72a02125b6c@18.192.209.160:443?security=&encryption=none&headerType=&type=tcp#%40InfoTech_VK
 vless://f843f1a2-a769-4356-85bb-68954d2fa20d@3.77.237.142:37673?security=&encryption=none&headerType=&type=tcp#%40InfoTech_VK
+trojan://telegram-id-privatevpns@35.158.180.45:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
+vless://ddd29159-9ad5-43a8-bf49-a0eb5bf0dbd2@104.17.148.22:80?security=none&type=ws&host=kchan.amirali0013.monster.&path=/@NIM_VPN_ir,@NIM_VPN_ir#@Hope_Net-join-us-on-Telegram
+vless://d61d297f-ca99-47ea-a97f-66d855f40587@172.67.202.220:2087?security=tls&sni=fa.lightningv.ir&type=ws&fp=chrome&alpn=h2,http/1.1&allowInsecure=1#@Hope_Net-join-us-on-Telegram
+vless://435bda4c-fe5e-42c9-a3ad-15334943b38a@104.16.255.71:80?security=none&type=ws&host=us3.rtacg.com&path=/#@Hope_Net-join-us-on-Telegram
+vless://435bda4c-fe5e-42c9-a3ad-15334943b38a@104.17.122.181:80?security=none&type=ws&host=us3.rtacg.com&path=/#@Hope_Net-join-us-on-Telegram
+vless://c4000cda-6237-4702-ac6a-024444978b8e@188.114.97.11:2096?security=tls&sni=Bpb-JULY.PAGes.dev&type=ws&host=bpB-jUlY.pAGES.Dev&fp=chrome&alpn=h2,http/1.1#@Hope_Net-join-us-on-Telegram
+vless://435bda4c-fe5e-42c9-a3ad-15334943b38a@104.17.145.156:80?security=none&type=ws&host=us3.rtacg.com&path=/#@Hope_Net-join-us-on-Telegram
