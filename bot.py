@@ -61,7 +61,7 @@ TIMEOUT_TCP = 2
 FETCH_DELAY = 6
 
 # Regex & Extensions
-VMESS_REGEX = r'(vmess|vless|trojan|ss|tuic|hysteria2?):\/\/[^\s\n]+'
+VMESS_REGEX = r'(vmess|vless|trojan|ss|tuic|hysteria2?|dns|slipnet|slipnet-enc):\/\/[^\s\n]+'
 MTPROTO_REGEX = r'(?:tg:\/\/|https:\/\/t\.me\/)proxy\?(?=[^"\'\s<>]*server=)(?=[^"\'\s<>]*port=)([^"\'\s<>]+)'
 # Updated to support .hat files as well
 FILE_EXTENSIONS = ('.npvt', '.hat')
@@ -529,18 +529,27 @@ async def main():
                 norm_json = ConfigNormalizer.normalize(config_str, proto)
                 if not norm_json or manager.is_duplicate(norm_json): continue
 
-                host, port = manager.parse_config_details(config_str, proto)
-                if not host: continue
-                ip = await manager.resolve_dns(host)
-                if not ip: continue
-                
-                ping_ms = await manager.check_connection(ip, port)
-                if ping_ms is None: continue
+                if proto in ['dns', 'slipnet', 'slipnet-enc']:
+                    ping_ms = "N/A"
+                    flag, country = "🏁", "نامشخص"
+                else:
+                    host, port = manager.parse_config_details(config_str, proto)
+                    if not host:
+                        continue
 
-                if proto != 'mtproto':
-                    valid_subscription_configs.append(config_str)
+                    ip = await manager.resolve_dns(host)
+                    if not ip:
+                        continue
 
-                flag, country = manager.get_location_info(ip)
+                    ping_ms = await manager.check_connection(ip, port)
+                    if ping_ms is None:
+                        continue
+
+                    if proto not in ['mtproto', 'dns', 'slipnet', 'slipnet-enc']:
+                        valid_subscription_configs.append(config_str)
+
+                    flag, country = manager.get_location_info(ip)
+
                 clean_proto = proto.upper().replace('VMESS', 'VMess').replace('VLESS', 'VLESS')
                 
                 tags = f"#{clean_proto} #VPN"
