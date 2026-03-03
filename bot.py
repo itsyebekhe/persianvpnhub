@@ -61,7 +61,7 @@ TIMEOUT_TCP = 2
 FETCH_DELAY = 6
 
 # Regex & Extensions
-VMESS_REGEX = r'(vmess|vless|trojan|ss|tuic|hysteria2?|dns|slipnet|slipnet-enc):\/\/[^\s\n]+'
+VMESS_REGEX = r'(vmess|vless|trojan|ss|tuic|hysteria2?|dns|slipnet|slipnet-enc|nm-dns):\/\/[^\s\n]+'
 MTPROTO_REGEX = r'(?:tg:\/\/|https:\/\/t\.me\/)proxy\?(?=[^"\'\s<>]*server=)(?=[^"\'\s<>]*port=)([^"\'\s<>]+)'
 # Updated to support .hat files as well
 FILE_EXTENSIONS = ('.npvt', '.hat')
@@ -529,8 +529,8 @@ async def main():
                 norm_json = ConfigNormalizer.normalize(config_str, proto)
                 if not norm_json or manager.is_duplicate(norm_json): continue
 
-                if proto in ['dns', 'slipnet', 'slipnet-enc']:
-                    ping_ms = "N/A"
+                if proto in ['dns', 'slipnet', 'slipnet-enc', 'nm-dns']:
+                    ping_ms = "N/A "
                     flag, country = "🏁", "نامشخص"
                 else:
                     host, port = manager.parse_config_details(config_str, proto)
@@ -545,7 +545,7 @@ async def main():
                     if ping_ms is None:
                         continue
 
-                    if proto not in ['mtproto', 'dns', 'slipnet', 'slipnet-enc']:
+                    if proto not in ['mtproto', 'dns', 'slipnet', 'slipnet-enc', 'nm-dns']:
                         valid_subscription_configs.append(config_str)
 
                     flag, country = manager.get_location_info(ip)
