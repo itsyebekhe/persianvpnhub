@@ -135,3 +135,4 @@ vless://0c49f1d8-3d34-473b-bebf-9d9a4811db62@45.141.234.196:51472?security=reali
 vless://26524cce-d514-4014-a426-365fb266a14d@52.19.138.237:8443?security=tls&sni=bt5hpm5jf6.chinam.eu.org&type=ws&host=bt5hpm5jf6.chinam.eu.org&path=%2Fdanfeng%3Fed%3D2560&fp=random#%40v2rayconfigamir%203655
 vless://870f0165-8308-4e53-b81f-8b54eaf03bd2@62.60.212.199:443?encryption=none&security=reality&sni=www.figma.com&fp=random&pbk=KT7T2Ny_fZP-oU18D5agZeUfe70tc6TIZ2IrlerKeTA&sid=8784&spx=%2F&type=tcp&headerType=hnone#%40ByGFW
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpad2V1WGF2am92dWh6dDFBRjBkNnF4@46.246.97.140:53908#outline_ir
+trojan://telegram-id-privatevpns@3.79.158.4:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
