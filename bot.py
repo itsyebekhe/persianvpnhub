@@ -10,11 +10,10 @@ import hashlib
 import shutil
 import time
 from datetime import datetime, timezone, timedelta
-from urllib.parse import urlparse, parse_qs, quote
-from typing import Optional
+from urllib.parse import urlparse, parse_qs, unquote, quote
 
 import aiohttp
-import requests
+import requests  # Added for downloading initial cache
 import geoip2.database
 from telethon import TelegramClient, Button
 from telethon.sessions import StringSession
@@ -36,17 +35,11 @@ STATS_FILE = os.path.join(BASE_DIR, 'stats.json')
 GEOIP_DB = os.path.join(BASE_DIR, 'Country.mmdb')
 TEMP_DIR = os.path.join(BASE_DIR, 'temp_downloads')
 
-# Subscription Directories / Files
-XRAY_DIR = os.path.join(BASE_DIR, 'xray')
-DNS_DIR = os.path.join(BASE_DIR, 'dns')
+# Subscription Files
+SUB_FILE_NORMAL = os.path.join(BASE_DIR, 'normal')
+SUB_FILE_B64 = os.path.join(BASE_DIR, 'base64')
 
-SUB_FILE_XRAY_NORMAL = os.path.join(XRAY_DIR, 'normal')
-SUB_FILE_XRAY_EXPORT = os.path.join(XRAY_DIR, 'export')
-
-SUB_FILE_DNS_NORMAL = os.path.join(DNS_DIR, 'normal')
-SUB_FILE_DNS_EXPORT = os.path.join(DNS_DIR, 'export')
-
-# Cache File for IDs
+# Cache File for IDs (The Fix)
 ID_CACHE_FILE = os.path.join(BASE_DIR, 'id_cache.json')
 
 # URLs
@@ -54,12 +47,11 @@ GEOIP_URL = "https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Countr
 CF_RANGES_URL = "https://raw.githubusercontent.com/ircfspace/cf-ip-ranges/refs/heads/main/export.ipv4"
 
 # Repo Info for Remote Loading
-REPO_USER = "itsyebekhe"
+REPO_USER = "itsyebekhe" 
 REPO_NAME = "persianvpnhub"
 EXPORT_BRANCH = "export"
 MAIN_BRANCH = "main"
-
-EXISTING_XRAY_SUBS_URL = f"https://raw.githubusercontent.com/{REPO_USER}/{REPO_NAME}/{EXPORT_BRANCH}/xray/normal"
+EXISTING_SUBS_URL = f"https://raw.githubusercontent.com/{REPO_USER}/{REPO_NAME}/{EXPORT_BRANCH}/normal"
 CACHE_URL = f"https://raw.githubusercontent.com/{REPO_USER}/{REPO_NAME}/{MAIN_BRANCH}/id_cache.json"
 
 # Constants
@@ -71,9 +63,8 @@ FETCH_DELAY = 6
 # Regex & Extensions
 VMESS_REGEX = r'(vmess|vless|trojan|ss|tuic|hysteria2?|dns|slipnet|slipnet-enc|nm-dns):\/\/[^\s\n]+'
 MTPROTO_REGEX = r'(?:tg:\/\/|https:\/\/t\.me\/)proxy\?(?=[^"\'\s<>]*server=)(?=[^"\'\s<>]*port=)([^"\'\s<>]+)'
+# Updated to support .hat files as well
 FILE_EXTENSIONS = ('.npvt', '.hat')
-
-DNS_SUB_PROTOS = {'dns', 'slipnet', 'slipnet-enc', 'nm-dns'}
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -124,104 +115,76 @@ class JalaliConverter:
         tehran_dt = utc_dt + timedelta(hours=3, minutes=30)
         jy, jm, jd = JalaliConverter.gregorian_to_jalali(tehran_dt.year, tehran_dt.month, tehran_dt.day)
         return f"{tehran_dt.hour:02d}:{tehran_dt.minute:02d} - {jy}/{jm:02d}/{jd:02d}"
-
+    
     @staticmethod
     def get_jalali_date_from_str(date_str):
         try:
             dt = datetime.strptime(date_str, '%Y-%m-%d')
             jy, jm, jd = JalaliConverter.gregorian_to_jalali(dt.year, dt.month, dt.day)
             return f"{jy}/{jm:02d}/{jd:02d}"
-        except Exception:
+        except:
             return date_str
 
 # --- SUBSCRIPTION MANAGER ---
 class SubscriptionManager:
-    def __init__(self, normal_path: str, export_path: str, remote_normal_url: Optional[str] = None):
-        self.normal_path = normal_path
-        self.export_path = export_path
-        self.remote_normal_url = remote_normal_url
-
-        os.makedirs(os.path.dirname(self.normal_path), exist_ok=True)
-        os.makedirs(os.path.dirname(self.export_path), exist_ok=True)
-
+    def __init__(self):
+        self.normal_path = SUB_FILE_NORMAL
+        self.b64_path = SUB_FILE_B64
         self.load_remote_subs()
 
     def load_remote_subs(self):
-        if os.path.exists(self.normal_path):
-            return
-
-        if not self.remote_normal_url:
-            open(self.normal_path, 'a', encoding='utf-8').close()
-            open(self.export_path, 'a', encoding='utf-8').close()
-            return
-
+        if os.path.exists(self.normal_path): return
         logger.info(f"Downloading existing subs from {EXPORT_BRANCH} branch...")
         try:
-            response = requests.get(self.remote_normal_url, timeout=10)
+            response = requests.get(EXISTING_SUBS_URL, timeout=10)
             if response.status_code == 200:
                 with open(self.normal_path, 'w', encoding='utf-8') as f:
                     f.write(response.text)
                 logger.info("Successfully loaded existing subscriptions.")
             else:
-                open(self.normal_path, 'a', encoding='utf-8').close()
+                open(self.normal_path, 'a').close()
         except Exception as e:
             logger.error(f"Failed to load remote subs: {e}")
-            open(self.normal_path, 'a', encoding='utf-8').close()
-
-        if not os.path.exists(self.export_path):
-            open(self.export_path, 'a', encoding='utf-8').close()
-
+            open(self.normal_path, 'a').close()
+            
     def trim_files(self):
         logger.info("New day detected: Trimming subscription files (removing oldest 50%).")
-        if not os.path.exists(self.normal_path):
-            return
+        if not os.path.exists(self.normal_path): return
         try:
             with open(self.normal_path, 'r', encoding='utf-8') as f:
                 content = f.read().strip()
-            if not content:
-                return
-
+            if not content: return
             lines = content.split('\n')
             total_lines = len(lines)
-
             if total_lines > 1:
                 keep_start_index = total_lines // 2
                 new_lines = lines[keep_start_index:]
             else:
                 new_lines = lines
-
             new_content = "\n".join(new_lines)
             with open(self.normal_path, 'w', encoding='utf-8') as f:
                 f.write(new_content)
-
             b64_content = base64.b64encode(new_content.encode('utf-8')).decode('utf-8')
-            with open(self.export_path, 'w', encoding='utf-8') as f:
+            with open(self.b64_path, 'w', encoding='utf-8') as f:
                 f.write(b64_content)
-
             logger.info(f"Trimmed subscription: {total_lines} -> {len(new_lines)} lines.")
         except Exception as e:
             logger.error(f"Error trimming subscription files: {e}")
 
     def update_subscription(self, new_configs):
-        if not new_configs:
-            return
-
+        if not new_configs: return
         existing_content = ""
         if os.path.exists(self.normal_path):
             with open(self.normal_path, 'r', encoding='utf-8') as f:
                 existing_content = f.read()
-
         separator = "\n" if existing_content.strip() else ""
         to_add = separator + "\n".join(new_configs)
         full_content = existing_content + to_add
-
         with open(self.normal_path, 'w', encoding='utf-8') as f:
             f.write(full_content)
-
         b64_content = base64.b64encode(full_content.encode('utf-8')).decode('utf-8')
-        with open(self.export_path, 'w', encoding='utf-8') as f:
+        with open(self.b64_path, 'w', encoding='utf-8') as f:
             f.write(b64_content)
-
         logger.info(f"Subscription updated with {len(new_configs)} new configs.")
 
 # --- STATS MANAGER ---
@@ -233,15 +196,12 @@ class StatsManager:
     def load_data(self):
         if os.path.exists(STATS_FILE):
             try:
-                with open(STATS_FILE, 'r') as f:
-                    return json.load(f)
-            except Exception:
-                pass
+                with open(STATS_FILE, 'r') as f: return json.load(f)
+            except: pass
         return {'date': self.current_date, 'configs': 0, 'proxies': 0, 'files': 0}
 
     def save_data(self):
-        with open(STATS_FILE, 'w') as f:
-            json.dump(self.data, f)
+        with open(STATS_FILE, 'w') as f: json.dump(self.data, f)
 
     async def check_date_and_report(self, client, chat_id):
         stored_date = self.data.get('date')
@@ -258,10 +218,8 @@ class StatsManager:
                 f"#آمار #گزارش\n"
             )
             try:
-                if total > 0:
-                    await client.send_message(chat_id, report_msg)
-            except Exception:
-                pass
+                if total > 0: await client.send_message(chat_id, report_msg)
+            except: pass
             self.data = {'date': self.current_date, 'configs': 0, 'proxies': 0, 'files': 0}
             self.save_data()
             return True
@@ -270,9 +228,7 @@ class StatsManager:
     def increment(self, category):
         if self.data.get('date') != self.current_date:
             self.data['date'] = self.current_date
-            self.data['configs'] = 0
-            self.data['proxies'] = 0
-            self.data['files'] = 0
+            self.data['configs'] = 0; self.data['proxies'] = 0; self.data['files'] = 0
         if category in self.data:
             self.data[category] += 1
             self.save_data()
@@ -281,19 +237,9 @@ class StatsManager:
 class CloudflareManager:
     def __init__(self):
         self.networks = []
-        for cidr in [
-            "2400:cb00::/32",
-            "2606:4700::/32",
-            "2803:f800::/32",
-            "2405:b500::/32",
-            "2405:8100::/32",
-            "2a06:98c0::/29",
-            "2c0f:f248::/32",
-        ]:
-            try:
-                self.networks.append(ipaddress.ip_network(cidr))
-            except Exception:
-                pass
+        for cidr in ["2400:cb00::/32", "2606:4700::/32", "2803:f800::/32", "2405:b500::/32", "2405:8100::/32", "2a06:98c0::/29", "2c0f:f248::/32"]:
+            try: self.networks.append(ipaddress.ip_network(cidr))
+            except: pass
 
     async def update_ranges(self):
         try:
@@ -304,24 +250,18 @@ class CloudflareManager:
                         for line in text.splitlines():
                             line = line.strip()
                             if line and not line.startswith('#'):
-                                try:
-                                    self.networks.append(ipaddress.ip_network(line))
-                                except Exception:
-                                    pass
-        except Exception:
-            pass
+                                try: self.networks.append(ipaddress.ip_network(line))
+                                except: pass
+        except: pass
 
     def is_cloudflare(self, ip_str):
-        if not ip_str:
-            return False
+        if not ip_str: return False
         try:
             clean = ip_str.strip('[]')
             obj = ipaddress.ip_address(clean)
             for net in self.networks:
-                if obj in net:
-                    return True
-        except Exception:
-            pass
+                if obj in net: return True
+        except: pass
         return False
 
 # --- CONFIG MANAGER ---
@@ -333,26 +273,18 @@ class ConfigNormalizer:
             if proto == 'vmess':
                 raw = content.replace('vmess://', '')
                 padding = len(raw) % 4
-                if padding:
-                    raw += "=" * (4 - padding)
+                if padding: raw += "=" * (4 - padding)
                 json_str = base64.b64decode(raw).decode('utf-8', errors='ignore')
                 data = json.loads(json_str)
-                for k in ['ps', 'remarks', 'id']:
-                    data.pop(k, None)
-
+                for k in ['ps', 'remarks', 'id']: data.pop(k, None)
+            
             elif proto in ['vless', 'trojan', 'tuic', 'hysteria', 'ss', 'hysteria2']:
                 parsed = urlparse(content)
                 host_port = parsed.netloc.split('@')[-1]
                 params = parse_qs(parsed.query)
                 flat_params = {k: v[0] for k, v in params.items()}
-                for key in ['fp', 'pbk', 'sid', 'spx']:
-                    flat_params.pop(key, None)
-                data = {
-                    'protocol': proto,
-                    'host_port': host_port,
-                    'path': parsed.path,
-                    'params': flat_params
-                }
+                for key in ['fp', 'pbk', 'sid', 'spx']: flat_params.pop(key, None)
+                data = {'protocol': proto, 'host_port': host_port, 'path': parsed.path, 'params': flat_params}
 
             elif proto == 'mtproto':
                 parsed = urlparse(content.replace('tg://', 'http://'))
@@ -363,12 +295,9 @@ class ConfigNormalizer:
                     'port': params.get('port', [''])[0],
                     'secret': params.get('secret', [''])[0]
                 }
-
-            if not data:
-                return content
+            if not data: return content
             return json.dumps(data, sort_keys=True)
-        except Exception:
-            return content
+        except: return content
 
 class ConfigManager:
     def __init__(self):
@@ -377,28 +306,23 @@ class ConfigManager:
         self.geo_reader = None
         self.cf_manager = CloudflareManager()
         self.dns_cache = {}
-        if not os.path.exists(TEMP_DIR):
-            os.makedirs(TEMP_DIR)
+        if not os.path.exists(TEMP_DIR): os.makedirs(TEMP_DIR)
 
     def load_history(self):
         if os.path.exists(HISTORY_FILE):
             try:
-                with open(HISTORY_FILE, 'r') as f:
-                    self.history = json.load(f)
-            except Exception:
-                self.history = {}
+                with open(HISTORY_FILE, 'r') as f: self.history = json.load(f)
+            except: self.history = {}
         curr = datetime.now(timezone.utc).timestamp()
         cutoff = curr - (DEDUPE_HOURS * 3600)
         self.history = {k: v for k, v in self.history.items() if v > cutoff}
 
     def save_history(self):
-        with open(HISTORY_FILE, 'w') as f:
-            json.dump(self.history, f)
+        with open(HISTORY_FILE, 'w') as f: json.dump(self.history, f)
 
     def is_duplicate(self, unique_str):
         fp = hashlib.sha256(unique_str.encode('utf-8')).hexdigest()
-        if fp in self.history:
-            return True
+        if fp in self.history: return True
         self.history[fp] = datetime.now(timezone.utc).timestamp()
         return False
 
@@ -407,63 +331,35 @@ class ConfigManager:
             async with aiohttp.ClientSession() as session:
                 async with session.get(GEOIP_URL) as resp:
                     if resp.status == 200:
-                        with open(GEOIP_DB, 'wb') as f:
-                            f.write(await resp.read())
-        try:
-            self.geo_reader = geoip2.database.Reader(GEOIP_DB)
-        except Exception:
-            pass
+                        with open(GEOIP_DB, 'wb') as f: f.write(await resp.read())
+        try: self.geo_reader = geoip2.database.Reader(GEOIP_DB)
+        except: pass
         await self.cf_manager.update_ranges()
 
     async def resolve_dns(self, host):
-        if not host:
-            return None
+        if not host: return None
         try:
             ipaddress.ip_address(host.strip('[]'))
             return host.strip('[]')
-        except Exception:
-            pass
-
-        if host in self.dns_cache:
-            return self.dns_cache[host]
-
+        except: pass
+        if host in self.dns_cache: return self.dns_cache[host]
         try:
             loop = asyncio.get_running_loop()
             ip = await loop.run_in_executor(None, socket.gethostbyname, host)
             self.dns_cache[host] = ip
             return ip
-        except Exception:
-            return None
+        except: return None
 
     def get_location_info(self, ip_str):
-        if self.cf_manager.is_cloudflare(ip_str):
-            return "☁️", "کلودفلر"
-        if not self.geo_reader or not ip_str:
-            return "🏁", "نامشخص"
+        if self.cf_manager.is_cloudflare(ip_str): return "☁️", "کلودفلر"
+        if not self.geo_reader or not ip_str: return "🏁", "نامشخص"
         try:
             resp = self.geo_reader.country(ip_str)
             iso = resp.country.iso_code
             name = resp.country.names.get('en', 'Unknown')
-            persian_names = {
-                'Germany': 'آلمان',
-                'United States': 'آمریکا',
-                'Netherlands': 'هلند',
-                'France': 'فرانسه',
-                'United Kingdom': 'انگلیس',
-                'Finland': 'فنلاند',
-                'Canada': 'کانادا',
-                'Turkey': 'ترکیه',
-                'Russia': 'روسیه',
-                'Singapore': 'سنگاپور',
-                'Japan': 'ژاپن',
-                'Sweden': 'سوئد',
-                'United Arab Emirates': 'امارات',
-                'Switzerland': 'سوئیس'
-            }
-            flag = (chr(127397 + ord(iso[0])) + chr(127397 + ord(iso[1]))) if iso else "🏁"
-            return flag, persian_names.get(name, name)
-        except Exception:
-            return "🏁", "نامشخص"
+            persian_names = {'Germany': 'آلمان', 'United States': 'آمریکا', 'Netherlands': 'هلند', 'France': 'فرانسه', 'United Kingdom': 'انگلیس', 'Finland': 'فنلاند', 'Canada': 'کانادا', 'Turkey': 'ترکیه', 'Russia': 'روسیه', 'Singapore': 'سنگاپور', 'Japan': 'ژاپن', 'Sweden': 'سوئد', 'United Arab Emirates': 'امارات', 'Switzerland': 'سوئیس'}
+            return (chr(127397 + ord(iso[0])) + chr(127397 + ord(iso[1])) if iso else "🏁"), persian_names.get(name, name)
+        except: return "🏁", "نامشخص"
 
     @staticmethod
     def parse_config_details(config_str, proto):
@@ -471,8 +367,7 @@ class ConfigManager:
             if proto == 'vmess':
                 b64 = config_str[8:]
                 padding = len(b64) % 4
-                if padding:
-                    b64 += "=" * (4 - padding)
+                if padding: b64 += "=" * (4 - padding)
                 data = json.loads(base64.b64decode(b64).decode('utf-8', errors='ignore'))
                 return data.get('add'), data.get('port')
             elif proto == 'mtproto':
@@ -482,13 +377,11 @@ class ConfigManager:
             else:
                 parsed = urlparse(config_str)
                 return parsed.hostname, parsed.port
-        except Exception:
-            return None, None
+        except: return None, None
 
     @staticmethod
     async def check_connection(ip, port):
-        if not ip or not port:
-            return None
+        if not ip or not port: return None
         try:
             start = time.perf_counter()
             conn = asyncio.open_connection(ip, int(port))
@@ -497,21 +390,19 @@ class ConfigManager:
             writer.close()
             await writer.wait_closed()
             return int((end - start) * 1000)
-        except Exception:
-            return None
+        except: return None
 
     @staticmethod
     def calculate_file_hash(path):
         h = hashlib.sha256()
         with open(path, "rb") as f:
-            for chunk in iter(lambda: f.read(4096), b""):
-                h.update(chunk)
+            for chunk in iter(lambda: f.read(4096), b""): h.update(chunk)
         return h.hexdigest()
 
 # --- HELPER: REMOTE CACHE LOADER ---
 def load_remote_cache():
-    if os.path.exists(ID_CACHE_FILE):
-        return
+    """Downloads the existing ID cache from the export branch."""
+    if os.path.exists(ID_CACHE_FILE): return
     logger.info(f"Downloading existing ID cache from {EXPORT_BRANCH} branch...")
     try:
         response = requests.get(CACHE_URL, timeout=10)
@@ -527,71 +418,63 @@ def load_remote_cache():
 # --- MAIN ---
 async def main():
     logger.info("Starting PSG Collector Bot...")
-
+    
     manager = ConfigManager()
     stats = StatsManager()
-
-    xray_sub_manager = SubscriptionManager(
-        normal_path=SUB_FILE_XRAY_NORMAL,
-        export_path=SUB_FILE_XRAY_EXPORT,
-        remote_normal_url=EXISTING_XRAY_SUBS_URL,
-    )
-    dns_sub_manager = SubscriptionManager(
-        normal_path=SUB_FILE_DNS_NORMAL,
-        export_path=SUB_FILE_DNS_EXPORT,
-        remote_normal_url=None,
-    )
-
+    sub_manager = SubscriptionManager()
+    
+    # 0. Load Cache (FIX)
     load_remote_cache()
-    await manager.setup_external_resources()
 
+    await manager.setup_external_resources()
+    
     user_client = TelegramClient(StringSession(SESSION_STRING), API_ID, API_HASH)
     bot_client = TelegramClient('bot_session', API_ID, API_HASH)
-
+    
     await user_client.connect()
     await bot_client.start(bot_token=BOT_TOKEN)
 
+    # 1. Date Check & Trim
     is_new_day = await stats.check_date_and_report(bot_client, DESTINATION_ID)
     if is_new_day:
-        xray_sub_manager.trim_files()
-        dns_sub_manager.trim_files()
+        sub_manager.trim_files()
 
     try:
-        with open(CHANNELS_FILE, 'r', encoding='utf-8') as f:
-            sources = json.load(f)
-    except Exception:
-        return
+        with open(CHANNELS_FILE, 'r', encoding='utf-8') as f: sources = json.load(f)
+    except: return
 
+    # --- PHASE 1: COLLECT (With ID Caching Fix) ---
     logger.info("Phase 1: Collecting...")
     collected_items = []
     current_time_ts = datetime.now(timezone.utc).timestamp()
-
+    
+    # Load Cache into Memory
     id_cache = {}
     if os.path.exists(ID_CACHE_FILE):
         try:
-            with open(ID_CACHE_FILE, 'r') as f:
-                id_cache = json.load(f)
-        except Exception:
-            pass
-
+            with open(ID_CACHE_FILE, 'r') as f: id_cache = json.load(f)
+        except: pass
+    
     cache_updated = False
 
     for source_username in sources.keys():
         try:
             logger.info(f"Scraping: {source_username}")
-
+            
+            # Determine target: Use Integer ID if cached to bypass ResolveUsernameRequest limit
             target = id_cache.get(source_username, source_username)
             if isinstance(target, str) and target.lstrip('-').isdigit():
                 target = int(target)
 
             try:
                 entity = await user_client.get_entity(target)
-
+                
+                # If we successfully got entity using username, Save ID to cache
                 if source_username not in id_cache:
                     id_cache[source_username] = entity.id
                     cache_updated = True
                     logger.info(f"Cached ID for {source_username}: {entity.id}")
-
+            
             except Exception as e:
                 if "wait" in str(e).lower() or "ResolveUsernameRequest" in str(e):
                     logger.warning(f"Skipping {source_username} due to FloodWait/Limit.")
@@ -601,68 +484,54 @@ async def main():
                     continue
 
             async for message in user_client.iter_messages(entity, limit=CHECK_LIMIT_PER_CHANNEL):
-                if not message.date:
-                    continue
+                if not message.date: continue
                 ts = message.date.astimezone(timezone.utc).timestamp()
-
+                
                 if (current_time_ts - ts) > (DEDUPE_HOURS * 3600):
                     continue
-
+                
+                # Check for both .npvt and .hat files
                 if message.file and message.file.name and message.file.name.lower().endswith(FILE_EXTENSIONS):
                     collected_items.append({'ts': ts, 'type': 'file', 'msg_obj': message, 'source': source_username})
                     continue
 
                 if message.text:
                     for match in re.finditer(VMESS_REGEX, message.text, re.IGNORECASE):
-                        collected_items.append({
-                            'ts': ts,
-                            'type': 'text',
-                            'proto': match.group(1),
-                            'raw': match.group(0),
-                            'source': source_username
-                        })
+                        collected_items.append({'ts': ts, 'type': 'text', 'proto': match.group(1), 'raw': match.group(0), 'source': source_username})
                     for match in re.finditer(MTPROTO_REGEX, message.text, re.IGNORECASE):
-                        collected_items.append({
-                            'ts': ts,
-                            'type': 'text',
-                            'proto': 'mtproto',
-                            'raw': match.group(0),
-                            'source': source_username
-                        })
+                        collected_items.append({'ts': ts, 'type': 'text', 'proto': 'mtproto', 'raw': match.group(0), 'source': source_username})
 
             await asyncio.sleep(FETCH_DELAY)
-
         except Exception as e:
             logger.warning(f"Error scraping {source_username}: {e}")
             await asyncio.sleep(FETCH_DELAY)
-
+    
+    # Save Cache to file if updated
     if cache_updated:
-        with open(ID_CACHE_FILE, 'w', encoding='utf-8') as f:
+        with open(ID_CACHE_FILE, 'w') as f:
             json.dump(id_cache, f)
         logger.info("ID Cache saved locally.")
 
+    # --- PHASE 2: PROCESS & SUBSCRIBE ---
     collected_items.sort(key=lambda x: x['ts'])
     logger.info(f"Phase 2: Processing {len(collected_items)} items...")
-
-    valid_xray_subscription_configs = []
-    valid_dns_subscription_configs = []
+    
+    valid_subscription_configs = []
 
     for item in collected_items:
         try:
             shamsi_date = JalaliConverter.get_persian_time(item['ts'])
-
+            
             if item['type'] == 'text':
                 config_str = item['raw'].strip('`"\'')
                 proto = item['proto']
-
+                
                 norm_json = ConfigNormalizer.normalize(config_str, proto)
-                if not norm_json or manager.is_duplicate(norm_json):
-                    continue
+                if not norm_json or manager.is_duplicate(norm_json): continue
 
-                if proto in DNS_SUB_PROTOS:
-                    ping_ms = "N/A"
+                if proto in ['dns', 'slipnet', 'slipnet-enc', 'nm-dns']:
+                    ping_ms = "N/A "
                     flag, country = "🏁", "نامشخص"
-                    valid_dns_subscription_configs.append(config_str)
                 else:
                     host, port = manager.parse_config_details(config_str, proto)
                     if not host:
@@ -676,18 +545,16 @@ async def main():
                     if ping_ms is None:
                         continue
 
-                    if proto != 'mtproto':
-                        valid_xray_subscription_configs.append(config_str)
+                    if proto not in ['mtproto', 'dns', 'slipnet', 'slipnet-enc', 'nm-dns']:
+                        valid_subscription_configs.append(config_str)
 
                     flag, country = manager.get_location_info(ip)
 
                 clean_proto = proto.upper().replace('VMESS', 'VMess').replace('VLESS', 'VLESS')
-
+                
                 tags = f"#{clean_proto} #VPN"
-                if proto == 'mtproto':
-                    tags = "#Proxy #MTProto"
-                elif proto == 'ss':
-                    tags = "#Shadowsocks #VPN"
+                if proto == 'mtproto': tags = "#Proxy #MTProto"
+                elif proto == 'ss': tags = "#Shadowsocks #VPN"
 
                 encoded_config = quote(config_str, safe="")
                 qr_link = (
@@ -710,39 +577,31 @@ async def main():
                     f"💡 منبع: @{item['source']}\n"
                     f"{qr_line}\n"
                 )
-
+                
                 buttons = []
-                if proto == 'mtproto':
+                if proto == 'mtproto': 
                     buttons.append([Button.url("⚡️ اتصال (Connect)", config_str)])
                 buttons.append([Button.url("🔍 دریافت کانفیگ‌های بیشتر", CHANNEL_LINK)])
 
-                await bot_client.send_message(
-                    DESTINATION_ID,
-                    f"{caption}\n```{config_str}```\n",
-                    buttons=buttons,
-                    link_preview=False
-                )
-
-                if proto == 'mtproto':
-                    stats.increment('proxies')
-                else:
-                    stats.increment('configs')
-
+                await bot_client.send_message(DESTINATION_ID, f"{caption}\n```{config_str}```\n", buttons=buttons, link_preview=False)
+                
+                if proto == 'mtproto': stats.increment('proxies')
+                else: stats.increment('configs')
+                
                 await asyncio.sleep(4)
 
             elif item['type'] == 'file':
                 msg = item['msg_obj']
                 path = await msg.download_media(file=TEMP_DIR)
-                if not path:
-                    continue
+                if not path: continue
 
                 file_hash = manager.calculate_file_hash(path)
                 if manager.is_duplicate(file_hash):
-                    os.remove(path)
-                    continue
-
+                    os.remove(path); continue
+                
+                # Determine file type for caption
                 filename = msg.file.name.lower() if msg.file.name else ""
-
+                
                 if filename.endswith('.hat'):
                     file_name_display = "HA Tunnel Plus"
                     file_hashtags = "#HATunnel #Config #File"
@@ -760,32 +619,21 @@ async def main():
                     f"🕒 انتشار: {shamsi_date}\n"
                     f"💡 منبع: @{item['source']}\n\n"
                 )
-
-                await bot_client.send_file(
-                    DESTINATION_ID,
-                    path,
-                    caption=caption,
-                    buttons=[[Button.url("🔍 دریافت کانفیگ‌های بیشتر", CHANNEL_LINK)]]
-                )
-
+                
+                await bot_client.send_file(DESTINATION_ID, path, caption=caption, buttons=[[Button.url("🔍 دریافت کانفیگ‌های بیشتر", CHANNEL_LINK)]])
+                
                 stats.increment('files')
-
-                if os.path.exists(path):
-                    os.remove(path)
-
+                if os.path.exists(path): os.remove(path)
                 await asyncio.sleep(4)
 
         except Exception as e:
             logger.error(f"Error processing item: {e}")
 
-    if valid_xray_subscription_configs:
-        xray_sub_manager.update_subscription(valid_xray_subscription_configs)
-    if valid_dns_subscription_configs:
-        dns_sub_manager.update_subscription(valid_dns_subscription_configs)
+    # --- PHASE 3: UPDATE SUBSCRIPTION ---
+    if valid_subscription_configs:
+        sub_manager.update_subscription(valid_subscription_configs)
 
-    if os.path.exists(TEMP_DIR):
-        shutil.rmtree(TEMP_DIR)
-
+    if os.path.exists(TEMP_DIR): shutil.rmtree(TEMP_DIR)
     manager.save_history()
     await user_client.disconnect()
     await bot_client.disconnect()
