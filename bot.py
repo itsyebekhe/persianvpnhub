@@ -545,7 +545,7 @@ async def main():
                     if ping_ms is None:
                         continue
 
-                    if proto not in ['mtproto', 'slipnet-enc', 'nm-dns']:
+                    if proto not in ['mtproto', 'dns', 'slipnet', 'slipnet-enc', 'nm-dns']:
                         valid_subscription_configs.append(config_str)
 
                     flag, country = manager.get_location_info(ip)
