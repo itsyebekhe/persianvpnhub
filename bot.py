@@ -29,7 +29,7 @@ CHANNEL_LINK = "https://t.me/persianvpnhub"
 
 # File Paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CHANNELS_FILE = os.path.join(BASE_DIR, 'channelsData', 'channelsAssets.json')
+CHANNELS_FILE = os.path.join(BASE_DIR, 'config.json')
 HISTORY_FILE = os.path.join(BASE_DIR, 'history.json')
 STATS_FILE = os.path.join(BASE_DIR, 'stats.json')
 GEOIP_DB = os.path.join(BASE_DIR, 'Country.mmdb')
