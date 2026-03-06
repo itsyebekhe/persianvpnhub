@@ -529,7 +529,11 @@ async def main():
                 norm_json = ConfigNormalizer.normalize(config_str, proto)
                 if not norm_json or manager.is_duplicate(norm_json): continue
 
-                if proto in ['dns', 'slipnet', 'slipnet-enc', 'nm-dns']:
+                if proto in ['dns', 'slipnet']:
+                    ping_ms = "N/A "
+                    flag, country = "🏁", "نامشخص"
+                    valid_subscription_configs.append(config_str)
+                elif proto in ['slipnet-enc', 'nm-dns']:
                     ping_ms = "N/A "
                     flag, country = "🏁", "نامشخص"
                 else:
@@ -545,7 +549,7 @@ async def main():
                     if ping_ms is None:
                         continue
 
-                    if proto not in ['mtproto', 'slipnet-enc', 'nm-dns']:
+                    if proto not in ['mtproto']:
                         valid_subscription_configs.append(config_str)
 
                     flag, country = manager.get_location_info(ip)
