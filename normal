@@ -71,3 +71,6 @@ vless://c71d2f84-1ae1-11f1-97cf-7fa5d2a6fb9f@gr5.vpnjantit.com:10002?path=%2Fvpn
 vless://c71d2f84-1ae1-11f1-97cf-7fa5d2a6fb9f@gr5.vpnjantit.com:10004?path=%2Fvpnjantit&security=none&encryption=none&type=ws#%F0%9F%87%A9%F0%9F%87%AA%C2%A6german%202
 trojan://telegram-id-privatevpns@13.36.46.152:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@3.79.165.50:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
+vless://07cd9dbe-21ac-4871-817d-c772687e4b7c@37.16.74.19:2053?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.ibm.com&fp=chrome&pbk=WckOSneVajAzpH0sZSAFAWPnmwuuEXKZrTICNj5_hHU&sid=4a5b6c7d&type=tcp&headerType=none#%20
+trojan://telegram-id-privatevpns@13.37.140.33:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
+trojan://humanity@chat.openai.com:443?path=%2Fassignment&security=tls&alpn=h2%2Chttp%2F1.1&host=www.calmlunch.com&fp=chrome&type=ws&sni=www.calmlunch.com#-@nftvici
