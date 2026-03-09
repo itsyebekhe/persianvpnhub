@@ -92,5 +92,6 @@
     "ServerTel": { "title": "", "logo": "" },
     "irFreeProxy": { "title": "", "logo": "" },
     "V2raysCollector": { "title": "", "logo": "" },
-    "Cheetah_MTP": { "title": "", "logo": "" }
+    "Cheetah_MTP": { "title": "", "logo": "" },
+    "net_cir": { "title": "", "logo": "" }
 }
