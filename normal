@@ -67,3 +67,4 @@ vless://Zem5jz6yS@143.204.111.124:443?path=%2F&security=tls&alpn=h2%2Chttp%2F1.1
 trojan://telegram-id-privatevpns@63.183.93.61:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
 vmess://eyJhZGQiOiIxNDMuMjA0LjExMS42NSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiZDM0cjczNW93anFiOWEuY2xvdWRmcm9udC5uZXQiLCJpZCI6IjdkOTY5YmVjLWVkMjEtNDBhZS04Y2NhLTE5NjNlOWE2MTMxNiIsImluc2VjdXJlIjoiMCIsIm5ldCI6IndzIiwicGF0aCI6Ii8iLCJwb3J0IjoiODAiLCJwcyI6Itio2LHYp9uMINin2KrYtdin2YQg2K/Yp9im2YXbjCDYrNmI24zZhiDYtNmI8J+XviBwcnJvZmlsZV9wdXJwbGVAIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiItLS0iLCJ2IjoiMiJ9
 trojan://telegram-id-privatevpns@13.38.214.118:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
+vless://f9a84da7-102f-4066-8593-095c4a4af003@102.37.157.78:6013?path=%2F&security=none&encryption=none&host=soft98.ir&type=ws#%40AzadNet
