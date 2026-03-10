@@ -68,3 +68,5 @@ trojan://telegram-id-privatevpns@63.183.93.61:22222?security=tls&alpn=http/1.1&h
 vmess://eyJhZGQiOiIxNDMuMjA0LjExMS42NSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiZDM0cjczNW93anFiOWEuY2xvdWRmcm9udC5uZXQiLCJpZCI6IjdkOTY5YmVjLWVkMjEtNDBhZS04Y2NhLTE5NjNlOWE2MTMxNiIsImluc2VjdXJlIjoiMCIsIm5ldCI6IndzIiwicGF0aCI6Ii8iLCJwb3J0IjoiODAiLCJwcyI6Itio2LHYp9uMINin2KrYtdin2YQg2K/Yp9im2YXbjCDYrNmI24zZhiDYtNmI8J+XviBwcnJvZmlsZV9wdXJwbGVAIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiItLS0iLCJ2IjoiMiJ9
 trojan://telegram-id-privatevpns@13.38.214.118:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 vless://f9a84da7-102f-4066-8593-095c4a4af003@102.37.157.78:6013?path=%2F&security=none&encryption=none&host=soft98.ir&type=ws#%40AzadNet
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpiTkcxR3VJUnd5MVRoZ2tzWUxaVERi@216.105.168.18:443/?outline=1&prefix=%16%03%01%00%C2%A8%01%01#🇺🇸
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3R09KNkVteFo2ZUtNWjc3NnQ0TWlx@104.192.227.162:443/?outline=1&prefix=%16%03%01%00%C2%A8%01%01#🇺🇸
