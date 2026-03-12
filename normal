@@ -58,3 +58,5 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphODIwMWJiZDc0MDQyMGJi@213.156.137.142:43659?
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphODIwMWJiZDc0MDQyMGJi@213.156.137.142:43659?#%40v2rayconfigamir%205248
 vless://75e1fde7-6bf6-48ef-ba43-400e960e185b@pq-BosniaandHerzegovina1.09vpn.com:80?path=/vless/&security=&encryption=none&type=ws#%40v2rayconfigamir%209668
 vless://75e1fde7-6bf6-48ef-ba43-400e960e185b@45.15.178.124:80?security=none&encryption=none&type=ws&path=/vless/#%40v2rayconfigamir%201051
+trojan://telegram-id-privatevpns@15.237.89.75:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
+vless://7e6b66dc-6dbc-4d01-a13e-13d0be4f38ef@65.109.208.248:21235?security=none&encryption=none&headerType=none&type=tcp#@kamkarstore
