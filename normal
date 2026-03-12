@@ -42,3 +42,5 @@ vless://e332f028-d343-5b44-8016-b3130f39e133@81.208.170.142:1500?encryption=none
 vless://sGLzG6kUwBpZd73sW0nq@81.208.170.142:1500?security=reality&encryption=none&pbk=VQxVgczORkbSNdDrkNOYs6zMBINpViztTKDuWCeQsVE&fp=chrome&type=grpc&sni=www.ebay.com&sid=775eb6408888248e#%40v2rayconfigamir%206205
 vless://0b9d4217-e627-46b9-8342-fa5463bdbcde@sw.truetunnel.xyz:443?security=reality&encryption=none&pbk=VZ45JY_rFdpprcZhHnO_pxs0tm5XFyE7h6Yv_HVbJQg&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=sw.truetunnel.xyz&sid=fd4f56d0fd822539#%F0%9F%94%A5%20Telegram%3A%20%40wiki_tajrobe
 trojan://telegram-id-privatevpns@3.127.99.68:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
+vless://f91c1cc2-05fe-4efd-ba09-86cb6bec19e3@23.95.113.104:443?path=%2F&security=&encryption=none&type=ws#Maznet-Psiphon-4
+vless://a4b53348-294d-43be-8549-93055291de3f@46.225.61.97:8080?type=ws&encryption=none&path=%2Fws&host=v.iampedi7.live&security=none#iampedi-vless-cdn-8880-sym32ta4
