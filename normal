@@ -61,3 +61,4 @@ vless://75e1fde7-6bf6-48ef-ba43-400e960e185b@45.15.178.124:80?security=none&encr
 trojan://telegram-id-privatevpns@15.237.89.75:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
 vless://7e6b66dc-6dbc-4d01-a13e-13d0be4f38ef@65.109.208.248:21235?security=none&encryption=none&headerType=none&type=tcp#@kamkarstore
 vless://5ac2d3b6-33cc-4442-9c0b-ae3909cabaae@31.42.190.76:443?path=%2F&security=none&encryption=none&type=ws#%F0%9F%94%A5%20%40wiki_tajrobe
+trojan://telegram-id-privatevpns@18.156.11.33:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
