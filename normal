@@ -87,3 +87,4 @@ vless://859b7d71-a9fc-4234-8e03-42eb876a170a@151.115.96.243:7242?encryption=none
 vless://686c62d9-17a7-43c9-a40a-f6747df60a9f@172.66.44.211:2096?encryption=none&security=tls&sni=ca.adobe-connect.top&alpn=channel%40.networld_vpn-channel%40.networld_vpn-channel%40.networld_vpn-channel%40.networld_vpn-&fp=chrome&type=ws&host=ca.adobe-connect.top&path=%2F#%20
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMXY1ZzlGZWZkb08=@57.129.140.88:8388#%20
 vless://07cd9dbe-21ac-4871-817d-c772687e4b7c@37.16.74.19:2053?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.ibm.com&fp=chrome&pbk=WckOSneVajAzpH0sZSAFAWPnmwuuEXKZrTICNj5_hHU&sid=4a5b6c7d&type=tcp&headerType=none#%20
+trojan://telegram-id-privatevpns@15.188.253.9:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
