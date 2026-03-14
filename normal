@@ -69,3 +69,4 @@ vless://5a5ca651-b3e4-425a-96f2-794547041670@178.250.243.188:3443?security=reali
 vless://e652bcb5-1974-451f-9845-1406b95e8a8d@77.110.119.11:8443?security=reality&sni=st.okcdn.ru&fp=qq&pbk=WvNaAxI0W__qfUKbtysH4IwF155YENlv3PG6crCmPkA&type=tcp&flow=xtls-rprx-vision&encryption=none#%40v2rayconfigamir%203081
 vless://7affe6ed-3783-4570-b1c7-c8049a94bb9f@109.120.189.188:443?security=reality&sni=eh.vk.com&pbk=zjv3djnsCKDqP7zZFIrJ9ImzgdPE3zFMCYrOvdWqkEE&sid=79&type=tcp&flow=xtls-rprx-vision&encryption=none#%40v2rayconfigamir%209916
 trojan://telegram-id-privatevpns@13.37.137.164:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTppM3l5YXFtQUhyaFNyZnJSZ3o5cHNG@104.192.227.163:443/?outline=1&prefix=%16%03%01%00%C2%A8%01%01#🇺🇸
