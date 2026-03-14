@@ -94,3 +94,4 @@ vless://446879b9-710c-431b-94d0-f6b4c18a528a@144.31.130.242:8081?encryption=none
 vless://446879b9-710c-431b-94d0-f6b4c18a528a@144.31.130.242:8444?encryption=none&type=tcp&security=reality&fp=chrome&sni=max.ru&pbk=Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw&sid=7dbf7d3233971d5c#%40v2rayconfigamir%208738
 vless://446879b9-710c-431b-94d0-f6b4c18a528a@144.31.130.242:8083?encryption=none&type=tcp&security=reality&fp=chrome&sni=max.ru&pbk=Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw&sid=7dbf7d3233971d5c#%40v2rayconfigamir%208150
 vless://aa4ea8e1-86ca-4e5e-9e14-824b139870b4@144.31.130.242:8080?encryption=none&type=tcp&security=reality&fp=chrome&sni=main.tortvpnbot.world&pbk=w28tNIWZCfW4X9aQDLwXECK3pU59zihJ0GIMA13u5X8#%40v2rayconfigamir%206520
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@141.94.220.210:443?security=tls&allowInsecure=0&encryption=none&type=ws&host=sni.111000.v6.navy&path=t.me/v2Line&sni=sni.111000.v6.navy&fp=chrome#proxymelimon
