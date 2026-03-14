@@ -96,3 +96,6 @@ vless://446879b9-710c-431b-94d0-f6b4c18a528a@144.31.130.242:8083?encryption=none
 vless://aa4ea8e1-86ca-4e5e-9e14-824b139870b4@144.31.130.242:8080?encryption=none&type=tcp&security=reality&fp=chrome&sni=main.tortvpnbot.world&pbk=w28tNIWZCfW4X9aQDLwXECK3pU59zihJ0GIMA13u5X8#%40v2rayconfigamir%206520
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@141.94.220.210:443?security=tls&allowInsecure=0&encryption=none&type=ws&host=sni.111000.v6.navy&path=t.me/v2Line&sni=sni.111000.v6.navy&fp=chrome#proxymelimon
 vless://266169d9-665f-4fed-b1a8-da29794ee3cd@berovps.masoodbiranvand-230.workers.dev:2053?security=none&allowInsecure=0&encryption=none&type=tcp&headerType=none#🇨🇦
+vless://ef092640-433a-4f17-99bd-d5d206435606@high-speed-test-01.linkpc.net:61234?security=reality&type=tcp&sni=www.nintendo.com&fp=chrome&flow=xtls-rprx-vision&sid=9c&pbk=Ck5v8Ja1m7hmsS5ahJaKZr3Z6ARwQWnX15jxDJtLwzM#🇯🇵
+vless://47702dbb-6607-4d76-80e9-cd75327be3e7@162.159.38.119:443?allowInsecure=1&encryption=none&host=zrf-623.pages.dev&path=/proxyip=sjc.o00o.ooo:443&security=tls&sni=zrf-623.pages.dev&type=ws#🇰🇷
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@57.129.14.56:8443?path=/?ed=2560&telegram🇨🇳+@wangcai2&security=tls&encryption=none&host=sni.111000.indevs.in&type=ws&sni=sni.111000.indevs.in#🇨🇦
