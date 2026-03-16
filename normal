@@ -50,3 +50,5 @@ vmess://eyJhZGQiOiJuMTc1MzU5ODQ1Mi53cGcyNy54eXoiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZw
 trojan://f389ed926e512e15f382dc3804029474@153.121.45.139:4937?security=tls&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=www.nintendogames.net#2%F0%9F%93%B1%20%40unvisible_drops
 vless://c16da53d-386c-4bc8-a1cb-d98d56b6c2e5@mcix.ircf.space:443?mode=gun&security=tls&encryption=none&insecure=0&type=grpc&allowInsecure=0#8%F0%9F%93%B1%20%40unvisible_drops
 vless://eca9ff44-edfa-4071-cadb-6c4b51e776fc@mtnx.ircf.space:8443?mode=gun&security=tls&encryption=none&insecure=0&type=grpc&allowInsecure=0#9%F0%9F%93%B1%20%40unvisible_drops
+trojan://telegram-id-privatevpns@18.194.236.215:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
+slipnet://MTd8ZG5zdHR8ZDIuc29mdGRpdmFyOTguaXJ8ZDIuc29mdGRpdmFyOTguaXJ8Mi4xODguMjEuMjA6NTM6MHwwfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8MzVmZmFlOTdlMWM3NGEzOTcyMWFmNDJiMmIxNTJlMTkxMDI4NDM0NTk1YWY0MDRjYTAxYjg2YzA1MmYyMmI2ZHx8fDB8fHwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHx8MHw0NDN8fHwwfHwwfDB8fDB8
