@@ -49,3 +49,8 @@ slipnet://MTd8ZG5zdHRfc3NofDhAVGlyZXhOZXQg2YLYt9i5INi02K/bjCDYqNuM2Kd8aS50b25uZW
 slipnet://MTd8ZG5zdHRfc3NofDlAVGlyZXhOZXQg2YLYt9i5INi02K/bjCDYqNuM2Kd8dDMuYWxsaHViYi5pbmZvfDIuMTg4LjIxLjIwOjUzOjB8MHwyMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8YmVjYmFkMzc2ZDM2YzU4ODRkNmQ1ZjYwMWUwMmI3ZWFlNmJiYWEzM2NhNDY2MzQ3YjQxZTEwOWU5MmM2ZWEzY3x8fDF8amF2aWR8c2hhaHwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHx8MHw0NDN8fHwwfHwwfDB8fDB8
 slipnet://MTd8ZG5zdHRfc3NofDEwQFRpcmV4TmV0INmC2LfYuSDYtNiv24wg2KjbjNinfHkuZGV2cGVyc2lhLmNvbXwyLjE4OC4yMS4yMDo1MzowfDB8MjAwfGJicnwxMDgwfDEyNy4wLjAuMXwwfGYzNDA5M2UzNTAzNGU5MTkyNTY1ZGMxMDU5YWIwMTI1YjcxMjZjZjZjOWNkOTU2NTI2YmI2OTM3NWM5OTcyMjR8fHwxfFBlcnNpYVRlYW18QFBlcnNpYVRNQ2hhbm5lbHwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHx8MHw0NDN8fHwwfHwwfDB8fDB8
 trojan://telegram-id-privatevpns@3.72.160.56:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@162.159.12.151:443?path=/&security=tls&encryption=none&insecure=1&host=sni.111000.indevs.in&type=ws&allowInsecure=1&sni=sni.111000.indevs.in#🇸🇬
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@176.96.138.17:2087?encryption=none&security=tls&sni=sni.111000.indevs.in&insecure=1&type=ws&host=sni.111000.indevs.in&path=/?ed=2560&telegram🇨🇳@wangcai2#🇩🇪
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@159.223.24.65:443?path=%2F%3Fed%3D2560&security=tls&encryption=none&insecure=1&host=sni.111000.indevs.in&type=ws&allowInsecure=1&sni=sni.111000.indevs.in#🇩🇪
+ss://YWVzLTI1Ni1nY206UmV4bkJnVTdFVjVBRHhH@141.164.45.187:7001#🇰🇷
+vless://4506cd31-0c15-4b92-b464-35b377b4c2be@104.19.135.124:443?path=/&security=tls&encryption=none&insecure=1&host=yopk.pages.dev&type=ws&allowInsecure=1&sni=yopk.pages.dev#🇨🇦
