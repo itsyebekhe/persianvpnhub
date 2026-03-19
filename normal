@@ -49,3 +49,4 @@ ss://YWVzLTI1Ni1nY206bktlRTJaRldWYUU0RHlqUg%3D%3D@154.38.176.7:80#%40v2rayconfig
 vless://948fac3c-42bf-41a6-a5f9-704d36ff0d8d@104.207.157.238:8443?security=tls&type=ws&path=%2Fdanfeng&host=chinam.sylu.net&alpn=http%2F1.1&sni=chinam.sylu.net&fp=random#%40v2rayconfigamir%208027
 vless://6ca2c654-53b3-4ac1-a2ef-c4b4ee88727a@45.136.128.175:443?security=tls&encryption=none&headerType=none&type=tcp&sni=kzcdn1.suio.me#%40v2rayconfigamir%204349
 vless://948fac3c-42bf-41a6-a5f9-704d36ff0d8d@69.169.111.44:443?&security=tls&fp=random&alpn=http/1.1&sni=snippet.fgfw.ccwu.cc&type=ws&headerType=none&host=snippet.fgfw.ccwu.cc&path=%2Fdanfeng#%40v2rayconfigamir%202995
+trojan://telegram-id-privatevpns@18.195.58.45:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
