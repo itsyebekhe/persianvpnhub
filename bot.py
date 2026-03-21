@@ -61,7 +61,7 @@ TIMEOUT_TCP = 2
 FETCH_DELAY = 6
 
 # Regex & Extensions
-VMESS_REGEX = r'(vmess|vless|trojan|ss|tuic|hysteria2?|dns|slipnet|slipnet-enc|nm-dns):\/\/[^\s\n]+'
+VMESS_REGEX = r'(vmess|vless|trojan|ss|tuic|hysteria2?|dns|dnstt|slipnet|slipnet-enc|nm-dns):\/\/[^\s\n]+'
 MTPROTO_REGEX = r'(?:tg:\/\/|https:\/\/t\.me\/)proxy\?(?=[^"\'\s<>]*server=)(?=[^"\'\s<>]*port=)([^"\'\s<>]+)'
 # Updated to support .hat files as well
 FILE_EXTENSIONS = ('.npvt', '.hat')
@@ -529,7 +529,7 @@ async def main():
                 norm_json = ConfigNormalizer.normalize(config_str, proto)
                 if not norm_json or manager.is_duplicate(norm_json): continue
 
-                if proto in ['dns', 'slipnet']:
+                if proto in ['dns', 'slipnet','dnstt']:
                     ping_ms = "N/A "
                     flag, country = "🏁", "نامشخص"
                     valid_subscription_configs.append(config_str)
