@@ -85,3 +85,5 @@ vless://0509acee-63e3-4364-95cc-21c601f059be@5.188.88.163:443?security=reality&s
 vless://f81b7cb0-70c6-3d1a-9b30-c95b1227f6ed@s725.ccgfw.top:443?security=tls&sni=u710297ua16es725.ccgfw.top&allowInsecure=1&fp=random&type=tcp&flow=xtls-rprx-vision&encryption=none#%40v2rayconfigamir%205309
 trojan://telegram-id-privatevpns@3.124.150.62:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
 vless://d9a83363-40a6-4a21-9dbe-cb2b7d287048@104.26.15.21:443?path=%2F107.174.121.122%3D443&security=tls&encryption=none&insecure=1&host=afrcloud22.mmv.kr&type=ws&allowInsecure=1&sni=afrcloud22.mmv.kr#%E2%9A%A1Telegram%20%3D%20%40prrofile_purple
+trojan://telegram-id-privatevpns@15.237.55.242:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
+slipnet://MTZ8c2F5ZWRuc3wyOW1vcmdofHouMjltb3JnaC5jb218OC44LjguODo1MzowfDB8NTAwMHxiYnJ8MTA4MHwxMjcuMC4wLjF8MHxlZDU5YTA0Y2RiMmU1M2YxNzI3ZDE5ZDU5NDg2OWE1NDA5N2Q0YzVhNWRiOTNjNjVkNzRmYzUyMmFiMzc5MzcxfHx8fHx8fDB8MTI3LjAuMC4xfDB8fHVkcHxwYXNzd29yZHx8fDB8NDQzfHx8fDB8fDB8MHw=
