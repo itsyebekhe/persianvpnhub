@@ -66,3 +66,4 @@ vless://6202b230-417c-4d8e-b624-0f71afa9c75d@51.195.119.195:2053?encryption=none
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo1Yjk3ODA0N2I0N2Y3ZWFi@154.205.154.184:11201?#%40v2rayconfigamir%204424
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0ZjI2ZDhiYjU5M2E1ZmM1@154.205.154.200:11201?#%40v2rayconfigamir%209546
 vless://b6337939-de25-41bd-b067-333a15abbd65@snapp.ir:80?type=ws&encryption=none&security=none&path=%2F&host=ar.liarashop.ir#@electvpn0
+trojan://telegram-id-privatevpns@51.45.15.225:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
