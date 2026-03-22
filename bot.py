@@ -556,7 +556,10 @@ async def main():
 
                 clean_proto = proto.upper().replace('VMESS', 'VMess').replace('VLESS', 'VLESS')
                 
-                tags = f"#{clean_proto} #VPN"
+                # Remove -enc suffix from protocol name for hashtags
+                hashtag_proto = clean_proto.replace('-ENC', '')
+                
+                tags = f"#{hashtag_proto} #VPN"
                 if proto == 'mtproto': tags = "#Proxy #MTProto"
                 elif proto == 'ss': tags = "#Shadowsocks #VPN"
 
