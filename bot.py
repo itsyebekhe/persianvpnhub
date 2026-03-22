@@ -568,10 +568,6 @@ async def main():
                     f"&chl={encoded_config}"
                 )
 
-                qr_line = ""
-                if proto != "mtproto":
-                    qr_line = f"\n🔍 [QRcode]({qr_link})"
-
                 caption = (
                     f"📂 کانفیگ {clean_proto}\n"
                     f"📍 لوکیشن: {country} {flag}\n"
@@ -579,12 +575,13 @@ async def main():
                     f"{tags}\n\n"
                     f"🕒 انتشار: {shamsi_date}\n"
                     f"💡 منبع: @{item['source']}\n"
-                    f"{qr_line}\n"
                 )
                 
                 buttons = []
                 if proto == 'mtproto': 
                     buttons.append([Button.url("⚡️ اتصال (Connect)", config_str)])
+                else:
+                    buttons.append([Button.url("⛶ اسکن کد QR کانفیگ", qr_link)])
                 buttons.append([Button.url("🔍 دریافت کانفیگ‌های بیشتر", CHANNEL_LINK)])
 
                 await bot_client.send_message(DESTINATION_ID, f"{caption}\n```{config_str}```\n", buttons=buttons, link_preview=False)
