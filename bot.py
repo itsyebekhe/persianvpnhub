@@ -584,20 +584,22 @@ async def main():
                     f"&chl={encoded_config}"
                 )
 
-                # Format source display: use entity name if available, otherwise fallback to config key
-                source_display = item.get('entity_name')
-                if not source_display:
-                    # Fallback to username if available
-                    entity_username = item.get('entity_username')
-                    if entity_username:
-                        source_display = f"@{entity_username}"
+                # Format source display: prioritize username, then name for channels without username
+                source_display = None
+                entity_username = item.get('entity_username')
+                entity_name = item.get('entity_name')
+
+                if entity_username:
+                    source_display = f"@{entity_username}"
+                elif entity_name:
+                    source_display = entity_name
+                else:
+                    # Final fallback to config key
+                    source_key = item['source']
+                    if not source_key.lstrip('-').isdigit():
+                        source_display = f"@{source_key}"
                     else:
-                        # Final fallback to config key
-                        source_key = item['source']
-                        if not source_key.lstrip('-').isdigit():
-                            source_display = f"@{source_key}"
-                        else:
-                            source_display = source_key
+                        source_display = source_key
                 
                 caption = (
                     f"📂 کانفیگ {clean_proto}\n"
@@ -634,20 +636,22 @@ async def main():
                 # Determine file type for caption
                 filename = msg.file.name.lower() if msg.file.name else ""
                 
-                # Format source display: use entity name if available, otherwise fallback to config key
-                source_display = item.get('entity_name')
-                if not source_display:
-                    # Fallback to username if available
-                    entity_username = item.get('entity_username')
-                    if entity_username:
-                        source_display = f"@{entity_username}"
+                # Format source display: prioritize username, then name for channels without username
+                source_display = None
+                entity_username = item.get('entity_username')
+                entity_name = item.get('entity_name')
+
+                if entity_username:
+                    source_display = f"@{entity_username}"
+                elif entity_name:
+                    source_display = entity_name
+                else:
+                    # Final fallback to config key
+                    source_key = item['source']
+                    if not source_key.lstrip('-').isdigit():
+                        source_display = f"@{source_key}"
                     else:
-                        # Final fallback to config key
-                        source_key = item['source']
-                        if not source_key.lstrip('-').isdigit():
-                            source_display = f"@{source_key}"
-                        else:
-                            source_display = source_key
+                        source_display = source_key
                 
                 if filename.endswith('.hat'):
                     file_name_display = "HA Tunnel Plus"
