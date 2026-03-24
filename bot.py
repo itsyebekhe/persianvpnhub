@@ -457,30 +457,39 @@ async def main():
     
     cache_updated = False
 
-    for source_username in sources.keys():
+    for source_key in sources.keys():
         try:
-            logger.info(f"Scraping: {source_username}")
+            logger.info(f"Scraping: {source_key}")
             
-            # Determine target: Use Integer ID if cached to bypass ResolveUsernameRequest limit
-            target = id_cache.get(source_username, source_username)
-            if isinstance(target, str) and target.lstrip('-').isdigit():
-                target = int(target)
+            # Check if the key is a numeric ID (handle both positive and negative IDs)
+            is_numeric_id = source_key.lstrip('-').isdigit()
+            
+            # Determine target: Use cached ID if available, otherwise use the key directly
+            target = None
+            if is_numeric_id:
+                # If it's already numeric, use it directly as int
+                target = int(source_key)
+            else:
+                # If it's a username, check cache first
+                target = id_cache.get(source_key, source_key)
+                if isinstance(target, str) and target.lstrip('-').isdigit():
+                    target = int(target)
 
             try:
                 entity = await user_client.get_entity(target)
                 
                 # If we successfully got entity using username, Save ID to cache
-                if source_username not in id_cache:
-                    id_cache[source_username] = entity.id
+                if not is_numeric_id and source_key not in id_cache:
+                    id_cache[source_key] = entity.id
                     cache_updated = True
-                    logger.info(f"Cached ID for {source_username}: {entity.id}")
+                    logger.info(f"Cached ID for {source_key}: {entity.id}")
             
             except Exception as e:
                 if "wait" in str(e).lower() or "ResolveUsernameRequest" in str(e):
-                    logger.warning(f"Skipping {source_username} due to FloodWait/Limit.")
+                    logger.warning(f"Skipping {source_key} due to FloodWait/Limit.")
                     continue
                 else:
-                    logger.warning(f"Could not get entity for {source_username}: {e}")
+                    logger.warning(f"Could not get entity for {source_key}: {e}")
                     continue
 
             async for message in user_client.iter_messages(entity, limit=CHECK_LIMIT_PER_CHANNEL):
@@ -492,18 +501,18 @@ async def main():
                 
                 # Check for both .npvt and .hat files
                 if message.file and message.file.name and message.file.name.lower().endswith(FILE_EXTENSIONS):
-                    collected_items.append({'ts': ts, 'type': 'file', 'msg_obj': message, 'source': source_username})
+                    collected_items.append({'ts': ts, 'type': 'file', 'msg_obj': message, 'source': source_key})
                     continue
 
                 if message.text:
                     for match in re.finditer(VMESS_REGEX, message.text, re.IGNORECASE):
-                        collected_items.append({'ts': ts, 'type': 'text', 'proto': match.group(1), 'raw': match.group(0), 'source': source_username})
+                        collected_items.append({'ts': ts, 'type': 'text', 'proto': match.group(1), 'raw': match.group(0), 'source': source_key})
                     for match in re.finditer(MTPROTO_REGEX, message.text, re.IGNORECASE):
-                        collected_items.append({'ts': ts, 'type': 'text', 'proto': 'mtproto', 'raw': match.group(0), 'source': source_username})
+                        collected_items.append({'ts': ts, 'type': 'text', 'proto': 'mtproto', 'raw': match.group(0), 'source': source_key})
 
             await asyncio.sleep(FETCH_DELAY)
         except Exception as e:
-            logger.warning(f"Error scraping {source_username}: {e}")
+            logger.warning(f"Error scraping {source_key}: {e}")
             await asyncio.sleep(FETCH_DELAY)
     
     # Save Cache to file if updated
@@ -571,13 +580,18 @@ async def main():
                     f"&chl={encoded_config}"
                 )
 
+                # Format source display: use @ for usernames, just number for numeric IDs
+                source_display = item['source']
+                if not source_display.lstrip('-').isdigit():
+                    source_display = f"@{source_display}"
+                
                 caption = (
                     f"📂 کانفیگ {clean_proto}\n"
                     f"📍 لوکیشن: {country} {flag}\n"
                     f"📶 پینگ: {ping_ms}ms\n\n"
                     f"{tags}\n\n"
                     f"🕒 انتشار: {shamsi_date}\n"
-                    f"💡 منبع: @{item['source']}\n"
+                    f"💡 منبع: {source_display}\n"
                 )
                 
                 buttons = []
@@ -606,6 +620,11 @@ async def main():
                 # Determine file type for caption
                 filename = msg.file.name.lower() if msg.file.name else ""
                 
+                # Format source display: use @ for usernames, just number for numeric IDs
+                source_display = item['source']
+                if not source_display.lstrip('-').isdigit():
+                    source_display = f"@{source_display}"
+                
                 if filename.endswith('.hat'):
                     file_name_display = "HA Tunnel Plus"
                     file_hashtags = "#HATunnel #Config #File"
@@ -621,7 +640,7 @@ async def main():
                     f"📍 لوکیشن: نامشخص\n\n"
                     f"{file_hashtags}\n\n"
                     f"🕒 انتشار: {shamsi_date}\n"
-                    f"💡 منبع: @{item['source']}\n\n"
+                    f"💡 منبع: {source_display}\n\n"
                 )
                 
                 await bot_client.send_file(DESTINATION_ID, path, caption=caption, buttons=[[Button.url("🔍 دریافت کانفیگ‌های بیشتر", CHANNEL_LINK)]])
