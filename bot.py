@@ -612,7 +612,7 @@ async def main():
                 if proto == 'mtproto': 
                     buttons.append([Button.url("⚡️ اتصال (Connect)", config_str)])
                 else:
-                    buttons.append([Button.url("⛶ اسکن کد QR کانفیگ", qr_link)])
+                    buttons.append([Button.url("⛶ کد QR کانفیگ", qr_link)])
                 buttons.append([Button.url("🔍 دریافت کانفیگ‌های بیشتر", CHANNEL_LINK)])
 
                 await bot_client.send_message(DESTINATION_ID, f"{caption}\n```{config_str}```\n", buttons=buttons, link_preview=False)
