@@ -478,6 +478,10 @@ async def main():
             try:
                 entity = await user_client.get_entity(target)
                 
+                # Store entity info for source display
+                entity_name = entity.title if hasattr(entity, 'title') else getattr(entity, 'first_name', None)
+                entity_username = getattr(entity, 'username', None)
+                
                 # If we successfully got entity using username, Save ID to cache
                 if not is_numeric_id and source_key not in id_cache:
                     id_cache[source_key] = entity.id
@@ -501,14 +505,14 @@ async def main():
                 
                 # Check for both .npvt and .hat files
                 if message.file and message.file.name and message.file.name.lower().endswith(FILE_EXTENSIONS):
-                    collected_items.append({'ts': ts, 'type': 'file', 'msg_obj': message, 'source': source_key})
+                    collected_items.append({'ts': ts, 'type': 'file', 'msg_obj': message, 'source': source_key, 'entity_name': entity_name, 'entity_username': entity_username})
                     continue
 
                 if message.text:
                     for match in re.finditer(VMESS_REGEX, message.text, re.IGNORECASE):
-                        collected_items.append({'ts': ts, 'type': 'text', 'proto': match.group(1), 'raw': match.group(0), 'source': source_key})
+                        collected_items.append({'ts': ts, 'type': 'text', 'proto': match.group(1), 'raw': match.group(0), 'source': source_key, 'entity_name': entity_name, 'entity_username': entity_username})
                     for match in re.finditer(MTPROTO_REGEX, message.text, re.IGNORECASE):
-                        collected_items.append({'ts': ts, 'type': 'text', 'proto': 'mtproto', 'raw': match.group(0), 'source': source_key})
+                        collected_items.append({'ts': ts, 'type': 'text', 'proto': 'mtproto', 'raw': match.group(0), 'source': source_key, 'entity_name': entity_name, 'entity_username': entity_username})
 
             await asyncio.sleep(FETCH_DELAY)
         except Exception as e:
@@ -580,10 +584,20 @@ async def main():
                     f"&chl={encoded_config}"
                 )
 
-                # Format source display: use @ for usernames, just number for numeric IDs
-                source_display = item['source']
-                if not source_display.lstrip('-').isdigit():
-                    source_display = f"@{source_display}"
+                # Format source display: use entity name if available, otherwise fallback to config key
+                source_display = item.get('entity_name')
+                if not source_display:
+                    # Fallback to username if available
+                    entity_username = item.get('entity_username')
+                    if entity_username:
+                        source_display = f"@{entity_username}"
+                    else:
+                        # Final fallback to config key
+                        source_key = item['source']
+                        if not source_key.lstrip('-').isdigit():
+                            source_display = f"@{source_key}"
+                        else:
+                            source_display = source_key
                 
                 caption = (
                     f"📂 کانفیگ {clean_proto}\n"
@@ -620,10 +634,20 @@ async def main():
                 # Determine file type for caption
                 filename = msg.file.name.lower() if msg.file.name else ""
                 
-                # Format source display: use @ for usernames, just number for numeric IDs
-                source_display = item['source']
-                if not source_display.lstrip('-').isdigit():
-                    source_display = f"@{source_display}"
+                # Format source display: use entity name if available, otherwise fallback to config key
+                source_display = item.get('entity_name')
+                if not source_display:
+                    # Fallback to username if available
+                    entity_username = item.get('entity_username')
+                    if entity_username:
+                        source_display = f"@{entity_username}"
+                    else:
+                        # Final fallback to config key
+                        source_key = item['source']
+                        if not source_key.lstrip('-').isdigit():
+                            source_display = f"@{source_key}"
+                        else:
+                            source_display = source_key
                 
                 if filename.endswith('.hat'):
                     file_name_display = "HA Tunnel Plus"
