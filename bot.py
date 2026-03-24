@@ -584,22 +584,25 @@ async def main():
                     f"&chl={encoded_config}"
                 )
 
-                # Format source display: prioritize username, then name for channels without username
+                # Format source display: simple logic - username with @, title for numeric IDs
                 source_display = None
+                source_key = item['source']
                 entity_username = item.get('entity_username')
-                entity_name = item.get('entity_name')
-
+                
                 if entity_username:
                     source_display = f"@{entity_username}"
-                elif entity_name:
-                    source_display = entity_name
                 else:
-                    # Final fallback to config key
-                    source_key = item['source']
-                    if not source_key.lstrip('-').isdigit():
-                        source_display = f"@{source_key}"
+                    # For numeric IDs or channels without username, use config title
+                    config_data = sources.get(source_key, {})
+                    config_title = config_data.get('title')
+                    if config_title:
+                        source_display = config_title
                     else:
-                        source_display = source_key
+                        # Fallback to config key
+                        if not source_key.lstrip('-').isdigit():
+                            source_display = f"@{source_key}"
+                        else:
+                            source_display = source_key
                 
                 caption = (
                     f"📂 کانفیگ {clean_proto}\n"
@@ -636,22 +639,25 @@ async def main():
                 # Determine file type for caption
                 filename = msg.file.name.lower() if msg.file.name else ""
                 
-                # Format source display: prioritize username, then name for channels without username
+                # Format source display: simple logic - username with @, title for numeric IDs
                 source_display = None
+                source_key = item['source']
                 entity_username = item.get('entity_username')
-                entity_name = item.get('entity_name')
-
+                
                 if entity_username:
                     source_display = f"@{entity_username}"
-                elif entity_name:
-                    source_display = entity_name
                 else:
-                    # Final fallback to config key
-                    source_key = item['source']
-                    if not source_key.lstrip('-').isdigit():
-                        source_display = f"@{source_key}"
+                    # For numeric IDs or channels without username, use config title
+                    config_data = sources.get(source_key, {})
+                    config_title = config_data.get('title')
+                    if config_title:
+                        source_display = config_title
                     else:
-                        source_display = source_key
+                        # Fallback to config key
+                        if not source_key.lstrip('-').isdigit():
+                            source_display = f"@{source_key}"
+                        else:
+                            source_display = source_key
                 
                 if filename.endswith('.hat'):
                     file_name_display = "HA Tunnel Plus"
