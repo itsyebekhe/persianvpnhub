@@ -62,7 +62,7 @@ FETCH_DELAY = 6
 
 # Regex & Extensions
 VMESS_REGEX = r'(vmess|vless|trojan|ss|tuic|hysteria2?|dns|dnstt|slipnet|slipnet-enc|nm-dns):\/\/[^\s\n]+'
-MTPROTO_REGEX = r'(?:tg:\/\/|https:\/\/t\.me\/)proxy\?(?=[^"\'\s<>]*server=)(?=[^"\'\s<>]*port=)([^"\'\s<>]+)'
+MTPROTO_REGEX = r'(?:tg:\/\/|https:\/\/t\.me\/)proxy\?(?=[^"\'\s<>\]\)]*server=)(?=[^"\'\s<>\]\)]*port=)([^"\'\s<>\]\)]+)'
 # Updated to support .hat files as well
 FILE_EXTENSIONS = ('.npvt', '.hat')
 
