@@ -41,3 +41,4 @@ trojan://humanity@104.21.40.34:443?security=tls&sni=www.gossipglove.com&type=ws&
 vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIiIsDQogICJhZGQiOiAiMTcyLjIzMy4yMjkuOTEiLA0KICAicG9ydCI6ICIxNDEwMiIsDQogICJpZCI6ICIyN2JhODdmYy01ODNmLTQ3NjMtOTA2MC04M2NmMGI5MjY0ZGIiLA0KICAiYWlkIjogIjAiLA0KICAic2N5IjogImF1dG8iLA0KICAibmV0IjogInRjcCIsDQogICJ0eXBlIjogIm5vbmUiLA0KICAiaG9zdCI6ICIiLA0KICAicGF0aCI6ICIiLA0KICAidGxzIjogIiIsDQogICJzbmkiOiAiIiwNCiAgImFscG4iOiAiIiwNCiAgImZwIjogIiINCn0=
 vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@45.82.251.116:8880?encryption=none&security=none&type=grpc#%20
 vless://dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51@162.19.228.119:80?encryption=none&security=none&type=ws&path=%2Fhttp#%20
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo1aEpSc3pIRlEyUTRGM1YyUGhiNnpv@216.105.168.18:443/?outline=1&prefix=%16%03%01%00%C2%A8%01%01#🇺🇸
