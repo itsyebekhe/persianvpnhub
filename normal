@@ -42,3 +42,5 @@ vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIiIsDQogICJhZGQiOiAiMTcyLjIzMy4yMjkuOTEi
 vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@45.82.251.116:8880?encryption=none&security=none&type=grpc#%20
 vless://dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51@162.19.228.119:80?encryption=none&security=none&type=ws&path=%2Fhttp#%20
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo1aEpSc3pIRlEyUTRGM1YyUGhiNnpv@216.105.168.18:443/?outline=1&prefix=%16%03%01%00%C2%A8%01%01#🇺🇸
+vless://4ee87cf0-9fe0-4a67-aa52-3b7ef6e17714@185.143.233.200:443?path=%2F%3Fed%3D443&security=tls&encryption=none&insecure=0&host=alef.ir.oadeflantrogm.airasiadl.com&fp=randomized&type=ws&allowInsecure=0&sni=alef.ir.oadeflantrogm.airasiadl.com#50GB%20%7C%2002-v4-%20%40unvisible_drops
+trojan://telegram-id-privatevpns@18.195.15.58:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
