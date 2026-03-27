@@ -57,3 +57,5 @@ slipnet://MTZ8c2F5ZWRuc3xuLmlyYW5tbi5iZXN0fG4uaXJhbm1uLmJlc3R8OC44LjguODo1MzowfD
 vless://13050079-6b9e-4c4e-a3b7-eedc945003ea@185.143.233.200:443?path=%2F%3Fed%3D443&security=tls&encryption=none&host=alef.ir.oadeflantrogm.abrirmahan.com&fp=randomized&type=ws&sni=alef.ir.oadeflantrogm.abrirmahan.com#Telegram%3A%20%20%40CroSs_Guildd
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.218:8080#@mtproto_proserver
 vless://1d3774f9-76d2-45bb-8a8a-2ad79aee03d6@arvancloud.ir:443?path=%2F&security=tls&alpn=h3%2Ch2%2Chttp%2F1.1&encryption=none&insecure=0&host=ai.faloweram.ir&fp=chrome&type=ws&allowInsecure=0&sni=ai.faloweram.ir#%40v2_mod_shop%20%28%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%29
+trojan://telegram-id-privatevpns@63.183.59.137:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
+vless://05519058-d2ac-4f28-9e4a-2b2a1386749e@13.39.70.196:22224?path=%2Ftelegram-channel-vlessconfig&security=tls&encryption=none&type=ws&sni=trojan.burgerip.co.uk#Telegram%3A%20%20%40Zero_Tunnel
