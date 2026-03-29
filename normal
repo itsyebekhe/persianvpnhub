@@ -49,3 +49,7 @@ dns://2.188.21.190
 dns://2.188.21.100
 dns://2.188.21.120
 dns://2.188.21.240
+vless://db3cf6e8-515a-47e0-8572-eb47bb611fb2@185.143.233.120:443?encryption=none&security=tls=-@ghalagyann---@ghalagyann---@ghalagyann---@ghalagyann---@ghalagyann---@ghalagyann&sni=alef.ir.oadeflantrogm.realirshop.com&fp=randomized&type=ws&host=alef.ir.oadeflantrogm.realirshop.com&path=%2F%3Fed%3D443#%D9%85%D8%AE%D8%B5%D9%88%D8%B5%20%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%20%D8%A8%D8%A7%20%D8%B3%D8%A7%DB%8C%D9%81%D9%88%D9%86%20%F0%9F%8D%93%20%40ghalagyann
+vless://42b8b0f3-cac0-49c4-8b84-4f0efbf902f7@185.143.233.232:443?encryption=none&security=tls&sni=pishparda.ir&fp=chrome&allowInsecure=1&type=ws=-@ghalagyann---@ghalagyann---@ghalagyann---@ghalagyann---@ghalagyann---@ghalagyann&host=pishparda.ir&path=%2Fvoip#%D9%85%D8%AE%D8%B5%D9%88%D8%B5%20%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%20%D8%A8%D8%A7%20%D8%B3%D8%A7%DB%8C%D9%81%D9%88%D9%86%20%F0%9F%8D%93%20%40ghalagyann
+vless://a1d9eaf5-9e03-4c67-af0b-e238b865b373@185.143.234.122:80?encryption=none&security=none&type=ws=-@ghalagyann---@ghalagyann---@ghalagyann---@ghalagyann---@ghalagyann---@ghalagyann&host=amm4.avenflow.ir&path=%2F#%D9%85%D8%AE%D8%B5%D9%88%D8%B5%20%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%20%D8%A8%D8%A7%20%D8%B3%D8%A7%DB%8C%D9%81%D9%88%D9%86%20%F0%9F%8D%93%20%40ghalagyann
+trojan://telegram-id-privatevpns@15.236.184.73:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
