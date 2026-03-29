@@ -63,3 +63,4 @@ vless://4d0e0ed6-188a-43cd-a1ee-57c987a02e4b@snapp.ir:443?path=%2F&security=tls&
 vless://d29cf368-c2d3-4d72-bbc0-cb4588039226@185.143.234.122:80?path=%2F&security=none&encryption=none&host=dl.koremusic.ir&type=ws#Telegram%3A%20%20%40Zero_Tunnel
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpOZU9SaWlBMWQzdkhkWHNmUFYzN0xy@104.192.227.163:443/?outline=1&prefix=%16%03%01%00%C2%A8%01%01#🇺🇸
 trojan://telegram-id-privatevpns@3.78.2.6:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
+trojan://telegram-id-privatevpns@51.44.121.226:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
