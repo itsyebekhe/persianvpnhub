@@ -54,3 +54,4 @@ vless://dbe9940a-9d2f-4092-90c8-e411225d185d@snapp.ir:80?type=ws&encryption=none
 trojan://telegram-id-privatevpns@15.188.43.202:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
 vless://51a3cf5f-b4c2-4a24-a2d4-a39a9780715d@snapp.ir:80?path=%2F&security=none&encryption=none&host=bote.wpemdad.com&type=ws#%F0%9F%8E%80
 vless://8129299b-42a7-43a5-b8c4-2c15efadf198@snapp.ir:80/?type=ws&encryption=none&host=ar.liarashop.ir&path=%2F#xsfilternet
+trojan://telegram-id-privatevpns@3.77.5.184:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
