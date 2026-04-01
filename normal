@@ -49,3 +49,4 @@ trojan://telegram-id-privatevpns@63.181.155.24:22222?security=tls&alpn=http/1.1&
 vless://23ef3949-52fc-436f-874e-cfea2ee1e789@185.143.232.200:80?path=%2F%3Fed%3D2048&security=none&encryption=none&host=star4.galexystore.ir&type=ws#%40v2_mod_shop+%28%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%29
 vless://6474f608-e5aa-4f81-8a2b-600d10c257da@varzesh3.com:80?path=%2Fir&security=none&encryption=none&host=m3.y101.ir&fp=chrome&type=ws#Telegram%3A%20%20%40Zero_Tunnel
 vless://6474f608-e5aa-4f81-8a2b-600d10c257da@tamin.ir:80?path=%2Fir&security=none&encryption=none&host=m2.y101.ir&fp=chrome&type=ws#Telegram%3A%20%20%40Zero_Tunnel
+trojan://telegram-id-privatevpns@13.39.95.237:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
