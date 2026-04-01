@@ -50,3 +50,4 @@ vless://23ef3949-52fc-436f-874e-cfea2ee1e789@185.143.232.200:80?path=%2F%3Fed%3D
 vless://6474f608-e5aa-4f81-8a2b-600d10c257da@varzesh3.com:80?path=%2Fir&security=none&encryption=none&host=m3.y101.ir&fp=chrome&type=ws#Telegram%3A%20%20%40Zero_Tunnel
 vless://6474f608-e5aa-4f81-8a2b-600d10c257da@tamin.ir:80?path=%2Fir&security=none&encryption=none&host=m2.y101.ir&fp=chrome&type=ws#Telegram%3A%20%20%40Zero_Tunnel
 trojan://telegram-id-privatevpns@13.39.95.237:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
+vless://bc7f26d5-5956-4447-a5cf-7938aa77617b@kiev.romanmonzo.com:443?encryption=none&type=ws&path=/roman&security=tls&fp=safari&sni=apple.lmt.lv&alpn=h2,http/1.1#@HMottahar%F0%9F%A7%8C
