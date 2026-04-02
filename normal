@@ -25,3 +25,4 @@ vless://6474f608-e5aa-4f81-8a2b-600d10c257da@tamin.ir:80?path=%2Fir&security=non
 trojan://telegram-id-privatevpns@13.39.95.237:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 vless://bc7f26d5-5956-4447-a5cf-7938aa77617b@kiev.romanmonzo.com:443?encryption=none&type=ws&path=/roman&security=tls&fp=safari&sni=apple.lmt.lv&alpn=h2,http/1.1#@HMottahar%F0%9F%A7%8C
 vless://23d6295f-0337-438f-be52-388bbe321ae4@a.samrayan.ir:443?security=tls&encryption=none&insecure=0&headerType=none&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=a.samrayan.ir#%40vpnnetpro
+vless://c45ccb5a-d8a4-4f42-820e-d293702b3e86@172.66.43.66:8880?path=%2Fmahdi%401404-marz46wx-%40simakade345z%3Fed%3D2560&security=none&encryption=none&host=www.esgtoday.com.www.sciencedirect.com.speedtest.net.ftp.linux.dash.cloudflare.com--dv385yaortvtnqi4htawuoijrgq2356yr.fastbrokencompony.com.&type=httpupgrade#`@mtproto_proserver
