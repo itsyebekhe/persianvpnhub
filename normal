@@ -48,3 +48,8 @@ vless://ee740b72-87f6-45e4-a680-85d8d1cc3df1@194.36.39.147:8443?flow=xtls-rprx-v
 vless://ee740b72-87f6-45e4-a680-85d8d1cc3df1@194.36.39.164:8443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=random&sni=rbc.ru&pbk=7HejPU15kdTl9QG_8AygEM3w0ythsbhG6q_SwUumyR0&sid=f1071c148a5aefc4#%40v2rayconfigamir%209721
 vless://00c2d153-ab37-4725-a465-7e1960aecef9@185.143.234.235:80?security=none&encryption=none&host=vix.idcenter.top&type=ws#%E2%9A%A1Telegram%20%3D%20%40prrofile_purple
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@148.135.195.95:8388#%40vpnnetpro
+trojan://telegram-id-privatevpns@15.188.149.87:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
+slipnet://MTh8c3N8U2ltb3JnaFNoYWRvd3NvY2tzfHNzLmJhbWFrLnh5enw4LjguOC44OjUzOjB8MHwyMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8fHx8MHx8fDIyfDB8MTI3LjAuMC4xfDB8fHVkcHxwYXNzd29yZHx8fHwwfDQ0M3x8fDB8fDB8MHx8MHx8MHwwfDEwODA=
+slipnet://MTh8c3N8U2ltb3JnaFNsaXBzdHJlYW18cy5iYW1hay54eXp8OC44LjguODo1MzowfDB8MjAwfGJicnwxMDgwfDEyNy4wLjAuMXwwfHx8fDB8fHwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHx8MHw0NDN8fHwwfHwwfDB8fDB8fDB8MHwxMDgw
+slipnet://MTh8ZG5zdHR8U2ltb3JnaERuc3R0fGQuYmFtYWsueHl6fDguOC44Ljg6NTM6MHwwfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8ZmNmNzUwM2ZkMzhjZGZlZWNlOGM4YTVkYzg4NWE1NDY0OTQ1YWI4ZTc5YWJlZjUwMjQ2MzU3MmNjMWM3Njg2M3x8fDB8fHwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHx8MHw0NDN8fHwwfHwwfDB8fDB8fDB8MHwxMDgw
+vless://7ddefdd5-bf9d-4818-a9b6-c2e4a0b0c95a@ww.gooldiran.ir:8880?encryption=none&type=ws&path=/#@HMottahar%2050G
