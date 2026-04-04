@@ -57,3 +57,4 @@ vless://02e59f34-2912-42a7-acb3-fe657e25d2a1@newsrv.isfahangaming.com:8080?type=
 vless://b7c3934e-325f-49ee-b6c3-d3c2ee3e7ca6@mim.md-teach.com:8443?security=tls&allowInsecure=0&encryption=none&type=ws&host=aminOff.moradi.online&path=/&sni=aminOff.moradi.online&fp=chrome&alpn=h2,http/1.1#%40azadnet04
 vless://cfc1d40c-6ef8-4b0a-98d6-8bc420d508fc@ww.iwantmoney.ir:8880?path=%2F&security=none&encryption=none&type=ws#%40azadnet04
 vless://b7c3934e-325f-49ee-b6c3-d3c2ee3e7ca6@mim.md-teach.com:8443?path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=aminOff.moradi.online&fp=chrome&type=ws&allowInsecure=0&sni=aminOff.moradi.online#%40azadnet04
+trojan://telegram-id-privatevpns@13.36.250.59:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
