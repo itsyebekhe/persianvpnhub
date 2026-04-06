@@ -56,3 +56,6 @@ trojan://telegram-id-privatevpns@15.188.46.103:22222?security=tls&alpn=http/1.1&
 vless://d6ec2f0d-2406-495e-bc8f-f6b9cee59ffd@185.143.234.235:80?security=none&encryption=none&host=vix.idcenter.top&type=ws#%E2%9A%A1Telegram%20%3D%20%40prrofile_purple
 trojan://telegram-id-privatevpns@15.224.29.219:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@18.157.121.169:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
+trojan://telegram-id-privatevpns@13.38.177.145:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
+vless://0c74a134-003a-4ced-b4e4-87630e0224db@de23.fastplus7.site:80?path=%2F&security=none&encryption=none&host=de23.fastplus11.ir&type=ws#%F0%9F%94%B0%20%40VPN%20%28%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%29
+vless://e4c9557e-0435-4669-8192-dda40aa188ee@v2ir03186.temp.veraspeed.ir:80?path=%2Ffilimo-video%2F177430809054030600%2F1774365690%2Fcb857b0770767a2b38b3ebc9d4c44d7fc5630fdd%2F196328x264new1-1080p.mp4%2Fs-20-v1-a1.ts&security=none&encryption=none&host=byebye.22.avenflow.ir&type=ws#%F0%9F%94%B0%20%40VPN%20%28%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%29
