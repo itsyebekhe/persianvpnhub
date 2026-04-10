@@ -69,3 +69,5 @@ trojan://humanity@104.18.32.47:443?security=tls&sni=www.multiplydose.com&type=ws
 vless://eac32a6e-414d-4d09-bf33-edab977fedd8@vip-nightgemshop.sap-tanbol.ir:80?path=%2F&security=none&encryption=none&host=vip-nightgemshop.sap-tanbol.ir&type=ws#%40v2_mod_shop%20%28%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%29
 vless://0457b106-5d4c-479f-9f88-c2910fd8d430@185.143.234.1:80?path=%2F&security=none&encryption=none&host=ir-st.ge9.ir&type=ws#proxymelimon
 vless://7635ce2e-166b-4984-a7a5-b6843de1f843@185.143.234.200:443?path=%2F%3Fed%3D443&security=tls&encryption=none&insecure=0&host=alef.ir.oadeflantrogm.airasiadl.com&fp=randomized&type=ws&allowInsecure=0&sni=alef.ir.oadeflantrogm.airasiadl.com#10GB%20%7C%2004-v9-%20%40unvisible_drops
+vless://57535069-9fc5-49f1-a656-f8ca8421e765@snapp.ir:80?path=%2F&security=none&encryption=none&host=dsfr.parsimas.ir&type=ws#@electvpn0
+vless://f1d697f4-355d-4c3b-a625-06859a6f4d22@haji.nahidapp.com:443?path=%2Fhaji%2F&security=tls&encryption=none&host=haji.nahidapp.com&allowinsecure=0&type=ws&sni=haji.nahidapp.com#@InfoTech_VK
