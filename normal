@@ -41,3 +41,4 @@ vless://ce069292-c8bf-40dd-a6b1-87818a1e64e9@144.172.88.117:443?type=ws&encrypti
 vless://2491c11c-b958-4553-96f7-1aaa7cad8320@153.80.249.101:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=T9-LNstrlOx3Bme7jREFDfDcvgYt3YGUpkTH4Uhwlws&security=reality&sid=4da040bb05be9f47&sni=dl.google.com&type=tcp#%40v2rayconfigamir%202758
 vless://85df0ad4-8818-4aa5-9799-4bb7232de9e0@ip1-fast.tyryqyserver.ir:80?path=%2F%3Fed%3D2052&security=none&encryption=none&host=tamamde1.global.ssl.fastly.net&type=ws#%40v2rayconfigamir%201006
 vless://85df0ad4-8818-4aa5-9799-4bb7232de9e0@ip3-fast.tyryqyserver.ir:80?path=%2F%3Fed%3D2052&security=none&encryption=none&host=tamamde1.global.ssl.fastly.net&type=ws#%40v2rayconfigamir%209796
+trojan://telegram-id-privatevpns@3.121.58.242:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
