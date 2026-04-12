@@ -73,3 +73,5 @@ vless://18d0bbd9-b1d5-4e71-bb2c-14eb3fe517f9@back.avenprime.ir:80?path=%2F%3Fed%
 trojan://humanity@188.114.99.0:443?path=%2Fassignment&security=tls&insecure=0&host=www.gossipglove.com&type=ws&allowInsecure=0&sni=www.gossipglove.com#v2ray%20psiphon%2031
 trojan://humanity@172.64.152.23:443?path=%2Fassignment&security=tls&insecure=1&host=www.calmlunch.com&type=ws&allowInsecure=1&sni=www.calmlunch.com#v2ray%20psiphon%2017
 trojan://humanity@104.18.12.149:443?path=%2Fassignment&security=tls&host=www.multiplydose.com&type=ws&sni=www.multiplydose.com#🔥@bubuv2raybot
+trojan://telegram-id-privatevpns@51.45.0.19:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
+vless://2cd53a7b-050d-4120-941d-c1c4bfa9406d@104.18.12.149:8443?type=ws&encryption=none&path=%2FTelegram%40SoonTeam%2CTelegram%40SoonTeam%2CTelegram%40SoonTeam%2CTelegram%40SoonTeam%2CTelegram%40SoonTeam&host=soonteam.imsoon.io&security=tls&fp=chrome&alpn=h2%2Chttp%2F1.1&sni=soonteam.imsoon.io#@irmeliy
