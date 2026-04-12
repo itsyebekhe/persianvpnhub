@@ -75,3 +75,8 @@ trojan://humanity@172.64.152.23:443?path=%2Fassignment&security=tls&insecure=1&h
 trojan://humanity@104.18.12.149:443?path=%2Fassignment&security=tls&host=www.multiplydose.com&type=ws&sni=www.multiplydose.com#🔥@bubuv2raybot
 trojan://telegram-id-privatevpns@51.45.0.19:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 vless://2cd53a7b-050d-4120-941d-c1c4bfa9406d@104.18.12.149:8443?type=ws&encryption=none&path=%2FTelegram%40SoonTeam%2CTelegram%40SoonTeam%2CTelegram%40SoonTeam%2CTelegram%40SoonTeam%2CTelegram%40SoonTeam&host=soonteam.imsoon.io&security=tls&fp=chrome&alpn=h2%2Chttp%2F1.1&sni=soonteam.imsoon.io#@irmeliy
+trojan://ksPfyOHM2lS5g4__J8HrpWG6blPBIQTX@104.18.16.56:443?path=%2Fapi%2Fv1%2Fflights%2Fdest-de%2Fprice-stream&security=tls&alpn=http%2F1.1&host=www.comoiran.ir&fp=chrome&type=ws&sni=www.comoiran.ir#@InfoTech_VK
+vless://2cb978f2-772b-47a3-8399-c7ca12ff281c@snapp.ir:80?encryption=none&security=none&type=ws&host=c.hshonar.ir&path=%2F#@saministamm
+vless://2cb978f2-772b-47a3-8399-c7ca12ff281c@snapp.ir:80?encryption=none&security=none&type=ws&host=c.hshonar.ir&path=@ICV2RAY#@saministamm
+vless://09b2d3cc-551a-4e4f-a816-671ea55f9278@snapp.ir:80?type=ws&encryption=none&path=%2F&host=n1.abantrust.ir&security=none#@saministamm
+trojan://J6aPcSiRDB@188.114.98.0:8443?path=%2F&security=tls&insecure=0&host=login.salar40040.ir&fp=random&type=ws&allowInsecure=0&sni=login.salar40040.ir#@saministamm
