@@ -66,3 +66,10 @@ trojan://humanity@104.18.12.149:443?path=%2Fassignment&security=tls&insecure=1&f
 vless://9169a5aa-260d-4d79-b53c-b47bdd2148da@185.143.234.5:443?path=%2F%3Fed%3D443&security=tls&encryption=none&insecure=0&host=alef.ir.oadeflantrogm.abrirmahan.com&fp=randomized&type=ws&allowInsecure=0&sni=alef.ir.oadeflantrogm.abrirmahan.com#10GB%20%7C%20v11-%20%40unvisible_drops
 vless://b2bd5bed-2715-4b6c-c920-91a9d13fa707@mmd.az99x.info:8880?path=%2F&security=&encryption=none&type=ws#https%3A%2F%2Ft.me%2FConfigir98
 trojan://telegram-id-privatevpns@35.157.47.55:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
+vless://05632886-f2b2-4409-bb8a-d85b64891fe0@185.143.235.200:80?type=httpupgrade&encryption=none&path=%2F&host=omran.pointspeed.ir&security=none#proxymelimon
+vless://e61cc2b6-6615-4fc8-b7c5-9142184ba407@snapp.ir:8080?path=%2F&security=&encryption=none&host=cm.programming-coding.ir&type=ws#v2ray%20psiphon%202
+vless://8b4f8df8-6d93-4b75-9906-b30c96a9ebc4@ww.parspas.ir:8880?path=%2F&security=&encryption=none&type=ws#v2ray%20psiphon%2013
+vless://18d0bbd9-b1d5-4e71-bb2c-14eb3fe517f9@back.avenprime.ir:80?path=%2F%3Fed%3D2048&security=&encryption=none&type=ws#v2ray%20psiphon%209
+trojan://humanity@188.114.99.0:443?path=%2Fassignment&security=tls&insecure=0&host=www.gossipglove.com&type=ws&allowInsecure=0&sni=www.gossipglove.com#v2ray%20psiphon%2031
+trojan://humanity@172.64.152.23:443?path=%2Fassignment&security=tls&insecure=1&host=www.calmlunch.com&type=ws&allowInsecure=1&sni=www.calmlunch.com#v2ray%20psiphon%2017
+trojan://humanity@104.18.12.149:443?path=%2Fassignment&security=tls&host=www.multiplydose.com&type=ws&sni=www.multiplydose.com#🔥@bubuv2raybot
