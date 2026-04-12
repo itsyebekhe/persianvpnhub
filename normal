@@ -65,3 +65,4 @@ vless://098fd515-29de-4d74-b77d-d8ab878a7e2c@104.18.12.149:443?path=%2Fresgdws&s
 trojan://humanity@104.18.12.149:443?path=%2Fassignment&security=tls&insecure=1&fp=chrome&type=ws&allowInsecure=1&sni=www.gossipglove.com#%F0%9F%87%A8%F0%9F%87%A6%20%20%40ProxyVpn11
 vless://9169a5aa-260d-4d79-b53c-b47bdd2148da@185.143.234.5:443?path=%2F%3Fed%3D443&security=tls&encryption=none&insecure=0&host=alef.ir.oadeflantrogm.abrirmahan.com&fp=randomized&type=ws&allowInsecure=0&sni=alef.ir.oadeflantrogm.abrirmahan.com#10GB%20%7C%20v11-%20%40unvisible_drops
 vless://b2bd5bed-2715-4b6c-c920-91a9d13fa707@mmd.az99x.info:8880?path=%2F&security=&encryption=none&type=ws#https%3A%2F%2Ft.me%2FConfigir98
+trojan://telegram-id-privatevpns@35.157.47.55:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
