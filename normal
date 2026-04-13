@@ -72,3 +72,8 @@ vless://6202b230-417c-4d8e-b624-0f71afa9c75d@194.146.12.230:443?path=/?ed=2560&T
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@51.91.102.163:2053?allowInsecure=1&encryption=none&host=sni.111000.v6.navy&path=%2F%3FTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2%3D&security=tls&sni=sni.111000.v6.navy&type=ws#🇩🇪
 vless://aad84bde-25e4-4fd7-b148-897998dd8ec6@tv.novatechland.ir:80?mode=auto&path=%2FFokAZBemHD2z9VVDTeukhK&security=none&alpn=http%2F1.1&encryption=none&host=tv.novatechland.ir&fp=chrome&type=xhttp&sni=tv.novatechland.ir#proxymelimon
 vless://137a9fef-629a-4197-abe9-9114a314a77c@snapp.ir:80?path=%2F&security=none&encryption=none&host=arv.liarashop.ir&type=ws#%40Father_VPN
+vless://fcea5925-8782-48ca-9ed3-2728cff92c05@185.143.233.235:80?security=none&encryption=none&host=vixon.portab.org&type=ws#%F0%9F%86%94%EF%B8%8F%40filtershekan_channel
+vless://e0c149a9-0ea3-4ae6-b6db-58c3bfc4accc@104.18.12.149:2083?path=%2Fer%3D2048&security=tls&alpn=h3%2Ch2%2Chttp%2F1.1&encryption=none&insecure=0&host=tala.sap-lotmarx.ir&fp=chrome&type=ws&allowInsecure=0&sni=tala.sap-lotmarx.ir#%40proxymelimon
+trojan://telegram-id-privatevpns@3.75.152.175:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
+trojan://humanity@104.18.12.149:443?path=%2Fassignment&security=tls&insecure=0&host=www.ignitelimit.com&type=ws&allowInsecure=0&sni=www.ignitelimit.com#TEL%3A%40Father_VPN%C2%B9
+vless://ab1bf57b-0644-4994-971b-ac585a851809@link2x06473.temp.veraspeed.ir:80?path=%2Ffilimo-video%2F177430809054030600%2F1774365690%2Fcb857b0770767a2b38b3ebc9d4c44d7fc5630fdd%2F196328x264new1-1080p.mp4%2Fs-20-v1-a1.ts&security=none&encryption=none&host=byebye.22.avenflow.ir&type=ws#@ehsawn8
