@@ -64,3 +64,8 @@ vless://651a858c-2975-4b96-96b7-82745b38714c@8.6.112.0:443?path=%2FWITH_CHACHA20
 vless://d135bb1d-47cc-4a83-b9a9-a12268ce6abd@snapp.ir:80?path=%2F&security=none&encryption=none&host=test1232-a1c43e7893-test1.apps.ir-central1.arvancaas.ir&type=ws#vipV2rayNGnp
 vless://651a858c-2975-4b96-96b7-82745b38714c@8.6.112.0:443?path=%2FWITH_CHACHA20_POLY1305_SHA256&security=tls&alpn=http%2F1.1&encryption=none&host=api.frest.ir&fp=chrome&type=ws&sni=api.frest.ir#vipV2rayNGnp
 vless://9a58741b-b9d2-41d6-9910-d5ea4fce6139@185.143.233.5:443?path=%2Fchat%3Fed%3D128&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=dn.8lack.ir&fp=firefox&type=ws&allowInsecure=0&sni=dn.8lack.ir#Tel%3BFather_vpn
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.62:8080#%20
+vless://63f92f3c-447c-4283-80b9-0af8e164cdad@152.53.51.29:22955?encryption=none&security=reality&sni=one-piece.com&fp=chrome&pbk=9Mt_Y8J_qDb1khlieWnhDSAq-kGtLHw6aOKgkAzOMms&sid=6ba85179e30d4fc2&type=grpc&serviceName=grpc&mode=gun#%20
+vless://a384c715-aeb5-45e8-859b-f687ca6c083f@5.180.97.139:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=google.com&fp=chrome&pbk=wBrGfTI9PaFf966aN6KaCY0cL6QRLlop4nzNa6bJsiQ&sid=9f35da6c9412b832&type=tcp&headerType=none#%20
+ss://6202b230-417c-4d8e-b624-0f71afa9c75d@82.117.245.166:2053?allowInsecure=1&encryption=none&host=sni.111000.indevs.in&path=%2F%3FTelegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2%3D&security=tls&sni=sni.111000.indevs.in&type=ws#@vipV2rayNGnp
+trojan://telegram-id-privatevpns@3.123.49.45:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
