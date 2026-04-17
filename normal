@@ -59,3 +59,7 @@ vless://011c7666-3497-4534-9f79-2ed3dbdbd0d6@snapp.ir:2087?path=%2F&security=tls
 vless://42dd8cfc-623b-4762-8edd-8c8115d6e7d7@arvancloud.ir:80?type=ws&encryption=none&path=%40TunizoNET&host=dom.amirenzohost.ir&security=none#@familyconfigs
 vless://8135074a-49d9-46da-b79d-b58d2b9dcb6a@185.143.233.235:443?path=%2Fdanfeng&security=tls&encryption=none&insecure=1&host=snippet.danfeng.rr.kg&type=ws&allowInsecure=1&sni=snippet.danfeng.rr.kg#@familyconfigs
 trojan://telegram-id-privatevpns@15.188.2.109:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
+vless://d37a75db-76b6-4db8-b213-0d5b044d138d@172.64.152.100:443?path=%2F&security=tls&encryption=none&insecure=0&host=hio-awx.pages.dev&type=ws&allowInsecure=0&sni=hio-awx.pages.dev#Tel%3BFather_vpn
+vless://651a858c-2975-4b96-96b7-82745b38714c@8.6.112.0:443?path=%2FWITH_CHACHA20_POLY1305_SHA256&security=tls&alpn=http%2F1.1&encryption=none&insecure=0&host=api.frest.ir&fp=chrome&type=ws&allowInsecure=0&sni=api.frest.ir#Tel%3BFather_vpn
+vless://d135bb1d-47cc-4a83-b9a9-a12268ce6abd@snapp.ir:80?path=%2F&security=none&encryption=none&host=test1232-a1c43e7893-test1.apps.ir-central1.arvancaas.ir&type=ws#vipV2rayNGnp
+vless://651a858c-2975-4b96-96b7-82745b38714c@8.6.112.0:443?path=%2FWITH_CHACHA20_POLY1305_SHA256&security=tls&alpn=http%2F1.1&encryption=none&host=api.frest.ir&fp=chrome&type=ws&sni=api.frest.ir#vipV2rayNGnp
