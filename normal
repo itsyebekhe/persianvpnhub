@@ -81,3 +81,6 @@ trojan://humanity@8.6.112.0:443?path=%2Fassignment&security=tls&insecure=0&host=
 vless://Telegram-Parsashonam@8.6.112.0:443?mode=auto&path=%2F&security=tls&encryption=none&insecure=0&host=test.atlasw.ir&type=xhttp&allowInsecure=0&sni=test.atlasw.ir#%40Parsashonam-1
 vless://Telegram-Parsashonam@8.6.112.6:443?mode=auto&path=%2F&security=tls&encryption=none&insecure=0&host=test.atlasw.ir&type=xhttp&allowInsecure=0&sni=test.atlasw.ir#%40Parsashonam-2
 trojan://trojan@103.136.70.115:443?path=%2F%3Fed%3D2560%26https%3A%2F%2Ft.me%2FWangCai2%F0%9F%87%A8%F0%9F%87%B3&security=tls&insecure=1&host=jflsjlaf.pages.dev&type=ws&allowInsecure=1&sni=jflsjlaf.pages.dev#@InfoTech_VK
+vless://d69dc89a-ced5-4920-8d51-439cac0ccdcd@snapp.ir:80?encryption=none&type=ws&path=%2F&host=onion-p3.yeksantech.ir&allowInsecure=1#@InfoTech_VK11
+vless://d69dc89a-ced5-4920-8d51-439cac0ccdcd@snapp.ir:80?path=%2F&security=none&encryption=none&host=onion-p3.yeksantech.ir&type=ws#%40filtershekan_channel
+vless://af4213f4-e6ab-4d03-b6ee-3ab6fc3c85bc@185.143.233.5:443?path=%2Fgraphql%3Fed%3D30&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=dl3nc.smartnetworktools.ir&fp=firefox&type=ws&sni=dl3nc.smartnetworktools.ir#%40filtershekan_channel
