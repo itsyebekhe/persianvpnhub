@@ -56,3 +56,6 @@ trojan://telegram-id-privatevpns@15.188.200.62:22222?security=tls&alpn=http/1.1&
 vless://7e4e3fa6-a6e2-4978-89fa-9db9d0a07d8e@snapp.ir:80?path=%2FFIRELINK&security=&encryption=none&host=firelink.arian-go-internet.ir&type=ws#proxymelimon
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@8.6.112.0:2096?security=tls&allowInsecure=0&encryption=none&type=ws&host=sni.jpmj.dev&path=/?ed%3D2560&sni=sni.jpmj.dev&fp=chrome#
 trojan://telegram-id-privatevpns@63.179.16.188:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
+vless://1631b7ec-f378-45c9-b837-24b77041692f@185.143.232.32:8080?path=%2F&security=none&encryption=none&host=ir-st5.ge9.ir&type=ws#proxymelimon
+vless://52dd2455-b2ce-4a04-a075-0b7f2bde9989@snapp.ir:80?path=%2F&security=none&encryption=none&host=sv1-dl.persianmusics.site&type=ws#proxymelimon
+vless://6b6e30a9-da34-40c8-8436-fe9677ec6bb9@104.18.13.149:80?mode=auto&path=%2F&security=none&encryption=none&host=soonteam.imsoon.io.&type=xhttp#CDN%F0%9F%8C%A9%EF%B8%8F%20X%F0%9F%87%B2%F0%9F%87%ABFR-%40SoonTeam%F0%9F%9A%807
