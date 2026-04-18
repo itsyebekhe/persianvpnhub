@@ -54,3 +54,4 @@ trojan://6d29eb2f74293cb01a19b32cf08ad2e9@160.16.106.99:4937?security=tls&sni=ww
 vless://68ee25ac-514e-4e00-81ed-67a0ba23954a@104.18.32.47:2087?ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&host=ed6geslk00b6rndj55k65gj8mbdjuoxi.pages.dev&path=/eyJqdW5rIjoiS0ZJaGhSaG14Z0NMeCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbIjE0Ni4xMDMuMTE0LjEzNCJdfQ==&security=tls&sni=ed6geslk00b6rndj55k65gj8mbdjuoxi.pages.dev&type=ws#🏳️
 trojan://telegram-id-privatevpns@15.188.200.62:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
 vless://7e4e3fa6-a6e2-4978-89fa-9db9d0a07d8e@snapp.ir:80?path=%2FFIRELINK&security=&encryption=none&host=firelink.arian-go-internet.ir&type=ws#proxymelimon
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@8.6.112.0:2096?security=tls&allowInsecure=0&encryption=none&type=ws&host=sni.jpmj.dev&path=/?ed%3D2560&sni=sni.jpmj.dev&fp=chrome#
