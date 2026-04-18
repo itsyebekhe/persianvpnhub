@@ -46,3 +46,4 @@ trojan://telegram-id-privatevpns@3.65.185.26:22222?security=tls&alpn=http/1.1&he
 vless://bce6cee2-c3bc-40ea-89b4-fb5de15c5d38@185.143.234.235:80?security=none&encryption=none&host=vixon.portab.org&type=ws#proxymelimon
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@8.6.112.0:2096?encryption=none&type=ws&security=tls&path=%2F&host=sni.jpmj.dev&sni=sni.jpmj.dev&allowInsecure=1#@
 vless://9bebe902-1cf8-45a4-91dd-e6d7b290303e@185.143.233.235:80?encryption=none&type=ws&path=%2FShop%2Fed&host=m2.yeksanvision.ir#@eror404_chnll
+trojan://telegram-id-privatevpns@13.37.187.91:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
