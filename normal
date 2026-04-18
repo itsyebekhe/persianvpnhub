@@ -59,3 +59,4 @@ trojan://telegram-id-privatevpns@63.179.16.188:22222?security=tls&alpn=http/1.1&
 vless://1631b7ec-f378-45c9-b837-24b77041692f@185.143.232.32:8080?path=%2F&security=none&encryption=none&host=ir-st5.ge9.ir&type=ws#proxymelimon
 vless://52dd2455-b2ce-4a04-a075-0b7f2bde9989@snapp.ir:80?path=%2F&security=none&encryption=none&host=sv1-dl.persianmusics.site&type=ws#proxymelimon
 vless://6b6e30a9-da34-40c8-8436-fe9677ec6bb9@104.18.13.149:80?mode=auto&path=%2F&security=none&encryption=none&host=soonteam.imsoon.io.&type=xhttp#CDN%F0%9F%8C%A9%EF%B8%8F%20X%F0%9F%87%B2%F0%9F%87%ABFR-%40SoonTeam%F0%9F%9A%807
+trojan://telegram-id-privatevpns@13.38.210.223:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
