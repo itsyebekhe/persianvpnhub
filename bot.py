@@ -203,9 +203,9 @@ class StatsManager:
     def save_data(self):
         with open(STATS_FILE, 'w') as f: json.dump(self.data, f)
 
-    async def check_date_and_report(self, client, chat_id):
+    async def check_date_and_report(self, client, chat_id, force_send=False):
         stored_date = self.data.get('date')
-        if stored_date != self.current_date:
+        if stored_date != self.current_date or force_send:
             jalali_date = JalaliConverter.get_jalali_date_from_str(stored_date)
             total = self.data['configs'] + self.data['proxies'] + self.data['files']
             report_msg = (
