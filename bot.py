@@ -436,12 +436,17 @@ async def main():
 
     # Check if config file exists and has valid sources
     try:
-        with open(CHANNELS_FILE, 'r', encoding='utf-8') as f: sources = json.load(f)
-        if not sources:  # Empty config
-            logger.info("Config file is empty, skipping execution.")
-            return
+        with open(CHANNELS_FILE, 'r', encoding='utf-8') as f: 
+            sources = json.load(f)
+    except json.JSONDecodeError as e:
+        logger.info(f"Invalid JSON syntax in config.json: {e}")
+        return
     except:
-        logger.info("Config file not found or invalid, skipping execution.")
+        logger.info("Config file not found, skipping execution.")
+        return
+    
+    if not sources:
+        logger.info("Config file is empty, skipping execution.")
         return
 
     # 1. Date Check & Trim (only if we have valid sources)
