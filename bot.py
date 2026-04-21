@@ -203,9 +203,9 @@ class StatsManager:
     def save_data(self):
         with open(STATS_FILE, 'w') as f: json.dump(self.data, f)
 
-    async def check_date_and_report(self, client, chat_id, force_send=False):
+    async def check_date_and_report(self, client, chat_id):
         stored_date = self.data.get('date')
-        if stored_date != self.current_date or force_send:
+        if stored_date != self.current_date:
             jalali_date = JalaliConverter.get_jalali_date_from_str(stored_date)
             total = self.data['configs'] + self.data['proxies'] + self.data['files']
             report_msg = (
@@ -717,7 +717,7 @@ async def main():
     await user_client.disconnect()
     
     # Send daily report only if everything completed successfully
-    await stats.check_date_and_report(bot_client, DESTINATION_ID, force_send=is_new_day)
+    await stats.check_date_and_report(bot_client, DESTINATION_ID)
     
     await bot_client.disconnect()
     logger.info("Bot completed successfully")
