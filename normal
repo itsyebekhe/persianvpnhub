@@ -65,3 +65,4 @@ vless://e4520a3d-c017-4cb1-90d3-2d3b0aeca4ae@snapp.ir:80?path=%2F&security=none&
 vless://ce871f8f-5f02-435b-b1db-e0739969aa02@api1.iramsmartkeyka.ir:2095?path=%2FwsVMarketLoad&security=none&encryption=none&type=ws#%40filtershekan_channel
 vless://6ec3c40c-d02e-4c2c-6c00-265575739a38@meli.masterdadeh.ir:80?path=%2F&security=none&encryption=none&type=ws&sni=185.226.94.198#%40filtershekan_channel
 trojan://telegram-id-privatevpns@13.36.75.60:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
+vless://fa1edd99-86b6-4a6f-9745-c476c59c0568@snapp.ir:2082?path=%2F&security=none&encryption=none&host=dl800tobi.sudoserver.ir&type=ws#Tel%3BFather_vpn
