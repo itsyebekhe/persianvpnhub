@@ -422,6 +422,7 @@ async def main():
     manager = ConfigManager()
     stats = StatsManager()
     sub_manager = SubscriptionManager()
+    valid_subscription_configs = []
     
     # 0. Load Cache (FIX)
     load_remote_cache()
