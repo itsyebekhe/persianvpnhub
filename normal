@@ -78,3 +78,8 @@ trojan://1234567890@64.188.97.153:443?security=tls&sni=kfm-bn0.pages.dev&insecur
 vless://fc835978-8121-414f-b3dd-2dc2ec56b8f7@192.142.37.191:4356?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&sni=files.moscownews24.ru#%40v2rayconfigamir%208616
 trojan://telegram-id-privatevpns@35.156.70.160:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
 vless://b06ab6e3-4e83-49eb-9c16-43e952302f76@ite.pishvatech.lol:80?path=%2F&security=none&encryption=none&type=ws#@aloconfig_com
+vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@45.82.251.116:8880?encryption=none&security=none&type=grpc#%20
+vless://309fa273-6579-4cb2-9143-7cad50401eba@188.34.193.153:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=gZGVp5PUdafgsmi1gawa1yLuha_XhXRc_W9SvPiGmTY&sid=7cad5040&type=tcp&headerType=none#%20
+trojan://telegram-id-privatevpns@13.39.190.72:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
+vless://ea227ffd-be0c-4acd-a70c-9b6b4777d862@185.143.234.235:80?security=none&encryption=none&host=vixon.portab.org&type=ws#%40filtershekan_channel
+vless://fc7132e6-6943-424c-84bc-adbb60398a93@snapp.ir:80?path=%2Fapp1&security=none&encryption=none&host=cdn.yeksanstudio.ir&type=ws#%40filtershekan_channel
