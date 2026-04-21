@@ -434,14 +434,20 @@ async def main():
     await user_client.connect()
     await bot_client.start(bot_token=BOT_TOKEN)
 
-    # 1. Date Check & Trim
+    # Check if config file exists and has valid sources
+    try:
+        with open(CHANNELS_FILE, 'r', encoding='utf-8') as f: sources = json.load(f)
+        if not sources:  # Empty config
+            logger.info("Config file is empty, skipping execution.")
+            return
+    except:
+        logger.info("Config file not found or invalid, skipping execution.")
+        return
+
+    # 1. Date Check & Trim (only if we have valid sources)
     is_new_day = await stats.check_date_and_report(bot_client, DESTINATION_ID)
     if is_new_day:
         sub_manager.trim_files()
-
-    try:
-        with open(CHANNELS_FILE, 'r', encoding='utf-8') as f: sources = json.load(f)
-    except: return
 
     # --- PHASE 1: COLLECT (With ID Caching Fix) ---
     logger.info("Phase 1: Collecting...")
@@ -520,18 +526,18 @@ async def main():
             await asyncio.sleep(FETCH_DELAY)
     
     # Save Cache to file if updated
-    if cache_updated:
-        with open(ID_CACHE_FILE, 'w') as f:
-            json.dump(id_cache, f)
-        logger.info("ID Cache saved locally.")
+        if cache_updated:
+            with open(ID_CACHE_FILE, 'w') as f:
+                json.dump(id_cache, f)
+            logger.info("ID Cache saved locally.")
 
-    # --- PHASE 2: PROCESS & SUBSCRIBE ---
-    collected_items.sort(key=lambda x: x['ts'])
-    logger.info(f"Phase 2: Processing {len(collected_items)} items...")
-    
-    valid_subscription_configs = []
+        # --- PHASE 2: PROCESS & SUBSCRIBE ---
+        collected_items.sort(key=lambda x: x['ts'])
+        logger.info(f"Phase 2: Processing {len(collected_items)} items...")
+        
+        valid_subscription_configs = []
 
-    for item in collected_items:
+        for item in collected_items:
         try:
             shamsi_date = JalaliConverter.get_persian_time(item['ts'])
             
