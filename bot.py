@@ -533,11 +533,8 @@ async def main():
 
         # --- PHASE 2: PROCESS & SUBSCRIBE ---
         collected_items.sort(key=lambda x: x['ts'])
-        logger.info(f"Phase 2: Processing {len(collected_items)} items...")
-        
-        valid_subscription_configs = []
 
-        for item in collected_items:
+    for item in collected_items:
         try:
             shamsi_date = JalaliConverter.get_persian_time(item['ts'])
             
@@ -626,7 +623,11 @@ async def main():
                     buttons.append([Button.url("⛶ کد QR کانفیگ", qr_link)])
                 buttons.append([Button.url("🔍 دریافت کانفیگ‌های بیشتر", CHANNEL_LINK)])
 
-                await bot_client.send_message(DESTINATION_ID, f"{caption}\n```{config_str}```\n", buttons=buttons, link_preview=False)
+                try:
+                    await asyncio.wait_for(bot_client.send_message(DESTINATION_ID, f"{caption}\n```{config_str}```\n", buttons=buttons, link_preview=False), timeout=20)
+                except asyncio.TimeoutError:
+                    logger.warning(f"Timeout sending message for {proto} config")
+                    continue
                 
                 if proto == 'mtproto': stats.increment('proxies')
                 else: stats.increment('configs')
@@ -635,7 +636,11 @@ async def main():
 
             elif item['type'] == 'file':
                 msg = item['msg_obj']
-                path = await msg.download_media(file=TEMP_DIR)
+                try:
+                    path = await asyncio.wait_for(msg.download_media(file=TEMP_DIR), timeout=45)
+                except asyncio.TimeoutError:
+                    logger.warning(f"Timeout downloading file")
+                    continue
                 if not path: continue
 
                 file_hash = manager.calculate_file_hash(path)
@@ -683,7 +688,12 @@ async def main():
                     f"💡 منبع: {source_display}\n\n"
                 )
                 
-                await bot_client.send_file(DESTINATION_ID, path, caption=caption, buttons=[[Button.url("🔍 دریافت کانفیگ‌های بیشتر", CHANNEL_LINK)]])
+                try:
+                    await asyncio.wait_for(bot_client.send_file(DESTINATION_ID, path, caption=caption, buttons=[[Button.url("🔍 دریافت کانفیگ‌های بیشتر", CHANNEL_LINK)]]), timeout=30)
+                except asyncio.TimeoutError:
+                    logger.warning(f"Timeout sending file {filename}")
+                    if os.path.exists(path): os.remove(path)
+                    continue
                 
                 stats.increment('files')
                 if os.path.exists(path): os.remove(path)
@@ -699,7 +709,12 @@ async def main():
     if os.path.exists(TEMP_DIR): shutil.rmtree(TEMP_DIR)
     manager.save_history()
     await user_client.disconnect()
+    
+    # Send daily report only if everything completed successfully
+    await stats.check_date_and_report(bot_client, DESTINATION_ID, force_send=is_new_day)
+    
     await bot_client.disconnect()
+    logger.info("Bot completed successfully")
 
 if __name__ == '__main__':
     asyncio.run(main())
