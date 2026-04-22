@@ -47,3 +47,4 @@ vmess://eyJhZGQiOiJ2ZXJzby5uYWhpZGFwcC5jb20iLCJhaWQiOiIwIiwiYWxwbiI6Imh0dHAvMS4x
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@176.96.138.17:2087?path=%2F&security=tls&encryption=none&host=sni.111000.indevs.in&fp=chrome&type=ws&sni=sni.111000.indevs.in#%40filtershekan_channel
 trojan://humanity@104.18.32.47:443?security=tls&sni=www.multiplydose.com&type=ws&host=www.multiplydose.com&path=%2Fassignment#%20
 trojan://telegram-id-privatevpns@18.156.207.245:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
+vless://cac8642d-4e02-4d7c-9125-a8814e78a67b@snapp.ir:80?encryption=none&type=ws&path=%2F&host=sphrrzv.iranofilm.ir#proxymelimon
