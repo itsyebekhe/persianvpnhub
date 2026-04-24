@@ -59,3 +59,5 @@ vless://87148d84-ea25-4d25-8009-a4a7b2854558@185.143.233.5:443?path=%2Fchat%3Fed
 vless://b9ffc9c6-aad0-0056-45ee-4f551a0f0b4a@tr.tehranionliine.ir:80?path=%2F&security=none&encryption=none&type=ws&sni=185.226.94.188#2%F0%9F%91%89%20%40v2FreeHub%20-%20%26%20Psiphon
 vless://22109ab6-bfdd-4062-ae1c-054c74353e39@185.143.233.235:80?security=none&encryption=none&host=vixon.portab.org&headerType=none&type=tcp#4%F0%9F%91%89%20%40v2FreeHub%20-%20%26%20Psiphon
 vless://f20de03b-c016-45cd-a6e2-d73713fa1fe0@185.143.234.235:80?security=none&encryption=none&host=d.nsa03.com&type=ws#%40filtershekan_channel
+trojan://telegram-id-privatevpns@15.224.33.14:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
+vmess://eyJhZGQiOiJjZG4uaXAtc3RhdGljLmNvbSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiRklOMDAzLm1pZGFzbmV0LndvcmsiLCJpZCI6ImE5MzExZmYyLTE0YmYtNGJhNi04NjAxLTQyMDI4YTdlM2E4NCIsImluc2VjdXJlIjoiMCIsIm5ldCI6IndzIiwicGF0aCI6Ii8iLCJwb3J0IjoiODAiLCJwcyI6Itio2LHYp9uMINin2KrYtdin2YQg2K/Yp9im2YXbjCDYrNmI24zZhiDYtNmI8J+XviBwcnJvZmlsZV9wdXJwbGVAIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiItLS0iLCJ2IjoiMiJ9
