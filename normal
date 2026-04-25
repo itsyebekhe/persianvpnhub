@@ -48,3 +48,6 @@ vless://fed07182-fa9e-490b-ac15-2f64e1ee21ab@anten.ir:80?path=%2F&security=none&
 trojan://telegram-id-privatevpns@3.75.103.136:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
 vless://ff6d6f8e-79f2-441e-ac39-bc3406f86e5c@khan10.tarfandgallery.sbs:443?path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&fp=chrome&type=ws&sni=khan10.tarfandgallery.sbs#%40filtershekan_channel
 trojan://telegram-id-privatevpns@13.38.235.130:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
+vless://-0d7a-496f-8e97-0bbc33bff55d@185.143.233.5:443?path=%2Fchat%3Fed%3D128&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=in.8lack.ir&fp=firefox&type=ws&sni=in.8lack.ir#%40filtershekan_channel
+vless://5b450693-fa03-7feb-a1f6-d4fc005aca18@meli.masterdadeh.ir:80?path=%2F&security=none&encryption=none&type=ws&sni=185.226.94.198#%40filtershekan_channel
+vless://00efd6e7-fa77-4659-bacf-4dca0df54022@185.143.234.235:443?encryption=none&type=ws&security=tls&path=%2F&host=shoping.arianrah.ir&sni=shoping.arianrah.ir&alpn=h2%2Chttp%2F1.1&fp=chrome&allowInsecure=1#GEMSHOP%20%F0%9F%92%8E%234
