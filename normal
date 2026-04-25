@@ -45,3 +45,5 @@ vless://6202b230-417c-4d8e-b624-0f71afa9c75d@104.18.13.149:2053?security=tls&enc
 vless://ca683ff2-5d4b-4d3a-8802-a3f790801604@185.143.233.235:80?security=none&encryption=none&host=d.nsa03.com&type=ws#%40filtershekan_channel
 vless://c334010c-b5eb-4d80-bc93-9d7b52b03e6e@varzesh3.com:8080?path=%2F&security=none&encryption=none&host=pt.novatechplus.ir&type=ws#%40filtershekan_channel
 vless://fed07182-fa9e-490b-ac15-2f64e1ee21ab@anten.ir:80?path=%2F&security=none&encryption=none&host=ss.linuwebtunnel.site&type=ws#%40filtershekan_channel
+trojan://telegram-id-privatevpns@3.75.103.136:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
+vless://ff6d6f8e-79f2-441e-ac39-bc3406f86e5c@khan10.tarfandgallery.sbs:443?path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&fp=chrome&type=ws&sni=khan10.tarfandgallery.sbs#%40filtershekan_channel
