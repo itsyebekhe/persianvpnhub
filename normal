@@ -34,3 +34,5 @@ vless://59ab21e3-c0cc-42d6-9ff5-fd49abfc0780@185.143.233.5:443?path=%2Fchat%3Fed
 vmess://eyJhZGQiOiJjZG4uaXAtc3RhdGljLmNvbSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZWNoQ29uZmlnTGlzdCI6IiIsImVjaEZvcmNlUXVlcnkiOiIiLCJlY2hTZXJ2ZXJLZXlzIjoiIiwiZmFrZWhvc3RfZG9tYWluIjoiIiwiZnAiOiIiLCJob3N0IjoiU1dFMDAxLm1pZGFzbmV0LndvcmsiLCJpZCI6IjJkMTVjNDNmLWViNDEtNDU5ZC1iNTIwLTAyZjI0ZDM3MTA4MiIsImludGVydmFsIjoiIiwibGVuZ3RoIjoiIiwibXV4IjoiIiwibXV4Q29uY3VycmVuY3kiOiIiLCJuZXQiOiJ3cyIsInBhY2tldHMiOiIiLCJwYXRoIjoiLyIsInBvcnQiOiI4MCIsInBzIjoieHNmaWx0ZXJuZXQiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6IiIsInYiOiIyIn0=
 vless://a391a660-d6e5-49da-b729-b00b1cb932f0@sub1.fncs.ir:8080?type=ws&encryption=none&path=%2Fv2ray&host=cdn1.fncs.ir&security=none#arise-pv
 vless://256f2dc7-d97b-484d-be32-89588e7ab667@snapp.ir:80?path=%2F&security=none&encryption=none&host=cdn.softnetconnect.ir&type=ws#%40Proxymelimon
+vless://5eaef112-cdc1-4438-a2ea-6f1ae9694d18@isna.ir:80?path=%2F%3Fed%3D2048&security=none&encryption=none&host=cardinal.gelvil.ir&type=ws#%40v2rayRoom
+vless://8703c844-375d-4d1f-9221-b5d1fc17869a@snapp.ir:80?path=%2F&security=none&encryption=none&host=cpi.lithiumnet.ir&type=ws#%40V2rayRoom
