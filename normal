@@ -55,3 +55,6 @@ vless://95051aa9-b4a0-4344-9c8f-a40e1ffcc4f7@185.143.233.5:443?path=%2Fchat%3Fed
 vless://Parsashonam@nextjs.org:443?mode=auto&path=%2Fp4r34m&security=tls&encryption=none&insecure=0&host=YOUR_SUB_DOMAIN&type=xhttp&allowInsecure=0&sni=nextjs.org#@Parsashonam
 vless://f286118f-fce9-4cd6-85ce-5832180f2a66@snapp.ir:8080?path=%2F&security=none&encryption=none&host=kootahkon.ir&type=ws#TEL%3BFather_vpn
 vless://217242f1-cd3d-4afd-b109-b2bf1cd5b741@orixcraft.ir:2095?path=%2F&security=none&encryption=none&type=ws#TEL%3BFather_vpn
+vless://65462646-6d80-4463-b47b-3529e531ab65@snapp.ir:80?path=%2F&security=none&encryption=none&host=iranfuture.musicritmic.ir&type=ws#@electvpn0
+vless://4be80655-e439-49d1-9560-d69a46297063@185.143.233.5:80?encryption=none&type=ws&path=%2Fgamescore%3Fed%3D128&host=cdn4.restaurantworld.ir#@electvpn0
+trojan://telegram-id-privatevpns@63.183.130.255:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
