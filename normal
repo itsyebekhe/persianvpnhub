@@ -42,3 +42,10 @@ vless://1935cc85-8ab0-4382-f0fc-d691e5ddbb53@185.143.235.200:80?path=%2F&securit
 vless://1935cc85-8ab0-4382-f0fc-d691e5ddbb53@185.143.235.200:80?path=%2F%DB%B6&security=none&encryption=none&host=my.zivorae.ir&type=ws#%40filtershekan_channel
 vless://3ff87a9a-305d-4723-9c9e-88b8a7796d41@blubank.sb24.ir:8080?security=none&encryption=none&host=networkex.onyxshoes.ir&type=ws#%40filtershekan_channel
 trojan://telegram-id-privatevpns@3.75.35.234:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
+vless://f0ac3bab-a26b-403b-9948-a999d7f4a92a@vercel.com:443?mode=auto&path=%2Ftt&security=tls&encryption=none&host=heydari.vercel.app&type=xhttp&sni=vercel.com#%40V2rayRoom
+vless://3ff87a9a-305d-4723-9c9e-88b8a7796d41@blubank.sb24.ir:8080?path=%2F&security=none&encryption=none&host=networkex.onyxshoes.ir&type=ws#%40V2rayRoom
+vless://388a6c57-87e7-420b-afe2-b3eb670fd7da@104.20.5.134:80?encryption=none&type=ws&path=%2F&host=vip.yaml7.ggff.net#@electvpn0
+vless://e4842be5-e2eb-4782-ade5-8df9efe7872a@snapp.ir:8880?encryption=none&type=ws&path=%2Frazstarlocal&host=p1.razstar.ir#@electvpn0
+vless://55e9c531-83cd-4122-8cba-3b9b9e37f1a2@seyyed.nahidapp.com:443?encryption=none&type=ws&security=tls&path=%2Fvless-ws&host=seyyed.nahidapp.com&sni=seyyed.nahidapp.com&fp=chrome&allowInsecure=1#@electvpn0
+trojan://telegram-id-privatevpns@15.224.77.136:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
+vless://8014017f-3f40-46e9-b02d-87e6c54d877e@185.143.233.5:443?path=%2Fchat%3Fed%3D128&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=dn.8lack.ir&fp=firefox&type=ws&allowInsecure=0&sni=dn.8lack.ir#@electvpn0
