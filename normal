@@ -51,3 +51,5 @@ vless://305e23a9-2fcc-4810-bb23-2ac36148ffff@snapp.ir:80?type=ws&encryption=none
 trojan://humanity@sourceforge.net:443?type=ws&security=tls&path=%2Fassignment&host=www.calmloud.com&sni=www.calmloud.com&alpn=http%2F1.1&fp=chrome&allowInsecure=0#@electvpn0
 trojan://telegram-id-privatevpns@51.45.39.44:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 vless://c0899a53-cc3b-4066-a3b4-d6d07b4853ee@react.dev:443?security=tls&alpn=h2&encryption=none&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&sni=react.dev#%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%20%D8%AF%D8%A7%D8%A6%D9%85%DB%8C%20%D8%AC%D9%88%DB%8C%D9%86%20%D8%B4%D9%88%F0%9F%97%BE%20prrofile_purple%40
+trojan://telegram-id-privatevpns@52.47.129.194:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
+vless://e99d54b0-64b4-44e3-9e0d-44a04e9587ef@snapp.ir:80?path=%2Fgraphql%3Fed%3D2560&security=none&alpn=http%2F1.1&encryption=none&host=ss5.limitless-cloud.ir&fp=chrome&type=ws&sni=ss5.limitless-cloud.ir#TEL%3BFather_vpn
