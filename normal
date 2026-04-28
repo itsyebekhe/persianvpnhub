@@ -68,3 +68,4 @@ vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIiIsDQogICJhZGQiOiAiNjcuMjIwLjcyLjIzNyIs
 trojan://telegram-id-privatevpns@3.123.242.84:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@13.38.179.226:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 vless://c59834b1-ec3d-4682-8580-861a400235bd@185.143.234.235:80?security=&encryption=none&host=d.nsa03.com&type=ws#%40NetZone_ir
+vless://d4cd7932-aaa6-40d5-bbbe-b6bcd05921e7@varzesh3.com:80?type=ws&encryption=none&path=%2Fws&host=nobody.fasterspeed.ir&security=none#@proxymelimon
