@@ -35,3 +35,4 @@ vless://c59834b1-ec3d-4682-8580-861a400235bd@185.143.234.235:80?security=&encryp
 vless://d4cd7932-aaa6-40d5-bbbe-b6bcd05921e7@varzesh3.com:80?type=ws&encryption=none&path=%2Fws&host=nobody.fasterspeed.ir&security=none#@proxymelimon
 vless://00f24ac9-7b34-411d-85b4-4e9501b39277@185.143.233.5:443?path=%2Fchat%3Fed%3D128&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=an.8lack.ir&fp=firefox&type=ws&sni=an.8lack.ir#%40filtershekan_channel
 vless://16f790bd-6f63-4386-ab7a-50aaf482eac7@snapp.ir:80?type=ws&security=none&host=fonix.musicritmic.ir&path=%2F#@aloconfig_com
+vless://01b04de5-99ef-6b90-a943-8adbaaa815cd@snapp.ir:80?path=/&security=none&encryption=none&host=new-game-server.supgame.ir&type=ws#t.me%2FConfigFori%20%20-%20%20Config%2019916
