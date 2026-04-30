@@ -46,3 +46,7 @@ vless://Telegram-Parsashonam@blog.helm.sh:443?mode=auto&path=%2Fp4r34m&security=
 vless://3e4f6e33-79de-4453-922e-129c1a6ff8c4@185.143.233.5:443?path=%2Fchat%3Fed%3D128&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=bn.8lack.ir&fp=firefox&type=ws&sni=bn.8lack.ir#%40filtershekan_channel
 vless://c69cc697-7587-4e9a-a066-b21ba3766d0d@185.143.233.235:2052?path=%2F&security=none&encryption=none&host=dev.artarona.ir&type=ws#TEL%3BFather_vpn
 trojan://telegram-id-privatevpns@35.158.91.156:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
+vless://1e03ea78-9599-4578-8469-7ad0f7ba3c3e@snapp.ir:8880?mode=auto&path=%2Fwskachal.babaii.ir&security=none&encryption=none&host=wskachal.babaii.ir&type=xhttp#%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%20%D8%AF%D8%A7%D8%A6%D9%85%DB%8C%20%D8%AC%D9%88%DB%8C%D9%86%20%D8%B4%D9%88%F0%9F%97%BE%20prrofile_purple%40
+trojan://humanity@172.67.180.92:443?security=tls&sni=www.multiplydose.com&type=ws&host=www.multiplydose.com&path=%2Fassignment#%20
+vless://b1ac23fb-b336-4d37-a3c0-64b29c4ef3a4@s2.tehranionliine.ir:80?path=%2F&security=none&encryption=none&type=ws#%40filtershekan_channel
+vless://d4632a9f-8066-4bc8-ab8e-a63e90a84534@snapp.ir:80?path=%2F&security=none&encryption=none&host=api.morvaridvps.ir&type=ws#%40filtershekan_channel
