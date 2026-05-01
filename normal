@@ -45,3 +45,8 @@ trojan://telegram-id-privatevpns@3.120.56.250:22222?security=tls&alpn=http/1.1&h
 vless://436b01eb-478d-49e1-9bb9-4550786a91c1@free.z1q1.cfd:80?path=%2F24fh6sv00&security=none&encryption=none&host=free.z1q1.cfd&type=ws#TEL%3BFather_vpn
 trojan://telegram-id-privatevpns@13.39.116.213:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 vless://68eac0a8-199b-4b4b-a80f-f75111897a37@cursor.com:443?mode=auto&path=%2FVel0vpn&security=tls&encryption=none&host=vel0vpn-two.vercel.app&type=xhttp&sni=cursor.com#%40V2rayRoom
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ%3D%3D@193.135.174.135:990#%40v2rayconfigamir%205849
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@45.142.120.30:8880?type=ws&security=none&encryption=none&host=vms.lifetime08.workers.dev#%40v2rayconfigamir%206078
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@193.135.174.135:990?type=tcp#%40v2rayconfigamir%204538
+vless://85df0ad4-8818-4aa5-9799-4bb7232de9e0@ip1-fast.tyryqyserver.ir:80?path=%2F%3Fed%3D2052&security=none&encryption=none&host=tamamde1.global.ssl.fastly.net&type=ws#%40v2rayconfigamir%205071
+vless://85df0ad4-8818-4aa5-9799-4bb7232de9e0@ip3-fast.tyryqyserver.ir:80?path=%2F%3Fed%3D2052&security=none&encryption=none&host=tamamde1.global.ssl.fastly.net&type=ws#%40v2rayconfigamir%202258
