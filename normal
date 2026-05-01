@@ -43,3 +43,5 @@ vless://4d98d561-7c78-4d2c-b66a-8788fb03fd7f@arvancloud.ir:80?path=%2F%3Fed%3D20
 vless://eb4a7de9-2395-4bf7-8c45-a3b8a0eae72a@abr.superip.ir:2052?path=%2FAPI%2Fsuperip&security=none&encryption=none&host=library.phill-up.ir&type=ws#@InfoTech_VK8
 trojan://telegram-id-privatevpns@3.120.56.250:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
 vless://436b01eb-478d-49e1-9bb9-4550786a91c1@free.z1q1.cfd:80?path=%2F24fh6sv00&security=none&encryption=none&host=free.z1q1.cfd&type=ws#TEL%3BFather_vpn
+trojan://telegram-id-privatevpns@13.39.116.213:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
+vless://68eac0a8-199b-4b4b-a80f-f75111897a37@cursor.com:443?mode=auto&path=%2FVel0vpn&security=tls&encryption=none&host=vel0vpn-two.vercel.app&type=xhttp&sni=cursor.com#%40V2rayRoom
