@@ -65,3 +65,5 @@ trojan://telegram-id-privatevpns@63.184.19.242:22222?security=tls&alpn=http/1.1&
 vless://02de29be-d553-4dc8-892c-753b670099b5@camp.nahidapp.com:443?path=%2FIF_VPN_Bot&security=tls&encryption=none&host=camp.nahidapp.com&type=ws#https%3A%2F%2Ft.me%2Fproxymelimon%20%F0%9F%91%A8%F0%9F%8F%BB%E2%80%8D%F0%9F%8E%A4%20%D8%A7%D9%85%DB%8C%D8%B1%D8%AA%D8%AA%D9%84%D9%88
 vless://73805cfb-4535-4797-9ad4-9e13c8dd5b3d@Ikco.ir:8080?path=%2Fcdn&security=&encryption=none&host=cp.movizdl.ir&type=ws#%40iProxyChannel%201
 vless://469b6631-f0ab-4ad7-93af-869dd32535e3@president.ir:80?path=%2F&security=&encryption=none&host=al1.apicallminecrafegame.online&type=ws#%40iProxyChannel%202
+vless://2b3497dd-c0db-4506-b3e2-8b9e2e2df26c@snapp.ir:80/?type=ws&encryption=none&path=%2F&host=service.nexorasmartlab.ir&security=none#proxymelimon
+trojan://telegram-id-privatevpns@13.39.30.161:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
