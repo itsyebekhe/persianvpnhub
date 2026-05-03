@@ -48,3 +48,7 @@ vless://Telegram-Parsashonam@94.130.13.19:443?encryption=none&security=tls&sni=k
 trojan://telegram-id-privatevpns@35.181.72.23:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 vless://60404e8a-a1d0-4374-9b4c-6aeb32dcf51b@185.143.233.235:8080?encryption=none&security=none&type=ws&host=Test.bosbedetoto.site&path=%2F#%40Va3lSho
 vless://469b6631-f0ab-4ad7-93af-869dd32535e3@president.ir:80?path=%2F&security=none&encryption=none&host=al1.apicallminecrafegame.online&type=ws#Telegram%20%7C%20%40Config0plus
+vless://0e941919-1658-460f-b1b5-22a3bc0b0973@snapp.ir:80?type=ws&path=/&security=none&host=aopas.reedsy.ir&alpn=h1#@electvpn0
+vless://8c73f761-d2a4-4502-94eb-20b8f0720beb@185.143.233.43:8880?encryption=none&type=ws&path=%2F&host=motabarim3.service-panelbaz.ir#@electvpn0
+vless://469b6631-f0ab-4ad7-93af-869dd32535e3@185.143.234.235:80?encryption=none&type=ws&path=%2F&host=al1.apicallminecrafegame.online#proxymelimon
+vless://74afc380-4410-410c-a3f3-999d975bad19@haji.nahidapp.com:443?encryption=none&type=ws&security=tls&path=%2Fhaji%2F&host=haji.nahidapp.com&sni=haji.nahidapp.com&allowInsecure=1#@electvpn0
