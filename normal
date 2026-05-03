@@ -37,3 +37,5 @@ vless://Telegram-Parsashonam@50.7.5.85:443?encryption=none&security=tls&sni=kube
 vless://Telegram-Parsashonam@50.7.5.85:443?encryption=none&security=tls&sni=letsencrypt.org&alpn=h2%2Chttp%2F1.1&insecure=1&allowInsecure=1&type=xhttp&host=mzsv.netlify.app&path=%2Fp4r34m&mode=auto#https%3A%2F%2Ft.me%2Farchivetell%20letsencrypt.org
 vless://Telegram-Parsashonam@94.130.50.12:443?encryption=none&security=tls&sni=kubernetes.io&alpn=h2%2Chttp%2F1.1&insecure=1&allowInsecure=1&type=xhttp&host=mzsv.netlify.app&path=%2Fp4r34m&mode=auto#https%3A%2F%2Ft.me%2Farchivetell_kubernetes.io
 vless://Telegram-Parsashonam@94.130.50.12:443?encryption=none&security=tls&sni=letsencrypt.org&alpn=h2%2Chttp%2F1.1&insecure=1&allowInsecure=1&type=xhttp&host=mzsv.netlify.app&path=%2Fp4r34m&mode=auto#https%3A%2F%2Ft.me%2Farchivetell_letsencrypt.org
+trojan://telegram-id-privatevpns@63.180.113.225:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
+vless://121e5690-bd82-4eac-ac88-4d87c31756de@line2.gymplusplus.com:80?type=ws&encryption=none&path=%2F&host=&security=none#@powerro
