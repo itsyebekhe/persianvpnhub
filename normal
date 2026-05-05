@@ -43,3 +43,9 @@ trojan://telegram-id-privatevpns@35.180.106.124:22222?security=tls&alpn=http/1.1
 vless://Telegram-Parsashonam@kubernetes.io:443?encryption=none&security=tls&sni=kubernetes.io&alpn=h2%2Chttp%2F1.1&insecure=1&allowInsecure=1&type=xhttp&host=mzze.netlify.app&path=%2Fp4r34m&mode=auto#%F0%9F%8C%90%20%40IR_NETLIFY%20%20%20kubernetes.io
 vless://Telegram-Parsashonam@jobset.sigs.k8s.io:443?encryption=none&security=tls&sni=jobset.sigs.k8s.io&alpn=h2%2Chttp%2F1.1&insecure=1&allowInsecure=1&type=xhttp&host=mzze.netlify.app&path=%2Fp4r34m&mode=auto#%F0%9F%8C%90%20%40IR_NETLIFY%20%20%20jobset.sigs.k8s.io
 trojan://telegram-id-privatevpns@51.45.11.214:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
+vless://Telegram-Parsashonam@jobset.sigs.k8s.io:443?security=tls&encryption=none&alpn=h2%2Chttp%2F1.1&headerType=none&type=tcp&sni=jobset.sigs.k8s.io#%40V2rayRoom
+vless://472cc766-8cf8-45db-93f1-01d08259aa01@snapp.ir:8080?path=%2F&security=none&encryption=none&host=code.maktabmotahari.ir&type=ws#%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%20%D8%AF%D8%A7%D8%A6%D9%85%DB%8C%20%D8%AC%D9%88%DB%8C%D9%86%20%D8%B4%D9%88%F0%9F%97%BE%20prrofile_purple%40
+vless://c09816d1-9b53-4e0d-85a8-9def477121ab@185.143.233.122:80?path=%2Fws&security=none&encryption=none&host=cdnisfucka.drnimaamini.ir&type=ws#%40filtershekan_channel
+vless://66f73678-34a5-4863-bd7b-cba151a2562e@185.143.233.5:2086?path=%2F&security=none&encryption=none&host=cdn.sesrsa.com&type=ws#%40filtershekan_channel
+trojan://telegram-id-privatevpns@3.66.80.118:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
+vless://bc6dd5e1-5e3a-408d-a936-f6d64bac65c1@varzesh3.com:2082?path=%2F&security=none&encryption=none&host=snappp.khanumjan.ir&type=ws#%40V2rayRoom
