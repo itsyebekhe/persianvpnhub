@@ -35,3 +35,6 @@ vless://d2deedf3-788b-42b5-86af-5a02f407bda2@red.nahidapp.com:443?path=%2Fred%2F
 vless://87a09075-f5f0-4ff9-80df-3e81fcdfd10d@185.143.234.235:80?path=%2F&security=none&encryption=none&host=d.nsa03.com&type=ws#%40filtershekan_channel
 vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%40filtershekan_channel
 vless://5907f111-80d7-43ab-acca-8df44b2beb15@snapp.ir:80?path=%2F&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#%40Test
+vless://60404e8a-a1d0-4374-9b4c-6aeb32dcf51b@185.143.233.235:8080?encryption=none&type=ws&host=Test.bosbedetoto.site&path=/&security=none#@ehsawn8
+trojan://telegram-id-privatevpns@13.36.216.227:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
+vless://f9bf92a9-e4b6-4a74-b75f-929ce468fc2f@snapp.ir:80?security=none&allowInsecure=0&encryption=none&type=ws&host=star.iranstookshop.ir&path=/#5G
