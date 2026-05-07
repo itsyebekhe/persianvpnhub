@@ -24,3 +24,4 @@ trojan://telegram-id-privatevpns@15.224.94.238:22222?security=tls&alpn=http/1.1&
 vless://4e016302-be30-4aca-9d12-3759d697124b@a2.grizzlygitt.ir:80?path=%2F&security=none&encryption=none&type=ws#%40GrizzlyVPN
 vless://609f7aa8-d0c9-47fc-a026-7ec166074710@s4.tehranionliine.ir:80?path=%2F&security=&encryption=none&type=ws#%F0%9F%92%8EnD6QlOcNgX
 vless://a3d096e0-1ed1-318c-16d2-0667e91ce11f@hmt.masterdadeh.ir:80?path=%2F&security=none&encryption=none&type=ws&sni=185.226.94.242#%40filtershekan_channel
+trojan://telegram-id-privatevpns@63.184.179.58:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
