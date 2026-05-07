@@ -27,3 +27,6 @@ vless://a3d096e0-1ed1-318c-16d2-0667e91ce11f@hmt.masterdadeh.ir:80?path=%2F&secu
 trojan://telegram-id-privatevpns@63.184.179.58:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
 vless://9f4c3a72-a88e-4ee3-bee8-40901085a352@Tapsi.ir:8080?path=%2Fcdn&security=none&encryption=none&host=Zp.movizdl.ir&type=ws#TEL%3BFather_vpn
 trojan://telegram-id-privatevpns@52.47.129.227:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
+vless://34572e7a-c273-4bef-8a77-c6b2bf6de533@snapp.ir:2082?path=%2F&security=none&encryption=none&host=h.hshonar.ir&type=ws#%40filtershekan_channel
+vless://fba3ac18-1708-4a8b-814a-f815fd09d8a9@arvancloud.ir:2095?encryption=none&host=panel.linuweb.ir&path=%2Fwebsite&security=none&type=ws#@powerro
+trojan://telegram-id-privatevpns@15.224.29.207:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
