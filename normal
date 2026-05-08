@@ -26,3 +26,5 @@ vless://606252cc-1c04-4e09-b5b1-f537dbcf5f58@snapp.ir:80?path=%2F&security=none&
 vless://94dc5204-c5a9-4856-9fd6-67264ba499c1@red.nahidapp.com:443?security=tls&type=ws&headerType=&path=%2Fred%2F&host=red.nahidapp.com&sni=red.nahidapp.com&fp=#@electvpn0
 vless://68b806e5-e240-4c58-a2ca-2fcba663a39f@185.143.233.235:80?encryption=none&type=ws&host=gb-london.lzccp.ir#@electvpn0
 trojan://telegram-id-privatevpns@3.123.242.100:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
+vless://d3db44da-fbd2-4592-bc01-fa7995ee0434@snapp.ir:80?path=%2F&security=none&encryption=none&host=bl.varyonet.ir&type=ws#%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%20%D8%AF%D8%A7%D8%A6%D9%85%DB%8C%20%D8%AC%D9%88%DB%8C%D9%86%20%D8%B4%D9%88%F0%9F%97%BE%20prrofile_purple%40
+trojan://telegram-id-privatevpns@13.37.76.238:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
