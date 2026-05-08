@@ -23,3 +23,6 @@ trojan://telegram-id-privatevpns@15.224.87.132:22222?security=tls&alpn=http/1.1&
 vless://e9c11f71-7fb6-4d4d-ab91-b1f9490d6f00@185.143.234.235:80?encryption=none&host=login.deltars.ir&path=%2F&security=none&type=ws#NetMeli-Turbo1-10.00GB%25F0%259F%2593%258A-60D%25E2%258F%25B3
 vless://606252cc-1c04-4e09-b5b1-f537dbcf5f58@snapp.ir:80?path=%2FFIRELINKKVPN&security=none&encryption=none&host=firelinkk.arian-go-internet.ir&type=ws#%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%7C%20%F0%9F%9A%80AshpaziMidas%F0%9F%9A%80%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D9%BE%DB%8C%D8%AA%D8%B2%D8%A7%20%D8%B1%D9%88%D8%A8%DB%8C%DA%A9%D8%A7%3A%20powerro%20%F0%9F%8D%95
 vless://606252cc-1c04-4e09-b5b1-f537dbcf5f58@snapp.ir:80?path=%2F&security=none&encryption=none&host=firelinkk.arian-go-internet.ir&type=ws#TEL%3BFather_vpn
+vless://94dc5204-c5a9-4856-9fd6-67264ba499c1@red.nahidapp.com:443?security=tls&type=ws&headerType=&path=%2Fred%2F&host=red.nahidapp.com&sni=red.nahidapp.com&fp=#@electvpn0
+vless://68b806e5-e240-4c58-a2ca-2fcba663a39f@185.143.233.235:80?encryption=none&type=ws&host=gb-london.lzccp.ir#@electvpn0
+trojan://telegram-id-privatevpns@3.123.242.100:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
