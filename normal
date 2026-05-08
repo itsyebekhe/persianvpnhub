@@ -38,3 +38,6 @@ trojan://telegram-id-privatevpns@15.188.208.223:22222?security=tls&alpn=http/1.1
 vless://87e624d8-d5e7-4f0b-aaf6-07d52ad581cf@snapp.ir:2086?path=%2F&security=none&encryption=none&host=sas.turbomail.ir&type=ws#h8ufeqzd-1023.99MB%F0%9F%93%8A
 vless://e708da72-58cf-4e52-97be-fc6116c1a8b4@ip.amirenzo.ir:80?encryption=none&host=baz.amirenzohost.ir&path=%2F&security=none&type=ws#powerro
 vless://318adaa4-6f45-46e7-b6e6-9c0a08ae1580@185.143.233.5:443?path=%2F%40alaedin%3Fed%3D128&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=alaedin7.8lack.ir&fp=firefox&type=ws&allowInsecure=0&sni=alaedin7.8lack.ir#%40ProxyMTProtoIR
+vless://7b048a03-a987-4957-9171-4475094dc7d6@ger1bot-ws.headerip.com:80?path=%2F&security=none&encryption=none&host=ger1.mv5.ir&type=ws#%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%20%D8%AF%D8%A7%D8%A6%D9%85%DB%8C%20%D8%AC%D9%88%DB%8C%D9%86%20%D8%B4%D9%88%F0%9F%97%BE%20prrofile_purple%40
+vless://9f213734-bbf7-4209-8e36-d533375bc6d4@snapp.ir:80?encryption=none&host=n1.abantrust.ir&path=%2F&security=none&type=ws#%E2%9C%A8%EF%B8%8F-73589_powerro-1.00GB%F0%9F%93%8A-2D%E2%8F%B3
+vless://c506ac8d-225b-4af3-8442-740ce3e43684@snapp.ir:2052?encryption=none&type=ws&path=%2F&host=dn.bigmeow.ir&security=none#%F0%9F%A6%89%40FreeConfigForYou
