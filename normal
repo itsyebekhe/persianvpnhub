@@ -34,3 +34,4 @@ vless://72a61ef2-f87d-44ee-a42a-e4154dcd5086@snapp.ir:8880?encryption=none&type=
 vless://0dadbf2c-480a-4de3-be2e-1eeb38974722@camp.nahidapp.com:443?encryption=none&type=ws&security=tls&path=%2FIF_VPN_Bot&host=camp.nahidapp.com&sni=camp.nahidapp.com&allowInsecure=0#@canfigiop
 trojan://telegram-id-privatevpns@3.79.92.53:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
 vless://515fa878-1381-4b2e-877a-7394d7135d5c@arvan.servermeli.xyz:80?path=%2F&security=none&encryption=none&host=conf1.chitav2.com&type=ws#TEL%3BFather_vpn
+trojan://telegram-id-privatevpns@15.188.208.223:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
