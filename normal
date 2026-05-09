@@ -28,3 +28,8 @@ trojan://telegram-id-privatevpns@13.36.88.140:22222?security=tls&alpn=http/1.1&h
 trojan://telegram-id-privatevpns@13.38.246.169:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
 vless://9012f0c7-74d8-491f-bfb1-47e2574cfa99@185.143.235.201:80?path=%2F&security=none&encryption=none&host=an.arshiashop.org&type=ws#%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%20%D8%AF%D8%A7%D8%A6%D9%85%DB%8C%20%D8%AC%D9%88%DB%8C%D9%86%20%D8%B4%D9%88%F0%9F%97%BE%20prrofile_purple%40
 trojan://telegram-id-privatevpns@52.58.203.172:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
+vless://c9841f8b-9388-4142-9549-688c98d77d13@red.nahidapp.com:443?path=%2Fred%2F&security=tls&encryption=none&host=red.nahidapp.com&type=ws&sni=red.nahidapp.com#%40filtershekan_channel
+vless://890b411f-c315-462c-bdf0-5f6452de775a@snapp.ir:8880?path=%2F&security=none&encryption=none&host=wt.programming-coding.ir&type=ws#%40filtershekan_channel
+vless://12eeb57a-3e54-4b9f-a79f-cd02cab69a79@snapp.ir:80?path=%2FSalamFarmandeh&security=none&encryption=none&host=content.dragonstorevt.info&type=ws#%40filtershekan_channel
+vless://5b376078-9561-4587-84c1-cc16a4f6d88a@digipay.ir:80?path=%2F&security=none&encryption=none&host=asd.pixserver.ir&type=ws#@iProxyChannel
+trojan://telegram-id-privatevpns@15.224.89.79:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
