@@ -35,3 +35,8 @@ trojan://telegram-id-privatevpns@15.224.80.211:22222?security=tls&alpn=http/1.1&
 vless://ce5ccdd9-a6f8-488f-aaa1-e5d66b9f9133@185.143.233.235:80?path=%2F&security=none&encryption=none&host=d.nsa03.com&type=ws#%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%20%D8%AF%D8%A7%D8%A6%D9%85%DB%8C%20%D8%AC%D9%88%DB%8C%D9%86%20%D8%B4%D9%88%F0%9F%97%BE%20prrofile_purple%40
 vless://a5449edb-5574-4c73-b6d6-3e00d693672d@185.143.233.122:80?path=%2Flord&security=none&encryption=none&host=esy.aigameapps.ir&type=ws#%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%20%D8%AF%D8%A7%D8%A6%D9%85%DB%8C%20%D8%AC%D9%88%DB%8C%D9%86%20%D8%B4%D9%88%F0%9F%97%BE%20prrofile_purple%40
 vless://525f27e1-1fd9-4f27-9a73-5dd9f6760466@185.143.233.235:8880?type=ws&encryption=none&path=%2Fws%3Fed%3D2560&host=New1.legendperm.ir&security=none#@aloconfig_com
+trojan://telegram-id-privatevpns@63.178.170.208:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
+vless://00669e97-27fb-4273-878b-d514f7f4fd4b@snapp.ir:80?path=%2F&security=none&encryption=none&host=striker.starferi.ir&type=ws#%40filtershekan_channel
+vless://ce5ccdd9-a6f8-488f-aaa1-e5d66b9f9133@185.143.233.235:80?security=none&encryption=none&headerType=none&type=tcp#%40v2rayRoom
+vless://26482944-9d9b-48a2-b2fa-427541b96220@SnaPp.ir:2082?path=%2F&security=none&encryption=none&host=younes.mobilesubasa.com&type=ws#%40v2rayRoom
+vless://c19be7e7-39a0-4547-a662-bca799f7870e@s4.tehranionliine.ir:80?path=%2F&security=none&encryption=none&type=ws#@aloconfig_com
