@@ -26,3 +26,4 @@ vless://a3087447-269f-43c5-a5f9-d5686f452612@185.143.233.5:2082?security=none&al
 vless://4e3f6a5b-acd3-4566-8349-bc71602b99c1@vpnxvpn.nazincup.ir:8080?path=%2Fapi&security=none&encryption=none&host=vpnxvpn.nazincup.ir&type=ws#%40
 vless://AstroVPN-Official@blog.helm.sh:443?mode=auto&path=%2Fappxa&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D&insecure=0&host=neon-pixie-167b20.netlify.app&fp=chrome&type=xhttp&allowInsecure=0&sni=blog.helm.sh#%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%DB%8C%40kakajan%F0%9F%8C%B9
 vless://a3087447-269f-43c5-a5f9-d5686f452612@185.143.233.5:2082?encryption=none&type=ws&path=%2F&host=cdn.mizbanertebatfarda.ir#@irconfiig
+trojan://telegram-id-privatevpns@3.126.44.218:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
