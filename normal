@@ -47,3 +47,6 @@ vless://0541b6dd-914f-48dc-a3d8-4f8e4e6fd85f@ursa.pardazwe.ir:2052?path=%2F&secu
 trojan://telegram-id-privatevpns@13.38.154.94:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 vless://36623934-3936-4030-b332-633533653363@185.143.233.167:80?path=%2Fl%2Fw%2FaXD2QyDdS6vRQpxs%3Fed%3D2047&security=none&encryption=none&host=dl.tgmovie.bond&type=ws#%40filtershekan_channel
 vless://67aa928d-0402-48ea-869a-a72dba3df515@185.143.233.235:443?encryption=none&type=ws&security=tls&path=%2F&host=who.xwho.ir&sni=who.xwho.ir&alpn=h2%2Chttp%2F1.1&fp=chrome&allowInsecure=0#powerro
+vless://58f8f6fa-27dd-4859-8c63-021e32547fc0@gift.nazincup.ir:80?path=%2Fapi&security=none&encryption=none&host=gift.nazincup.ir&type=ws#%40filtershekan_channel
+vless://acd7d454-c55b-4568-a720-6b6b65c61ce6@s2.tehranionliine.ir:80?path=%2F&security=none&encryption=none&type=ws#%40filtershekan_channel
+vless://12a781ed-3c49-469b-96a6-984c0115912e@miller.iransatellite.net:80?path=%2F&security=none&encryption=none&type=ws#%40filtershekan_channel
