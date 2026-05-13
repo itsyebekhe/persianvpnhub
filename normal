@@ -52,3 +52,5 @@ vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIiIsDQogICJhZGQiOiAidjI5LmhkYWNkLmNvbSIs
 trojan://telegram-id-privatevpns@35.180.13.11:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 vless://24472781-f021-48a1-bebb-5390c2affade@api1.iramsmartkeyka.ir:2086?type=ws&encryption=none&path=%2FwsVMarketLoad&host=&security=none#senator5gb-oiaj9g33
 vless://be617da4-b296-4eef-9030-1a760a928ae4@technomobile.fpnshop.ir:80?encryption=none&host=technomobile.mytopmedia.sbs&path=%2F&security=none&type=ws#Vpn_jet7
+dns://eyJzY2hlbWEiOiJ3aGl0ZWRucy5wcm9maWxlIiwidmVyc2lvbiI6MSwicHJvZmlsZSI6eyJuYW1lIjoiZzQiLCJzZXJ2ZXIiOnsiZG9tYWluIjoiZzQucm1mdC50ZWNoIiwiZW5jcnlwdGlvbl9rZXkiOiJhMzM3ZTlmYTc1MTYxYzQ0YmViZTdkNzE3ZGEzNmFmYyIsImVuY3J5cHRpb25fbWV0aG9kIjoxfX19
+dns://eyJzY2hlbWEiOiJ3aGl0ZWRucy5wcm9maWxlIiwidmVyc2lvbiI6MSwicHJvZmlsZSI6eyJuYW1lIjoiYzQiLCJzZXJ2ZXIiOnsiZG9tYWluIjoiZG5zdHQwMS5pcmFuZGFhZC5jb20iLCJlbmNyeXB0aW9uX2tleSI6IjNhMmQzYTBjYmQ0MTFlZGY0NzFmMWVlNjVkNjU5MDQ1IiwiZW5jcnlwdGlvbl9tZXRob2QiOjF9fX0
