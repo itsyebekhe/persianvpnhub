@@ -34,3 +34,4 @@ vless://981fca81-5be1-41f8-ac9b-d138e8109943@43.168.16.112:443?allow_insecure=0&
 vmess://eyJ2IjoiMiIsInBzIjoiQHYycmF5Y29uZmlnYW1pciA4ODU4IiwiYWRkIjoibjE3NTMzNDg3MzYubGllNWQuY3lvdSIsInBvcnQiOjQ0MywiaWQiOiJmMjY3ZWFjMy1kZmI0LTQ1YmUtYTQ4MC03ZTE4NDdjYTA0YWIiLCJhaWQiOjAsInNjeSI6ImF1dG8iLCJuZXQiOiJ3cyIsInR5cGUiOiJub25lIiwicGF0aCI6Ii8iLCJ0bHMiOiJ0bHMifQ==
 vless://360f1d71-f8dd-4c71-aa4f-347486312dca@hk.chinablog.xyz:8080?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=bXstTdAgEyOn8LEMM_K2gIOw7T2iKhr6l-lXcrF4PlM&sni=www.liblib.art#%40v2rayconfigamir%203513
 vless://48559872-76d9-4695-8960-0c58f15b2678@185.143.235.20:8880?security=none&type=ws&headerType=&path=%2F&host=tr-st.ge9.ir#@pmoironn
+vless://7ab405fa-7fad-4e50-a133-a1437712c0dc@185.143.235.20:2086?path=%2Fpath&security=none&encryption=none&host=tr-st2.ge9.ir&type=ws#TEL%3BFather_vpn
