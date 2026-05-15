@@ -45,3 +45,4 @@ trojan://telegram-id-privatevpns@13.38.241.41:22222?security=tls&alpn=http/1.1&h
 vless://20c33382-9f5a-4fe3-998b-1af9719f260a@snapp.ir:80?encryption=none&security=none&type=ws&headerType=none&path=%2F&host=M1.snllshop.ir#@config_free2
 vless://59bb1fa4-8c04-44af-bffb-efff394b75c2@Snapp.ir:8080?path=%2F&security=none&encryption=none&host=ir2.kokomokiyoo.ir&type=ws#%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%20%D8%AF%D8%A7%D8%A6%D9%85%DB%8C%20%D8%AC%D9%88%DB%8C%D9%86%20%D8%B4%D9%88%F0%9F%97%BE%20prrofile_purple%40
 vless://69ab00e0-9230-424b-b1be-eaf9ec776ce8@trex.docos.tech:443?security=tls&allowInsecure=0&encryption=none&type=ws&host=trex.docos.tech&path=/vless-ws&sni=trex.docos.tech&fp=chrome#@config_free2
+vless://92b93f5d-af24-420e-95fb-0120f55b4481@men2.gafe-lorbad.ir:80?path=%2F&security=none&encryption=none&host=s2.fasrrapido.ir&type=ws#@electvpn0
