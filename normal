@@ -44,3 +44,10 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.149:8
 vless://981fca81-5be1-41f8-ac9b-d138e8109943@193.32.177.152:443?encryption=none&security=tls&sni=babayaga-6i7.pages.dev&type=ws&host=babayaga-6i7.pages.dev&path=/?ed=2560&Telegram??@WangCai2#🇺🇸
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@162.159.12.151:443?ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&host=sni.111000.indevs.in&path=%2F&security=tls&sni=sni.111000.indevs.in&type=ws#🇨🇦
 trojan://telegram-id-privatevpns@15.188.181.239:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
+vless://f4af15b0-8994-48bf-b0d2-117a49f3f503@blubank.sb24.ir:80?encryption=none&type=ws&path=%2F&host=static.aliyanserver.ir#@electvpn0
+vless://b296d621-d830-4bee-8433-bd940e89a25a@chatgpt.com:8443?alpn=http%2F1.1&encryption=none&fp=chrome&host=dl.mincroft.top&path=%2F&security=tls&sni=dl.mincroft.top&type=ws#@electvpn0
+vless://0a47ab98-b50b-4b92-baec-6e16af930dde@snapp.ir:8080?path=%2FEmbestpro1&security=none&encryption=none&host=Cyrus.zomavo.ir&type=ws#TEL%3BFather_vpn
+vless://b4e6c21d-3931-4907-b739-00224db4299c@ir120-app.brnkood.com:443?encryption=none&type=ws&security=tls&path=%2Fsites%2Fbrn%2Fbackup.zip&host=ir120-assets.boornakood.ir&sni=ir120-assets.boornakood.ir&alpn=h2&fp=chrome&allowInsecure=1#@electvpn0
+vless://b4e6c21d-3931-4907-b739-00224db4299c@ir120-backup.brnkood.com:443?encryption=none&type=ws&security=tls&path=%2Fsites%2Fbrn%2Fbackup.zip&host=ir120-assets.boornakood.ir&sni=ir120-assets.boornakood.ir&alpn=h2&fp=chrome&allowInsecure=1#@electvpn0
+vless://b4e6c21d-3931-4907-b739-00224db4299c@ir120-api.boornakood.ir:443?encryption=none&type=ws&security=tls&path=%2Fsites%2Fbrn%2Fbackup.zip&host=ir120-assets.boornakood.ir&sni=ir120-assets.boornakood.ir&alpn=h2&fp=chrome&allowInsecure=1#@electvpn0
+vless://b4e6c21d-3931-4907-b739-00224db4299c@ir120-assets.boornakood.ir:443?encryption=none&type=ws&security=tls&path=%2Fsites%2Fbrn%2Fbackup.zip&host=ir120-assets.boornakood.ir&sni=ir120-assets.boornakood.ir&alpn=h2&fp=chrome&allowInsecure=1#@electvpn0
