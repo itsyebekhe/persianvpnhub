@@ -39,3 +39,5 @@ vless://d428091c-e6eb-48f9-9a07-b44eb886ac90@2.27.26.36:443?security=reality&sni
 vless://67001098-9d9f-4ab5-995a-6c297be549c3@nexus.itsazan.info:2083?path=%2Fapi%2Fv1%2Fusers&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=nexus.itsazan.info&fp=chrome&type=ws&allowInsecure=0&sni=nexus.itsazan.info#%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%20%D8%AF%D8%A7%D8%A6%D9%85%DB%8C%20%D8%AC%D9%88%DB%8C%D9%86%20%D8%B4%D9%88%F0%9F%97%BE%20prrofile_purple%40
 trojan://telegram-id-privatevpns@15.236.132.94:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@15.237.54.100:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
+trojan://telegram-id-privatevpns@63.182.26.197:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
+vless://2afabae4-6a9f-4b41-afa1-97f1cba88b26@185.143.233.5:2096?encryption=none&type=ws&security=tls&path=%2F&host=p1.sesrsa.com&sni=sub.sesrsa.com&fp=firefox&allowInsecure=0#Vasl_b
