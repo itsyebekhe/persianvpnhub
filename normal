@@ -23,3 +23,4 @@ vless://e41b8db0-d98d-4651-8c6d-335120a9eadc@185.143.234.235:2086?path=%2Fws&sec
 vless://74816983-e4d9-46e5-a0e6-11f55d361e1e@arvancloud.ir:2086?type=ws&encryption=none&path=%2Fcode&host=xtco.jorvnora.ir&security=none#
 vless://f829c917-6eeb-4250-aa0f-ca33f91352f7@ww.parspas.ir:8880?path=%2F&security=none&encryption=none&type=ws#@aloconfig_com
 vless://71bda45d-8054-485e-a5f2-ef8b6d5a29ba@snapp.ir:80?type=ws&security=none&path=%2F&host=derakhshan.molvliafor.ir#@powerro
+trojan://telegram-id-privatevpns@13.38.175.41:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
