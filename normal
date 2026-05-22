@@ -27,3 +27,4 @@ vless://dad8cfaf-a8dc-491b-94ad-1fb57cfc6691@pisronovin.ir:80?path=%2F&security=
 vless://9dc1bebe-e059-4c96-b3a3-46a2936b1a53@Snapp.ir:80?path=%2F&security=none&encryption=none&host=B1.nexoratechcenter.ir&type=ws#Kinghooman
 vless://f9aeba2c-4c68-11f1-8d30-2ddfba49052f@185.143.234.235:8880/?encryption=none&type=ws&path=%2F%3Fed%3D2560&host=sv-1.jservices.ir#server1%F0%9F%8D%8B%E2%80%8D%F0%9F%9F%A9
 vless://61a302fb-c328-4d55-bf64-db8cb87020ad@snapp.ir:80?path=%2F&security=none&encryption=none&host=derakhshan.molvliafor.ir&type=ws#%40FREECONFIGSPLUS%F0%9F%87%B8%F0%9F%87%AA
+trojan://telegram-id-privatevpns@63.183.106.71:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
