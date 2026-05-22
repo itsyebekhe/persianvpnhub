@@ -28,3 +28,9 @@ vless://9dc1bebe-e059-4c96-b3a3-46a2936b1a53@Snapp.ir:80?path=%2F&security=none&
 vless://f9aeba2c-4c68-11f1-8d30-2ddfba49052f@185.143.234.235:8880/?encryption=none&type=ws&path=%2F%3Fed%3D2560&host=sv-1.jservices.ir#server1%F0%9F%8D%8B%E2%80%8D%F0%9F%9F%A9
 vless://61a302fb-c328-4d55-bf64-db8cb87020ad@snapp.ir:80?path=%2F&security=none&encryption=none&host=derakhshan.molvliafor.ir&type=ws#%40FREECONFIGSPLUS%F0%9F%87%B8%F0%9F%87%AA
 trojan://telegram-id-privatevpns@63.183.106.71:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
+vless://8ca468e9-82e2-422d-ac23-25029eb41664@anten.ir:2052?path=%2Fcdn&security=none&encryption=none&host=i.asaasa.ir&type=ws#TEL%3BFather_vpn
+dns://eyJzY2hlbWEiOiJ3aGl0ZWRucy5wcm9maWxlIiwidmVyc2lvbiI6MSwicHJvZmlsZSI6eyJuYW1lIjoiQHZhc2xfYmFzaGltIFs0OV0iLCJzZXJ2ZXIiOnsiZG9tYWluIjoidi53ZG4uYmVzdCIsImVuY3J5cHRpb25fa2V5IjoiYmFkOTkzNjQwOTM4NjE2MzQwMzBlOTZmMTFmZTMxMzIiLCJlbmNyeXB0aW9uX21ldGhvZCI6MX19fQ
+dns://eyJzY2hlbWEiOiJ3aGl0ZWRucy5wcm9maWxlIiwidmVyc2lvbiI6MSwicHJvZmlsZSI6eyJuYW1lIjoiQHZhc2xfYmFzaGltIFs1MF0iLCJzZXJ2ZXIiOnsiZG9tYWluIjoidi5kaWdpb3phcmsuc3RvcmUiLCJlbmNyeXB0aW9uX2tleSI6ImM0Y2M3MzkxYzJkYWQ2NTEwN2M2MjAxY2U1MDQwYzczIiwiZW5jcnlwdGlvbl9tZXRob2QiOjF9fX0
+dns://eyJzY2hlbWEiOiJ3aGl0ZWRucy5wcm9maWxlIiwidmVyc2lvbiI6MSwicHJvZmlsZSI6eyJuYW1lIjoiQHZhc2xfYmFzaGltIFs1MV0iLCJzZXJ2ZXIiOnsiZG9tYWluIjoidi5qeW5tYXJrZXQuc2hvcCIsImVuY3J5cHRpb25fa2V5IjoiNDRkMzI5ZjJjZDhlMzdkNjlkNWU1NDIwZmM0OTJjOTAiLCJlbmNyeXB0aW9uX21ldGhvZCI6MX19fQ
+dns://eyJzY2hlbWEiOiJ3aGl0ZWRucy5wcm9maWxlIiwidmVyc2lvbiI6MSwicHJvZmlsZSI6eyJuYW1lIjoiQHZhc2xfYmFzaGltIFs1Ml0iLCJzZXJ2ZXIiOnsiZG9tYWluIjoidi53ZG4uYmVzdCIsImVuY3J5cHRpb25fa2V5IjoiYmFkOTkzNjQwOTM4NjE2MzQwMzBlOTZmMTFmZTMxMzIiLCJlbmNyeXB0aW9uX21ldGhvZCI6MX19fQ
+trojan://telegram-id-privatevpns@13.38.186.226:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
