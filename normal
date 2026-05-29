@@ -127,3 +127,5 @@ vless://5c56f746-e0a4-498c-881e-92510b00bcfa@209.250.245.206:37385?security=none
 trojan://Mitivpn@216.24.57.7:443?path=%2F%3Fed%3D2048&security=tls&alpn=http%2F1.1&insecure=1&host=cdn.hitgram.ir&fp=chrome&type=ws&allowInsecure=1&sni=cdn.hitgram.ir#%40NETMelliAnti
 trojan://Mitivpn@216.24.57.7:443?path=%2F%3Fed%3D2048&security=tls&alpn=http%2F1.1&insecure=1&host=www.hitgram.ir&fp=chrome&type=ws&allowInsecure=1&sni=www.hitgram.ir#%40NETMelliAnti
 vless://de989f46-ce7c-4d94-9c58-5ccd80e8d7a1@104.17.150.76:2086?path=%2F&security=none&encryption=none&host=war2.unlimiteddev-service2881.ir&type=ws#%40Filtershekan_channel%20%7C5
+vless://9e0c0ec9-ae5c-448e-95aa-e39bfde9622a@95.179.140.164:19857?security=none&encryption=none&headerType=none&type=tcp#@outline_ir
+vless://191183a0-8130-4e07-94b9-539ab220d680@xx.r9x.ir:80?path=%2Fws2&security=&encryption=none&host=xx.r9x.ir&type=ws#hhhhhh-r85ldmehcz
