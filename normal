@@ -264,3 +264,5 @@ vless://394f6981-a782-4779-9a85-e6cf22935d93@45.159.12.120:8443?encryption=none&
 vless://9770fce0-0b88-590f-992d-7dac8625d360@winq35461s-19523160106-direct.irgame.co:443?alpn=h2%2Chttp%2F1.1&encryption=none&flow=xtls-rprx-vision&fp=chrome&security=tls&sni=winq35461s-19523160106-direct.irgame.co&type=tcp#🔵@chillguy_vpn
 vless://a5ea9247-79f3-4655-aece-3fb51e1e669e@rezerv1.yunus.guru:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=-X9CZv5MYKivpxPVP1vdgFKf2AJWmZ0Pju-j8LFmlh4&security=reality&sid=6c88854e73e86773&sni=rezerv1.yunus.guru&type=tcp#🔵@chillguy_vpn
 vless://4f013568-a58b-4b04-b5dd-4d52bf1c33a4@141.193.213.20:443?encryption=none&host=amoosamiii.net&path=%2Fpoiuyws&security=tls&sni=amoosamiii.net&type=ws#🔵@chillguy_vpn
+vless://dce2c2b0-b9ad-489e-8c76-29a96c296dc4@91.107.248.233:80?security=reality&encryption=none&pbk=9WCa12k9THrR6jP0YUpcMq_rx_0cGSIMk_ppYSpc_To&headerType=none&fp=chrome&spx=%2FANHdpVJ8WOWoRP6&type=tcp&sni=play.google.com&sid=ef84#%40NETMelliAnti
+vless://115c7da0-f4c5-41d9-866d-8067287ce6a0@t2.appleid45.ir:443?path=%2F&security=tls&encryption=none&insecure=0&fp=chrome&type=ws&allowInsecure=0&sni=t46.filimovideo.ir#%40NETMelliAnti
