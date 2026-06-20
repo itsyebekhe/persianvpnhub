@@ -345,3 +345,5 @@ vless://e5d07969-f008-42ee-bbab-7995ef4d1e1d@185.173.144.212:19430?encryption=no
 trojan://MiTiVPN@188.114.97.6:443?type=ws&security=tls&path=%2Fed%3Dmitivpn&host=my.95r.ir&sni=my.95r.ir&alpn=http%2F1.1&fp=chrome&insecure=1&allowInsecure=1#30%20%D8%AE%D8%B1%D8%AF%D8%A7%D8%AF%20%E2%9C%A8
 vless://be88d265-a268-4ce1-ba06-516fa5c8471d@134.255.252.76:9999?encryption=none&fp=chrome&pbk=_kcz60zlz7bBTIXtK11MgHIrnVBF9sTJnU2MiLCwDF8&security=reality&sid=02&sni=varzesh3.com&spx=%2F3LB8Ys42AC9wwHz&type=tcp#Best-X-v2
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.7:8080#%40SylphNet%20%7C%202026-06-21%2001%3A28
+vless://c9fd0fb1-8251-4106-b09a-f4b426736f67@137.184.218.169:36925?security=reality&encryption=none&pbk=lJ9INPpO4rdnm2Tek_yg0PGFyUrBB6MoKyvqt_Mfqm0&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.cloudflare.com#%40SylphNet%20%7C%202026-06-21%2002%3A13
+vless://dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51@de.vpnbase.net:80?encryption=none&host=%40SylphNet&path=%2Fhttp&security=none&type=ws#%40SylphNet%20%7C%202026-06-21%2002%3A28
