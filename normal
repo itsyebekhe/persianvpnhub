@@ -334,3 +334,14 @@ trojan://humanity@104.19.229.21:443?path=%2Fassignment&security=tls&insecure=0&h
 vless://41f46aa9-da29-45f6-b33e-50ed736c8646@global.cloud-play.ir:80?mode=auto&path=%2F&security=none&encryption=none&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D&host=simeonelaparo.de&type=xhttp#🔵@chillguy_vpn
 vless://db707e06-2711-4517-9c48-6409e4608c4f@xn-ip1.dbssl.ir:443?mode=auto&path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D&insecure=0&host=us.dbssl.ir&fp=chrome&type=xhttp&allowInsecure=0&sni=us.dbssl.ir#🔵@chillguy_vpn
 vless://7b4fa63d-c22e-4e0a-8de0-f9f87a54c51e@panel.renvaro.ir:8443?encryption=none&type=tcp&headerType=none#🔵@chillguy_vpn
+trojan://zsamwtZNsm-2MKkyTHSRbQ@sv4.hosttbd.ir:10004?security=none&headerType=none&allowInsecure=0&type=tcp&path=/&host=fast.com#%40NETMelliAnti
+trojan://CBIO9r68xR5fRBvneMKfaw@sv5.hosttbd.ir:10005?security=none&headerType=none&allowInsecure=0&type=tcp&path=/&host=fast.com#%40NETMelliAnti
+vless://89049f79-320b-48a0-b1cf-110165cae30c@83.228.224.161:2083?security=reality&encryption=none&pbk=l1Ekgk-8T5rB-yolp5OIpc0XZTcd2gBeqmIR2bytKXY&headerType=none&fp=chrome&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=www.yahoo.com&sid=4e590fdc#%40SylphNet%20%7C%202026-06-21%2001%3A03
+vless://e5d07969-f008-42ee-bbab-7995ef4d1e1d@185.173.144.209:11919?encryption=none&headerType=http&host=play.google.com&path=%2F&security=none&type=tcp#%F0%9F%87%BA%F0%9F%87%B8%20TCP-500.00GB%F0%9F%93%8A
+vless://e5d07969-f008-42ee-bbab-7995ef4d1e1d@185.173.144.209:37368?encryption=none&host=play.google.com&path=%2Fmeet&security=none&type=ws#%F0%9F%87%BA%F0%9F%87%B8%20WS
+vless://e5d07969-f008-42ee-bbab-7995ef4d1e1d@185.173.144.212:39860?encryption=none&headerType=http&host=play.google.com&path=%2F&security=none&type=tcp#%F0%9F%87%BA%F0%9F%87%B8%20TCP%202
+vless://e5d07969-f008-42ee-bbab-7995ef4d1e1d@185.173.144.212:38334?encryption=none&fp=chrome&pbk=NziHXc_dnhzsVEfn_asAz4JONCuwQYHNiCW_2-GX5FA&security=reality&sid=b0ab63ef9a&sni=www.yahoo.com&spx=%2FOecT1TIRBgMRSP8&type=tcp#%F0%9F%87%BA%F0%9F%87%B8%20Reality%202
+vless://e5d07969-f008-42ee-bbab-7995ef4d1e1d@185.173.144.212:19430?encryption=none&host=play.google.com&path=%2Fmeet&security=none&type=ws#%F0%9F%87%BA%F0%9F%87%B8%20WS%202
+trojan://MiTiVPN@188.114.97.6:443?type=ws&security=tls&path=%2Fed%3Dmitivpn&host=my.95r.ir&sni=my.95r.ir&alpn=http%2F1.1&fp=chrome&insecure=1&allowInsecure=1#30%20%D8%AE%D8%B1%D8%AF%D8%A7%D8%AF%20%E2%9C%A8
+vless://be88d265-a268-4ce1-ba06-516fa5c8471d@134.255.252.76:9999?encryption=none&fp=chrome&pbk=_kcz60zlz7bBTIXtK11MgHIrnVBF9sTJnU2MiLCwDF8&security=reality&sid=02&sni=varzesh3.com&spx=%2F3LB8Ys42AC9wwHz&type=tcp#Best-X-v2
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.7:8080#%40SylphNet%20%7C%202026-06-21%2001%3A28
