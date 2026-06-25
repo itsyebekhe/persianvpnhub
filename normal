@@ -239,3 +239,8 @@ vless://8ca5cbd3-ec16-4728-bedc-2bc0d82f0922@217.217.247.247:443?security=realit
 vless://89049f79-320b-48a0-b1cf-110165cae30c@37.156.44.50:2083?security=reality&encryption=none&pbk=l1Ekgk-8T5rB-yolp5OIpc0XZTcd2gBeqmIR2bytKXY&headerType=none&fp=chrome&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=www.yahoo.com&sid=4e590fdc#%40FarazV2ray
 vless://eeb6823c-b926-4ea2-866a-5542edd26e59@104.18.42.54:443?path=%2F&security=tls&encryption=none&insecure=0&host=t1s1.rittbo.kdns.fr&type=ws&allowInsecure=0&sni=t1s1.rittbo.kdns.fr#%40FarazV2ray
 vless://a88183b3-883b-40ce-9134-673a72c8b4c2@108.162.194.165:2086?path=%2F&security=none&encryption=none&host=arshia.lezzatArshia.ir&type=httpupgrade#%40NETMelliAnti
+trojan://telegram-id-privatevpns@13.39.98.83:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
+trojan://MiTiVPN@151.101.110.219:443?path=%2Fde&security=tls&alpn=http%2F1.1&insecure=0&host=cdn2-mitivpn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#%40outline_ir
+vless://0058c215-ab1e-400c-a403-b5b2fda7e846@151.101.103.151:80?path=%2F%3Fed&security=none&encryption=none&host=max-gb1.global.ssl.fastly.net&type=ws#@v2reya88%20%7C%20%40confinghub2
+vless://a4e249e4-5992-46f7-80e6-29c02f0175a9@AR4.PASARGUARDMS.IR:2083?security=reality&encryption=none&pbk=AwnCJ7vTulBg6KyhJsHx5CkMBG_iuEboawi4E_buQno&headerType=none&fp=chrome&type=tcp&sni=yahoo.com&sid=bb99d437bb13f5f9#🔵@chillguy_vpn
+vless://495be7b0-42f9-46b2-bc96-beec3fd6ebdd@172.64.155.209:8443?path=%2F&security=tls&encryption=none&insecure=0&host=ez-4aa808.ezaccess1188cb7.workers.dev&fp=random&type=ws&allowInsecure=0&sni=ez-4aa808.ezaccess1188cb7.workers.dev#🔵@chillguy_vpn
