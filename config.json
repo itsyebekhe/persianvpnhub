@@ -109,5 +109,6 @@
     "Echo_Center": { "title": "", "logo": "" },
     "anty_filter": { "title": "", "logo": "" },
     "LightVPN_0": { "title": "", "logo": "" },
-    "ConfigWireguard": { "title": "", "logo": "" }
+    "ConfigWireguard": { "title": "", "logo": "" },
+    "mozconfigs": { "title": "", "logo": "" }
 }
