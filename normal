@@ -339,3 +339,5 @@ vmess://eyJhZGQiOiIxNzguMTA0LjY2LjgzIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhv
 vless://14400b5d-a218-4ed0-b4a9-d703a3501911@max-ep.443.erangle.ru:55503?path=%2F&security=tls&encryption=none&insecure=0&host=max-ep.443.erangle.ru&fp=chrome&type=httpupgrade&allowInsecure=0&sni=max-ep.443.erangle.ru#Channel%20%3A%20%40Daily_Configs
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpxa1JOTmhzSXJ6VTZxbmtM@20.223.221.41:443#Channel%20%3A%20%40Daily_Configs
 vless://6680846a-8a57-4dfd-9a0e-63209cfc8535@162.159.38.119:443?path=%2Fau-mt%3Fed%3D2082&security=tls&encryption=none&insecure=0&host=support.zoom.us.yxls.eu.cc&type=ws&allowInsecure=0&sni=support.zoom.us.yxls.eu.cc#Channel%20%3A%20%40Daily_Configs
+vless://e7d6530a-632e-41db-b919-5a1f7a55f58c@allnet.sanaiehdasti.com:1323?security=none&type=tcp&headerType=http&path=%2F&host=www.icloud.com#🔵@chillguy_vpn
+vless://b2f6aa3a-2550-4a1c-b2c0-1c94b1207217@162.159.38.119:443?path=%2Fhdgrbws&security=tls&encryption=none&host=terazhediii.info&type=ws&sni=terazhediii.info#🔵@chillguy_vpn
