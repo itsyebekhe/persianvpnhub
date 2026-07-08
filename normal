@@ -299,3 +299,7 @@ trojan://telegram-id-privatevpns@13.37.122.139:22222?security=tls&alpn=http/1.1&
 vless://b595a257-1c1c-4843-a0ab-46d650be5b19@fast.motorbazan.com:443?security=tls&type=ws&headerType=&path=&host=loosboijji.global.ssl.fastly.net&sni=ssl.fastly.com&fp=#🔵@chillguy_vpn
 vless://e6b1614c-e2f3-ba0d-0490-167d8c39c988@x4g-production-6503.up.railway.app:443?encryption=none&security=tls&type=ws&host=x4g-production-6503.up.railway.app&path=/ws/e6b1614c-e2f3-ba0d-0490-167d8c39c988&sni=x4g-production-6503.up.railway.app&fp=ios&alpn=http/1.1#🔵@chillguy_vpn
 vless://3788e28f-f48a-485e-9b90-482a6f8ca51d@gostar27.irtour123.com:443?path=%2Fvr1027%3Fed%3D2560&security=tls&encryption=none&insecure=0&fp=firefox&type=ws&allowInsecure=0&sni=gostar27.irtour123.com#🔵@chillguy_vpn
+vless://d7870f16-1c35-445f-9ff9-36f052895b34@151.101.193.57:80?mode=auto&path=%2F&security=none&encryption=none&extra=%7B%22scMaxEachPostBytes%22%3A%221000-1000000%22%7D&host=monopoli.global.ssl.fastly.net&type=xhttp#%40Echo_Center
+trojan://humanity@104.16.174.36:443?path=%2Fassignment&security=tls&insecure=0&host=www.ignitelimit.com&type=ws&allowInsecure=0&sni=www.ignitelimit.com#%40Echo_Center
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpZMVlTV05WV2Z1Zm9scGxL@20.164.216.112:443#%40Echo_Center
+vless://54f6511e-5ea2-46b8-8475-7adc729ece51@webmail.azinsaraco.ir:443?path=%2FZEUS_PANEL_BOT&security=tls&encryption=none&insecure=0&host=zeus-panel-cxyca3.zeus-butoun.workers.dev&fp=ios&type=ws&allowInsecure=0&sni=zeus-panel-cxyca3.zeus-butoun.workers.dev#%40Echo_Center
