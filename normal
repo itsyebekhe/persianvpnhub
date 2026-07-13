@@ -336,3 +336,4 @@ vless://ef673ef8-bdcc-4b3c-bdc2-00155a97791d@openai.com:2053?encryption=none&typ
 vless://eb7b6567-4115-4017-9c50-f5d074360a7f@pes.mamadhpbot.ir:2662?encryption=none&type=tcp&headerType=http&path=%2F&host=play.google.com#%F0%9F%87%B9%F0%9F%87%B7%40W570W
 vless://ef673ef8-bdcc-4b3c-bdc2-00155a97791d@cdn3.portalcode.ir:2053?encryption=none&type=xhttp&security=tls&path=%252Fxhu&host=cd.jorgotr.ir&mode=auto&sni=cd.jorgotr.ir&insecure=1&allowInsecure=1#%F0%9F%87%A9%F0%9F%87%AA%40W570W
 vless://eb7b6567-4115-4017-9c50-f5d074360a7f@pes.mamadhpbot.ir:3041?encryption=none&type=tcp&headerType=http&path=%2F&host=play.google.com#%F0%9F%87%AE%F0%9F%87%AA%40W570W
+vless://1d399c5a-1c32-4fff-a4d0-d78fd3328a4c@162.159.152.45:443?security=tls&sni=pages.teasalo.cloudns.org&type=ws&host=pages.teasalo.cloudns.org&fp=random&alpn=h3#@Hope_Net-join-us-on-Telegram
