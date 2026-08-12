@@ -433,3 +433,4 @@ vless://26734a84-52ad-488b-8451-814c5542e577@212.104.128.88:443?alpn=h3%2Ch2%2Ch
 vless://e4514801-0d5a-42ba-869f-39bd605aef9e@63.187.187.6:22223?security=none&encryption=none&headerType=none&type=tcp#%40FarazV2ray
 vless://d98e06d3-7f42-41e8-8dad-e9f35517a992@104.16.72.162:8443?path=%2F&security=tls&encryption=none&insecure=0&host=ad-004.zensah3g.info.&fp=firefox&type=ws&allowInsecure=0&sni=ssl.zensah3g.info.#%40FarazV2ray
 vless://24d49ddd-67c1-4821-b5b9-f12107366978@151.101.3.147:80?encryption=none&security=none&type=xhttp&host=baharishomalyour-name.global.ssl.fastly.net&path=/api&mode=auto&extra={#%F0%9F%8C%9F%20%40MTproxy22_v2ray
+vless://9ab4c043-dc1a-403b-b8a4-b9ddb1616e8d@191.40.4.7:40359?encryption=none&security=none&type=tcp#%F0%9F%87%A9%F0%9F%87%AA-5kgsl88v0t
