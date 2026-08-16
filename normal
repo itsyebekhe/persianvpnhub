@@ -449,3 +449,7 @@ vmess://eyJhZGQiOiIxNzguODMuNDUuMjkiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9z
 vless://83afd88f-200f-4d89-bfc7-66eff160c1d8@104.18.37.228:443?path=%2F%3F%3D512&security=tls&encryption=none&insecure=0&host=josni.hoyes.cloudns.ch&ech=ip.gs%2Budp%3A%2F%2F8.8.8.8&type=ws&allowInsecure=0&sni=josni.hoyes.cloudns.ch#%40irconfiig%20%F0%9F%8C%9E%F0%9F%8C%B6%EF%B8%8F
 vless://e4514801-0d5a-42ba-869f-39bd605aef9e@63.185.140.9:22223?security=none&encryption=none&headerType=none&type=tcp#%40irconfiig%20%F0%9F%8C%9E%F0%9F%8C%B6%EF%B8%8F
 vless://d024662a-397e-4fac-9643-8b7939e6bf33@94.237.124.107:3389?security=none&encryption=none&headerType=none&type=tcp#%40irconfiig%20%F0%9F%8C%9E%F0%9F%8C%B6%EF%B8%8F
+vless://3621d06a-c83a-4922-805d-eb716315a499@91.98.154.118:57775?path=%2F&security=none&encryption=none&host=play.google.com&type=ws#@ConfigYab_AUTO
+vless://707db87b-9cbf-438f-b4c7-9d984c8e944a@serv7.granitvpn.ru:7771?type=grpc&security=reality&sni=5post-gate.x5.ru&fp=firefox&pbk=yhUfTGgu5PYRlFqMnRZkxffH_aU05AFUToGI8_EKF28&sid=8248954896&serviceName=5post-gate.x5.ru#@ConfigYab_AUTO
+vless://7813c2ed-6c2c-4cd2-9c51-598fc3b0ec42@104.16.8.39:80?host=5zw3diufsm9bkxfrgtvmnlh1zts57vi2.yfhgg.workers.dev&security=none&type=ws&path=%2Fvl%2FOsgPWShq0w17IBGl3eaIbY1puj7h1uc&encryption=none#@ConfigYab_AUTO
+vless://83afd88f-200f-4d89-bfc7-66eff160c1d8@104.16.80.73:443?encryption=none&security=tls&sni=josni.hoyes.cloudns.ch&insecure=0&allowInsecure=0&ech=ip.gs%2Budp%3A%2F%2F8.8.8.8&type=ws&host=josni.hoyes.cloudns.ch&path=musiclovers85%3Fed%3D512#@ConfigYab_AUTO
