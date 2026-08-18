@@ -317,3 +317,11 @@ vless://05cf7b0e-ad1a-42bb-80e7-73ae45b1019a@188.114.97.6:8443?path=%2Fapi%2Fvoi
 ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU@18.188.213.207:443#%F0%9F%87%BA%F0%9F%87%B8-0098%20-%20NetFreedom0%20
 ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@149.22.95.183:443#%F0%9F%87%A8%F0%9F%87%A6CA-149.22.95.183-0056
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.214:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.214-0080
+vless://83afd88f-200f-4d89-bfc7-66eff160c1d8@172.66.44.97:443?security=tls&encryption=none&insecure=0&host=josni.hoyes.cloudns.ch&ech=ip.gs%2Budp%3A%2F%2F8.8.8.8&type=ws&allowInsecure=0&sni=josni.hoyes.cloudns.ch#%40FarazV2ray
+vless://f6190ff2-864c-46cf-ac16-93908c069b75@129.121.95.159:443?path=%2Fconnect&security=tls&encryption=none&insecure=0&fp=firefox&type=ws&allowInsecure=0#6268
+vless://75d9fb2c-30fe-4aa1-9112-f0810e96882e@185.84.158.70:8080?path=%2Fapi&security=&encryption=none&host=185.84.158.70&type=ws#6269
+vless://98586561-43ac-435d-9bfd-b5780eb9e771@record.sinafc.ir:8086?security=reality&encryption=none&pbk=nnq5J3zXFDHUGvCza7e5CMa34oexEcXUqAfqz_YY7yo&headerType=none&fp=chrome&spx=%2F264a2ff0d4bd231&type=tcp&sni=explore.amd.com&sid=64523ae2#6271
+vless://caec0d8d-ab2f-4247-b97d-7fb1a34ab195@182.16.61.2:45647?security=&encryption=none&headerType=none&type=tcp#6274
+vless://3ffb96ec-aa53-4303-93f8-ea9e972d682b@user.mizban-b.site:2044?security=&encryption=none&host=testspeed-foreign.tci.ir&headerType=http&type=tcp#6275
+vless://3ffb96ec-aa53-4303-93f8-ea9e972d682b@web.rmohammadi.site:2044?security=&encryption=none&host=testspeed-foreign.tci.ir&headerType=http&type=tcp#6276
+vless://3ffb96ec-aa53-4303-93f8-ea9e972d682b@cpanel.web-manage.com.tr:2044?security=&encryption=none&host=testspeed-foreign.tci.ir&headerType=http&type=tcp#6277
