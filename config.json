@@ -110,5 +110,6 @@
     "anty_filter": { "title": "", "logo": "" },
     "LightVPN_0": { "title": "", "logo": "" },
     "ConfigWireguard": { "title": "", "logo": "" },
-    "mozconfigs": { "title": "", "logo": "" }
+    "mozconfigs": { "title": "", "logo": "" },
+    "WebProxys": { "title": "", "logo": "" }
 }
