@@ -62,7 +62,7 @@ FETCH_DELAY = 6
 
 # Regex & Extensions
 VMESS_REGEX = r'(vmess|vless|trojan|ss|tuic|hysteria2?|dns|dnstt|slipnet|slipnet-enc|nm-dns):\/\/[^\s\n]+'
-MTPROTO_REGEX = r'(?:tg:\/\/|https:\/\/t\.me\/)proxy\?(?=[^"\'\s<>\]\)]*server=)(?=[^"\'\s<>\]\)]*port=)([^"\'\s<>\]\)]+)'
+MTPROTO_REGEX = r'(?:tg:\/\/|https:\/\/t\.me\/)(?:(proxy)\?(?=[^"\'\s<>\]\)]*server=)(?=[^"\'\s<>\]\)]*port=)|(webproxy)\?(?=[^"\'\s<>\]\)]*server=)(?=[^"\'\s<>\]\)]*secret=))([^"\'\s<>\]\)]+)'
 # Updated to support .hat files as well
 FILE_EXTENSIONS = ('.npvt', '.hat')
 
@@ -286,11 +286,11 @@ class ConfigNormalizer:
                 for key in ['fp', 'pbk', 'sid', 'spx']: flat_params.pop(key, None)
                 data = {'protocol': proto, 'host_port': host_port, 'path': parsed.path, 'params': flat_params}
 
-            elif proto == 'mtproto':
+            elif proto in ('mtproto', 'webproxy'):
                 parsed = urlparse(content.replace('tg://', 'http://'))
                 params = parse_qs(parsed.query)
                 data = {
-                    'protocol': 'mtproto',
+                    'protocol': proto,
                     'server': params.get('server', [''])[0],
                     'port': params.get('port', [''])[0],
                     'secret': params.get('secret', [''])[0]
@@ -370,10 +370,17 @@ class ConfigManager:
                 if padding: b64 += "=" * (4 - padding)
                 data = json.loads(base64.b64decode(b64).decode('utf-8', errors='ignore'))
                 return data.get('add'), data.get('port')
-            elif proto == 'mtproto':
+            elif proto in ('mtproto', 'webproxy'):
                 parsed = urlparse(config_str.replace('tg://', 'http://'))
                 params = parse_qs(parsed.query)
-                return params.get('server', [None])[0], params.get('port', [None])[0]
+                port = params.get('port', [None])[0]
+                server = params.get('server', [None])[0]
+                if proto == 'webproxy':
+                    if not port:
+                        port = 443
+                    if server:
+                        server = server.split('/')[0]
+                return server, port
             else:
                 parsed = urlparse(config_str)
                 return parsed.hostname, parsed.port
@@ -524,7 +531,8 @@ async def main():
                     for match in re.finditer(VMESS_REGEX, message.text, re.IGNORECASE):
                         collected_items.append({'ts': ts, 'type': 'text', 'proto': match.group(1), 'raw': match.group(0), 'source': source_key, 'entity_name': entity_name, 'entity_username': entity_username})
                     for match in re.finditer(MTPROTO_REGEX, message.text, re.IGNORECASE):
-                        collected_items.append({'ts': ts, 'type': 'text', 'proto': 'mtproto', 'raw': match.group(0), 'source': source_key, 'entity_name': entity_name, 'entity_username': entity_username})
+                        proto = 'webproxy' if match.group(2) else 'mtproto'
+                        collected_items.append({'ts': ts, 'type': 'text', 'proto': proto, 'raw': match.group(0), 'source': source_key, 'entity_name': entity_name, 'entity_username': entity_username})
 
             await asyncio.sleep(FETCH_DELAY)
         except Exception as e:
@@ -571,7 +579,7 @@ async def main():
                     if ping_ms is None:
                         continue
 
-                    if proto not in ['mtproto']:
+                    if proto not in ['mtproto', 'webproxy']:
                         valid_subscription_configs.append(config_str)
 
                     flag, country = manager.get_location_info(ip)
@@ -582,7 +590,7 @@ async def main():
                 hashtag_proto = clean_proto.replace('-ENC', '')
                 
                 tags = f"#{hashtag_proto} #VPN"
-                if proto == 'mtproto': tags = "#Proxy #MTProto"
+                if proto in ('mtproto', 'webproxy'): tags = "#Proxy #MTProto"
                 elif proto == 'ss': tags = "#Shadowsocks #VPN"
 
                 encoded_config = quote(config_str, safe="")
@@ -623,7 +631,7 @@ async def main():
                 )
                 
                 buttons = []
-                if proto == 'mtproto': 
+                if proto in ('mtproto', 'webproxy'):
                     buttons.append([Button.url("⚡️ اتصال (Connect)", config_str)])
                 else:
                     buttons.append([Button.url("⛶ کد QR کانفیگ", qr_link)])
@@ -635,7 +643,7 @@ async def main():
                     logger.warning(f"Timeout sending message for {proto} config")
                     continue
                 
-                if proto == 'mtproto': stats.increment('proxies')
+                if proto in ('mtproto', 'webproxy'): stats.increment('proxies')
                 else: stats.increment('configs')
                 
                 await asyncio.sleep(4)
